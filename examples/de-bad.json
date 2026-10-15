@@ -1,0 +1,492 @@
+{
+  "tool": "slop-check",
+  "version": "0.1.0",
+  "lang": "de",
+  "register": "article",
+  "words": 240,
+  "verdict": "revise",
+  "verdict_reason": "3 harte Funde (S-01, S-02). Regel: ein harter Fund oder Auffälligkeiten aus mindestens 5 verschiedenen Mustern bedeuten überarbeiten.",
+  "notice": "slop-check sagt nicht, ob eine KI einen Text geschrieben hat. Es zeigt Muster, die du prüfen kannst.",
+  "findings": [
+    {
+      "id": "F-06",
+      "category": "form",
+      "severity": "tell",
+      "name": "Etikett-Überschrift",
+      "line": 3,
+      "start": 2,
+      "end": 30,
+      "excerpt": "# Was ist Content-Marketing?",
+      "message": "Überschriften wie \"Was ist X?\", \"Fazit\" oder \"Einleitung\" sagen, wo man ist, nicht was man erfährt.",
+      "fix": "Die Überschrift als Aussage oder Versprechen formulieren."
+    },
+    {
+      "id": "P-01",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "In der heutigen (schnelllebigen) Welt",
+      "line": 5,
+      "start": 32,
+      "end": 67,
+      "excerpt": "In der heutigen schnelllebigen Welt",
+      "message": "Floskel „In der heutigen schnelllebigen Welt“ (In der heutigen (schnelllebigen) Welt): Zeitdiagnose ohne Inhalt als Einstieg.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "P-04",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Mehr denn je",
+      "line": 5,
+      "start": 90,
+      "end": 107,
+      "excerpt": "wichtiger denn je",
+      "message": "Floskel „wichtiger denn je“ (Mehr denn je): Steigerung ohne Vergleichsgröße. Gemeldet, weil sich solche Wendungen hier häufen.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "P-06",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Es ist kein Geheimnis",
+      "line": 5,
+      "start": 109,
+      "end": 130,
+      "excerpt": "Es ist kein Geheimnis",
+      "message": "Floskel „Es ist kein Geheimnis“ (Es ist kein Geheimnis): Behauptet Allgemeinwissen, statt es zu zeigen.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "P-67",
+      "category": "phrases",
+      "severity": "hint",
+      "name": "Nachhaltig (als Füllwort)",
+      "line": 5,
+      "start": 186,
+      "end": 204,
+      "excerpt": "nachhaltig wachsen",
+      "message": "Floskel „nachhaltig wachsen“ (Nachhaltig (als Füllwort)): Oft nur Verstärker.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "P-07",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Tauchen wir ein",
+      "line": 5,
+      "start": 206,
+      "end": 241,
+      "excerpt": "Tauchen wir tiefer in das Thema ein",
+      "message": "Floskel „Tauchen wir tiefer in das Thema ein“ (Tauchen wir ein): Reisemetapher als Übergang.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "S-02",
+      "category": "substance",
+      "severity": "fail",
+      "name": "Vage Zuschreibung",
+      "line": 7,
+      "start": 244,
+      "end": 258,
+      "excerpt": "Studien zeigen",
+      "message": "\"Studien zeigen\", \"Experten sagen\", \"laut einer Umfrage\": eine Autorität wird behauptet, aber nicht genannt.",
+      "fix": "Die Quelle nennen und verlinken oder den Satz als eigene Erfahrung formulieren."
+    },
+    {
+      "id": "S-01",
+      "category": "substance",
+      "severity": "fail",
+      "name": "Zahl ohne Quelle",
+      "line": 7,
+      "start": 265,
+      "end": 269,
+      "excerpt": "73 %",
+      "message": "Zahl „73 %“ ohne Quelle im selben Satz.",
+      "fix": "Quelle als Link oder (Quelle: Name) in denselben Satz setzen, die Zahl als eigene Erfahrung kennzeichnen oder streichen."
+    },
+    {
+      "id": "S-03",
+      "category": "substance",
+      "severity": "tell",
+      "name": "Person ohne Quelle",
+      "line": 7,
+      "start": 324,
+      "end": 336,
+      "excerpt": "Thomas Weber",
+      "message": "Thomas Weber wird ohne Quelle im Satz zitiert oder wiedergegeben. Gibt es die Person, und hat sie das gesagt?",
+      "fix": "Link zur Originalquelle ergänzen oder die Person streichen. Eigene Namen per Konfiguration own_names freigeben."
+    },
+    {
+      "id": "S-07",
+      "category": "substance",
+      "severity": "tell",
+      "name": "Geglättetes Detail",
+      "line": 7,
+      "start": 402,
+      "end": 424,
+      "excerpt": "Ein führender Anbieter",
+      "message": "Ein konkretes Detail wird durch eine vage Größe ersetzt: \"ein führender Anbieter\", \"namhafte Unternehmen\", \"zahlreiche Kunden\".",
+      "fix": "Den Namen nennen oder das Detail beschreiben, das den Fall besonders macht."
+    },
+    {
+      "id": "S-01",
+      "category": "substance",
+      "severity": "fail",
+      "name": "Zahl ohne Quelle",
+      "line": 7,
+      "start": 503,
+      "end": 519,
+      "excerpt": "um das Dreifache",
+      "message": "Zahl „um das Dreifache“ ohne Quelle im selben Satz.",
+      "fix": "Quelle als Link oder (Quelle: Name) in denselben Satz setzen, die Zahl als eigene Erfahrung kennzeichnen oder streichen."
+    },
+    {
+      "id": "S-04",
+      "category": "substance",
+      "severity": "hint",
+      "name": "Austauschbarer Absatz",
+      "line": 11,
+      "start": 549,
+      "end": 780,
+      "excerpt": "Warum ist das so? Weil Kunden heute anders entscheiden. Es geht nicht um Reichweite. Es geht um Vertrauen. Gute Inhalte schaffen echten Mehrwert, stärken die...",
+      "message": "Absatz mit 36 Wörtern ohne Zahl, Namen, Datum, Beispiel oder eigene Erfahrung: könnte in jedem Text stehen.",
+      "fix": "Ein konkretes Detail aus eigener Erfahrung ergänzen oder den Absatz streichen."
+    },
+    {
+      "id": "T-05",
+      "category": "structure",
+      "severity": "hint",
+      "name": "Rhetorische Frage als Einstieg",
+      "line": 11,
+      "start": 549,
+      "end": 566,
+      "excerpt": "Warum ist das so?",
+      "message": "Ein Absatz beginnt mit einer Frage, die er selbst sofort beantwortet. Einmal geht, gehäuft wirkt es wie eine Schablone.",
+      "fix": "Die Antwort direkt als ersten Satz schreiben."
+    },
+    {
+      "id": "T-01",
+      "category": "structure",
+      "severity": "hint",
+      "name": "Kontrast-Schablone",
+      "line": 11,
+      "start": 605,
+      "end": 641,
+      "excerpt": "Es geht nicht um Reichweite. Es geht",
+      "message": "\"Es geht nicht um X, sondern um Y\" und ähnliche Gegenüberstellungen, die eine Position erfinden, nur um sie zu widerlegen. Einmal ist ein Hinweis, ab zwei ein Muster.",
+      "fix": "Die Gegenposition streichen und die eigene Aussage direkt begründen."
+    },
+    {
+      "id": "T-02",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Dreierlisten-Häufung",
+      "line": 11,
+      "start": 669,
+      "end": 738,
+      "excerpt": "schaffen echten Mehrwert, stärken die Marke und bauen Beziehungen auf",
+      "message": "Immer wieder drei Begriffe in einer Reihe (\"schnell, einfach und sicher\"). Einzelne Dreierlisten sind normal, gehäuft wirken sie mechanisch.",
+      "fix": "Listen kürzen: zwei Begriffe oder einer mit Beleg."
+    },
+    {
+      "id": "T-02",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Dreierlisten-Häufung",
+      "line": 11,
+      "start": 740,
+      "end": 779,
+      "excerpt": "Sie sind klar, präzise und verständlich",
+      "message": "Immer wieder drei Begriffe in einer Reihe (\"schnell, einfach und sicher\"). Einzelne Dreierlisten sind normal, gehäuft wirken sie mechanisch.",
+      "fix": "Listen kürzen: zwei Begriffe oder einer mit Beleg."
+    },
+    {
+      "id": "S-06",
+      "category": "substance",
+      "severity": "tell",
+      "name": "Rat ohne Schritte",
+      "line": 13,
+      "start": 782,
+      "end": 1017,
+      "excerpt": "Zudem spielt die Ladezeit eine entscheidende Rolle. Darüber hinaus ist eine ganzheitliche Strategie unerlässlich. Außerdem solltest du deine Zielgruppe kenne...",
+      "message": "6 Aufforderungen in einem Absatz, aber keine Schritte und kein Beispiel.",
+      "fix": "Den Rat in Schritte zerlegen oder ein Beispiel aus der Praxis ergänzen."
+    },
+    {
+      "id": "T-03",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Konnektor am Satzanfang",
+      "line": 13,
+      "start": 782,
+      "end": 787,
+      "excerpt": "Zudem",
+      "message": "Gehäufte Satzanfänge mit \"Zudem\", \"Darüber hinaus\", \"Außerdem\". Sie verbinden nichts, sie stapeln.",
+      "fix": "Konnektor streichen oder den Zusammenhang ausformulieren (weil, deshalb, aber)."
+    },
+    {
+      "id": "P-11",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Spielt eine entscheidende Rolle",
+      "line": 13,
+      "start": 788,
+      "end": 832,
+      "excerpt": "spielt die Ladezeit eine entscheidende Rolle",
+      "message": "Floskel „spielt die Ladezeit eine entscheidende Rolle“ (Spielt eine entscheidende Rolle): Wichtigkeit behauptet, nicht erklärt. Gemeldet, weil sich solche Wendungen hier häufen.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "P-59",
+      "category": "phrases",
+      "severity": "hint",
+      "name": "Entscheidend",
+      "line": 13,
+      "start": 813,
+      "end": 826,
+      "excerpt": "entscheidende",
+      "message": "Floskel „entscheidende“ (Entscheidend): Häufiges Wichtigkeitswort.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "T-03",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Konnektor am Satzanfang",
+      "line": 13,
+      "start": 834,
+      "end": 848,
+      "excerpt": "Darüber hinaus",
+      "message": "Gehäufte Satzanfänge mit \"Zudem\", \"Darüber hinaus\", \"Außerdem\". Sie verbinden nichts, sie stapeln.",
+      "fix": "Konnektor streichen oder den Zusammenhang ausformulieren (weil, deshalb, aber)."
+    },
+    {
+      "id": "P-16",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Ganzheitlich",
+      "line": 13,
+      "start": 858,
+      "end": 871,
+      "excerpt": "ganzheitliche",
+      "message": "Floskel „ganzheitliche“ (Ganzheitlich): Modewort, das Vollständigkeit vortäuscht. Gemeldet, weil sich solche Wendungen hier häufen.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "P-47",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Essenziell / unerlässlich",
+      "line": 13,
+      "start": 882,
+      "end": 894,
+      "excerpt": "unerlässlich",
+      "message": "Floskel „unerlässlich“ (Essenziell / unerlässlich): Pflicht-Rhetorik ohne Grund. Gemeldet, weil sich solche Wendungen hier häufen.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "T-03",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Konnektor am Satzanfang",
+      "line": 13,
+      "start": 896,
+      "end": 904,
+      "excerpt": "Außerdem",
+      "message": "Gehäufte Satzanfänge mit \"Zudem\", \"Darüber hinaus\", \"Außerdem\". Sie verbinden nichts, sie stapeln.",
+      "fix": "Konnektor streichen oder den Zusammenhang ausformulieren (weil, deshalb, aber)."
+    },
+    {
+      "id": "T-06",
+      "category": "structure",
+      "severity": "hint",
+      "name": "Doppelpunkt-Enthüllung",
+      "line": 15,
+      "start": 1019,
+      "end": 1032,
+      "excerpt": "Das Ergebnis:",
+      "message": "Ein kurzer Satzanfang mit Doppelpunkt oder Fragezeichen baut Spannung auf (\"Das Ergebnis:\", \"Der Grund?\").",
+      "fix": "Den Satz normal bauen: Subjekt, Verb, Aussage."
+    },
+    {
+      "id": "F-03",
+      "category": "form",
+      "severity": "tell",
+      "name": "Bindestrich als Gedankenstrich",
+      "line": 15,
+      "start": 1050,
+      "end": 1053,
+      "excerpt": "...chten. Das Ergebnis: mehr Sichtbarkeit - und mehr Anfragen. Der Umsatz stieg, w...",
+      "message": "\" - \" mit Leerzeichen ersetzt einen Gedankenstrich.",
+      "fix": "Durch Komma, Punkt oder Doppelpunkt ersetzen."
+    },
+    {
+      "id": "T-09",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Partizip-Anhängsel",
+      "line": 15,
+      "start": 1089,
+      "end": 1097,
+      "excerpt": "wodurch",
+      "message": "Ein Satz bekommt hinten eine Deutung angehängt (\", wodurch ...\", \", was zeigt, dass ...\").",
+      "fix": "Das Anhängsel streichen oder als eigenen Satz mit Beleg schreiben."
+    },
+    {
+      "id": "T-09",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Partizip-Anhängsel",
+      "line": 15,
+      "start": 1158,
+      "end": 1174,
+      "excerpt": "was zeigt, dass",
+      "message": "Ein Satz bekommt hinten eine Deutung angehängt (\", wodurch ...\", \", was zeigt, dass ...\").",
+      "fix": "Das Anhängsel streichen oder als eigenen Satz mit Beleg schreiben."
+    },
+    {
+      "id": "S-04",
+      "category": "substance",
+      "severity": "hint",
+      "name": "Austauschbarer Absatz",
+      "line": 17,
+      "start": 1204,
+      "end": 1506,
+      "excerpt": "Gute Kommunikation ist die Basis jeder erfolgreichen Zusammenarbeit zwischen Marke und Publikum. Wer klar und verständlich kommuniziert, vermeidet Missverstä...",
+      "message": "Absatz mit 40 Wörtern ohne Zahl, Namen, Datum, Beispiel oder eigene Erfahrung: könnte in jedem Text stehen.",
+      "fix": "Ein konkretes Detail aus eigener Erfahrung ergänzen oder den Absatz streichen."
+    },
+    {
+      "id": "F-06",
+      "category": "form",
+      "severity": "tell",
+      "name": "Etikett-Überschrift",
+      "line": 19,
+      "start": 1508,
+      "end": 1516,
+      "excerpt": "## Fazit",
+      "message": "Überschriften wie \"Was ist X?\", \"Fazit\" oder \"Einleitung\" sagen, wo man ist, nicht was man erfährt.",
+      "fix": "Die Überschrift als Aussage oder Versprechen formulieren."
+    },
+    {
+      "id": "P-29",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Zusammenfassend lässt sich sagen",
+      "line": 21,
+      "start": 1518,
+      "end": 1550,
+      "excerpt": "Zusammenfassend lässt sich sagen",
+      "message": "Floskel „Zusammenfassend lässt sich sagen“ (Zusammenfassend lässt sich sagen): Schlussformel statt Schlussgedanke.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "T-08",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Zusammenfassung als Ende",
+      "line": 21,
+      "start": 1518,
+      "end": 1534,
+      "excerpt": "Zusammenfassend",
+      "message": "Der Text endet mit einer Wiederholung des Gesagten (\"Zusammenfassend\", \"Alles in allem\").",
+      "fix": "Den Schlussabsatz streichen oder durch etwas Neues ersetzen."
+    },
+    {
+      "id": "P-18",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Gamechanger",
+      "line": 21,
+      "start": 1586,
+      "end": 1597,
+      "excerpt": "Gamechanger",
+      "message": "Floskel „Gamechanger“ (Gamechanger): Superlativ aus dem Werbe-Englisch.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "P-14",
+      "category": "phrases",
+      "severity": "tell",
+      "name": "Das volle Potenzial ausschöpfen",
+      "line": 21,
+      "start": 1646,
+      "end": 1661,
+      "excerpt": "volle Potenzial",
+      "message": "Floskel „volle Potenzial“ (Das volle Potenzial ausschöpfen): Potenzial-Rhetorik ohne Ergebnis.",
+      "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+    },
+    {
+      "id": "T-07",
+      "category": "structure",
+      "severity": "tell",
+      "name": "Pathos am Schluss",
+      "line": 21,
+      "start": 1682,
+      "end": 1726,
+      "excerpt": "Die Zukunft gehört denen, die jetzt handeln.",
+      "message": "Der letzte Satz endet mit einer großen Geste (\"Die Zukunft gehört dir\", \"Der erste Schritt beginnt jetzt\").",
+      "fix": "Den Schlusssatz streichen oder durch einen konkreten Schritt ersetzen."
+    }
+  ],
+  "summary": {
+    "substance": {
+      "fail": 3,
+      "tell": 3,
+      "hint": 2
+    },
+    "facts": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "phrases": {
+      "fail": 0,
+      "tell": 10,
+      "hint": 2
+    },
+    "structure": {
+      "fail": 0,
+      "tell": 9,
+      "hint": 3
+    },
+    "rhythm": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "form": {
+      "fail": 0,
+      "tell": 3,
+      "hint": 0
+    }
+  },
+  "facts": {
+    "lost": [],
+    "added": []
+  },
+  "people": [
+    {
+      "name": "Thomas Weber",
+      "line": 7,
+      "sourced": false
+    }
+  ],
+  "metrics": {
+    "concreteness_per_100": 1.29,
+    "prose_words": 232,
+    "mean_sentence_len": null,
+    "cv_sentence_len_para": null,
+    "words_per_paragraph": null,
+    "mattr50": null,
+    "mean_word_len": null,
+    "nominalizations_1k": null,
+    "triads_1k": null,
+    "colons_1k": null,
+    "participle_tail_1k": null,
+    "ai_side_count": null,
+    "ai_side_limit": 6
+  },
+  "rhythm": [],
+  "text": "\n\n# Was ist Content-Marketing?\n\nIn der heutigen schnelllebigen Welt ist Content-Marketing wichtiger denn je. Es ist kein Geheimnis, dass Unternehmen, die auf hochwertige Inhalte setzen, nachhaltig wachsen. Tauchen wir tiefer in das Thema ein.\n\nStudien zeigen, dass 73 % der Kunden einen Blogartikel lesen, bevor sie kaufen. Thomas Weber, Marketingexperte, sagt: \"Content ist der Schlüssel zum Erfolg.\" Ein führender Anbieter aus der Branche setzt bereits auf diese Strategie und steigerte seinen Umsatz um das Dreifache.\n\n## Warum ist das wichtig?\n\nWarum ist das so? Weil Kunden heute anders entscheiden. Es geht nicht um Reichweite. Es geht um Vertrauen. Gute Inhalte schaffen echten Mehrwert, stärken die Marke und bauen Beziehungen auf. Sie sind klar, präzise und verständlich.\n\nZudem spielt die Ladezeit eine entscheidende Rolle. Darüber hinaus ist eine ganzheitliche Strategie unerlässlich. Außerdem solltest du deine Zielgruppe kennen, du solltest regelmäßig veröffentlichen und du solltest auf Qualität achten.\n\nDas Ergebnis: mehr Sichtbarkeit - und mehr Anfragen. Der Umsatz stieg, wodurch die Bedeutung von Inhalten deutlich wird. Der Traffic wuchs, was zeigt, dass sich die Investition lohnt.\n\nGute Kommunikation ist die Basis jeder erfolgreichen Zusammenarbeit zwischen Marke und Publikum. Wer klar und verständlich kommuniziert, vermeidet Missverständnisse, schafft Vertrauen und legt den Grundstein für eine langfristige Beziehung, die beiden Seiten nützt und über die Zeit immer stärker wird.\n\n## Fazit\n\nZusammenfassend lässt sich sagen, dass Content-Marketing ein echter Gamechanger ist. Mit den richtigen Inhalten schöpfst du das volle Potenzial deiner Website aus. Die Zukunft gehört denen, die jetzt handeln.\n"
+}

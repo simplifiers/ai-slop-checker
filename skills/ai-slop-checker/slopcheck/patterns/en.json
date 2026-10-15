@@ -1,0 +1,2011 @@
+{
+ "lang": "en",
+ "catalog_version": "0.1.0",
+ "license": "MIT",
+ "note": "Patterns, word lists and examples are original wording. 'better' contains no invented figures, studies or names; placeholders are in square brackets.",
+ "allow": [
+  "robust standard error",
+  "robust standard errors",
+  "robust regression",
+  "robust estimator",
+  "robust estimators",
+  "robust statistics",
+  "test harness",
+  "harness racing",
+  "safety harness",
+  "financial leverage",
+  "operating leverage",
+  "leverage ratio",
+  "landscape mode",
+  "landscape orientation",
+  "landscape architect",
+  "landscape architecture",
+  "landscape photography",
+  "landscape design",
+  "vital signs",
+  "vital capacity",
+  "essential oils",
+  "essential oil",
+  "essential amino acids",
+  "dynamic range",
+  "dynamic programming",
+  "dynamic pricing",
+  "dynamic typing",
+  "foster care",
+  "foster parents",
+  "foster child",
+  "foster family",
+  "seamless tube",
+  "seamless pipe"
+ ],
+ "lexicon": {
+  "function_words": [
+   "the",
+   "and",
+   "is",
+   "of",
+   "to",
+   "in",
+   "that",
+   "it",
+   "for",
+   "with",
+   "as",
+   "are",
+   "this",
+   "be",
+   "not",
+   "on",
+   "you",
+   "we",
+   "i",
+   "they",
+   "but",
+   "or",
+   "if",
+   "was",
+   "have",
+   "at",
+   "by",
+   "from",
+   "an",
+   "your"
+  ],
+  "number_words": {
+   "one": 1,
+   "two": 2,
+   "three": 3,
+   "four": 4,
+   "five": 5,
+   "six": 6,
+   "seven": 7,
+   "eight": 8,
+   "nine": 9,
+   "ten": 10,
+   "eleven": 11,
+   "twelve": 12,
+   "fifteen": 15,
+   "twenty": 20,
+   "thirty": 30,
+   "forty": 40,
+   "fifty": 50,
+   "sixty": 60,
+   "seventy": 70,
+   "eighty": 80,
+   "ninety": 90,
+   "hundred": 100,
+   "thousand": 1000,
+   "twice": 2
+  },
+  "months": [
+   "january",
+   "february",
+   "march",
+   "april",
+   "may",
+   "june",
+   "july",
+   "august",
+   "september",
+   "october",
+   "november",
+   "december",
+   "monday",
+   "tuesday",
+   "wednesday",
+   "thursday",
+   "friday",
+   "saturday",
+   "sunday"
+  ],
+  "first_person": [
+   "i",
+   "me",
+   "my",
+   "mine",
+   "myself",
+   "we",
+   "us",
+   "our",
+   "ours",
+   "ourselves",
+   "i'm",
+   "i've",
+   "i'd",
+   "we're",
+   "we've",
+   "we'd"
+  ],
+  "example_cues": [
+   "\\be\\.g\\.",
+   "\\bfor example\\b",
+   "\\bfor instance\\b",
+   "\\bsuch as\\b",
+   "\\blast (?:week|month|year)\\b",
+   "\\brecently\\b",
+   "\\byesterday\\b"
+  ],
+  "directive_cues": [
+   "\\bshould\\b",
+   "\\bmust\\b",
+   "\\bmake sure\\b",
+   "\\bbe sure to\\b",
+   "\\bdon['’]t forget\\b",
+   "\\bremember to\\b",
+   "\\bensure\\b",
+   "\\bit['’]s (?:essential|important|crucial) to\\b",
+   "\\bconsider\\b",
+   "\\balways\\b",
+   "\\bnever\\b",
+   "\\bfocus on\\b"
+  ],
+  "connectors": [
+   "moreover",
+   "furthermore",
+   "additionally",
+   "in addition",
+   "notably",
+   "importantly",
+   "ultimately",
+   "consequently",
+   "likewise",
+   "similarly",
+   "besides",
+   "what's more",
+   "on top of that"
+  ],
+  "summary_openers": [
+   "in summary",
+   "overall",
+   "in conclusion",
+   "to sum up",
+   "all in all",
+   "ultimately",
+   "to summarize",
+   "in short",
+   "the bottom line"
+  ],
+  "pathos_close": [
+   "\\bthe future (?:is|belongs|starts)\\b",
+   "\\bthe (?:first )?step (?:is|starts|begins)\\b",
+   "\\bit['’]s (?:all )?(?:up to you|in your hands)\\b",
+   "\\bnow is the time\\b",
+   "\\bwhat are you waiting for\\b",
+   "\\bthe choice is yours\\b",
+   "\\bstart today\\b",
+   "\\bthe rest is history\\b",
+   "\\bthe journey (?:starts|begins)\\b",
+   "\\bis worth it[.!]?$",
+   "\\bthe possibilities are endless\\b"
+  ],
+  "contrast": [
+   "\\b(?:it['’]s|it is|this is|that['’]s|that is|it was)\\s+not\\s+(?:just\\s+|only\\s+|really\\s+)?(?:about\\s+)?[^.!?;\\n]{1,60}[.;,]\\s*(?:it['’]s|it is|this is|that['’]s|it was)\\b",
+   "\\bisn['’]t (?:just |only |really )?(?:about )?[^.!?;\\n]{1,60}[.;,]\\s*(?:it['’]s|it is)\\b",
+   "\\bthe (?:question|problem|point|issue) (?:isn['’]t|is not)\\b[^.!?\\n]{1,60}[.;,]\\s*(?:it['’]s|it is)\\b"
+  ],
+  "colon_heads_exclude": [
+   "source",
+   "sources",
+   "note",
+   "tip",
+   "example",
+   "warning",
+   "question",
+   "answer",
+   "title",
+   "description",
+   "step",
+   "date",
+   "place",
+   "price",
+   "duration",
+   "audience",
+   "update",
+   "reading time",
+   "q",
+   "a"
+  ],
+  "participle_tail": [
+   ",\\s*(?:highlighting|underscoring|emphasizing|emphasising|showcasing|reflecting|signaling|signalling|demonstrating|illustrating|cementing|solidifying|paving the way|marking a|making it (?:clear|easier|possible))\\b",
+   ",\\s*which (?:\\w+ )?(?:highlights|underscores|shows|demonstrates|reflects|speaks to)\\b"
+  ],
+  "heading_label": "^\\s*(?:conclusion|in conclusion|introduction|intro|summary|in summary|final thoughts|closing thoughts|wrapping up|wrap-up|overview|key takeaways|the bottom line|tl;dr)\\s*[.!:]?\\s*$",
+  "heading_whatis": "^\\s*(?:what (?:is|are) (?:an? |the )?[\\w\\s-]{1,40}|what does [\\w\\s-]{1,40} mean)\\??\\s*$",
+  "passive": "\\b(?:is|are|was|were|be|been|being|gets|got)\\s+(?:\\w+ly\\s+)?(?:\\w+ed|built|done|made|seen|given|taken|written|known|shown|found|sent|told|paid|held|kept|left|brought|thought|bought|caught|taught|sold|run|cut|put|set|read|chosen|driven|grown|drawn|spoken|broken|hidden|forgotten)\\b",
+  "noun_suffixes": [],
+  "name_stop": [
+   "The",
+   "A",
+   "An",
+   "Our",
+   "My",
+   "Your",
+   "Their",
+   "His",
+   "Her",
+   "Its",
+   "This",
+   "That",
+   "These",
+   "Those",
+   "Every",
+   "Each",
+   "No",
+   "Any",
+   "Some",
+   "So",
+   "As",
+   "According",
+   "When",
+   "Then",
+   "Later",
+   "Finally",
+   "After",
+   "Before",
+   "In",
+   "On",
+   "At",
+   "For",
+   "With",
+   "From",
+   "By",
+   "To",
+   "Of",
+   "And",
+   "But",
+   "Or",
+   "If",
+   "Once",
+   "One",
+   "Someone",
+   "Everyone",
+   "Nobody",
+   "It",
+   "He",
+   "She",
+   "We",
+   "I",
+   "You",
+   "They",
+   "Who",
+   "What",
+   "Google",
+   "Microsoft",
+   "Business",
+   "Customer",
+   "Customers",
+   "Client",
+   "Clients",
+   "Team",
+   "Company",
+   "Boss",
+   "Study",
+   "Survey",
+   "Report",
+   "Research",
+   "Brand",
+   "Platform",
+   "Agency",
+   "Founder",
+   "Founders",
+   "Buyer",
+   "Today",
+   "Yesterday",
+   "Tomorrow",
+   "Now",
+   "Afterwards",
+   "Eventually",
+   "First",
+   "Last",
+   "Next",
+   "Recently",
+   "Monday",
+   "Tuesday",
+   "Wednesday",
+   "Thursday",
+   "Friday",
+   "Saturday",
+   "Sunday",
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December",
+   "Mr",
+   "Mrs",
+   "Ms",
+   "Dr",
+   "Prof",
+   "Here",
+   "There",
+   "Also",
+   "Only",
+   "Even",
+   "Still",
+   "Expert",
+   "Marketing",
+   "Consultant",
+   "Professor",
+   "Author",
+   "Coach",
+   "CEO",
+   "Analyst",
+   "Why",
+   "How",
+   "Where",
+   "Which",
+   "While",
+   "Because",
+   "Since",
+   "Although",
+   "Yes",
+   "Not"
+  ],
+  "speech_verbs": "(?:says|said|explains|explained|notes|noted|argues|argued|writes|wrote|recommends|recommended|warns|warned|believes|believed|adds|added|told|points out|pointed out|insists|insisted|claims|claimed|puts it|put it)",
+  "roles": "(?:(?:[a-z][a-z-]*\\s+)?(?:expert|specialist|consultant|strategist|analyst|researcher|coach|trainer|author|founder|co-founder|CEO|CMO|CTO|professor|Professor|investor|advisor|adviser|marketer|psychologist|doctor))",
+  "institution_suffix": "(association|institute|group|agency|bank|magazine|journal|university|college|school|foundation|center|centre|council|ministry|department|office|inc|ltd|llc|gmbh|partners|consulting|media|review|times|post|news|labs|capital|ventures|research|insights|digital|online|marketing|software|studio|studios|network)$",
+  "units": "(?:mm|cm|m|km|inch|inches|ft|feet|foot|yd|yards?|mi|miles?|g|kg|mg|lb|lbs|oz|l|ml|gal|°c|°f|°|degrees?|kwh|wh|kw|w|mw|v|mah|hz|khz|mhz|ghz|mb|gb|tb|kb|px|pt|dpi|ppi|kcal|psi|hp|db|lux|lumens?|ms|min|mins|sec|secs|hrs?|mph|kph|km/h)"
+ },
+ "patterns": [
+  {
+   "id": "S-01",
+   "category": "substance",
+   "name": "Figure without a source",
+   "description": "Percentages, shares, amounts, large numbers or multiples with no source in the same sentence. Measurements, years, versions, legal sections and times do not count.",
+   "bad": "73% of customers read reviews before buying.",
+   "better": "A link to the survey in the same sentence, or: At our shop, [your number from your own experience] out of ten customers ask about reviews first.",
+   "severity": "fail",
+   "match": {
+    "type": "check",
+    "check": "unsourced_number"
+   },
+   "fix": "Add the source as a link or (source: name) in the same sentence, mark the figure as your own experience, or cut it."
+  },
+  {
+   "id": "S-02",
+   "category": "substance",
+   "name": "Vague attribution",
+   "description": "\"Studies show\", \"experts say\", \"according to a survey\": an authority is invoked but not named.",
+   "bad": "Studies show that short texts work better.",
+   "better": "Name the study with a link, or write what you observed yourself: [your observation].",
+   "severity": "fail",
+   "match": {
+    "type": "regex",
+    "pattern": "(?<!\\bour )(?<!\\bmy )(?<!\\byour )\\b(?:(?:recent|new|numerous|many|several|various|some|multiple) )?(?:studies|research|surveys|statistics|analyses|data|findings|reports) (?:show|shows|suggest|suggests|prove|proves|indicate|indicates|confirm|confirms|reveal|reveals|has shown|have shown|found|demonstrate|demonstrates)\\b|\\b(?:(?:many|most|leading|some|top|industry) )?(?:experts|specialists|researchers|scientists|analysts|insiders|marketers) (?:agree|say|said|believe|recommend|warn|suggest|estimate|predict|argue|claim)\\b|\\baccording to (?:experts|researchers|research|studies|a (?:recent |new )?(?:study|survey|report|poll|analysis)|analysts|recent research|industry experts|many experts)\\b|\\b(?:a|one) (?:recent|new|large|landmark|groundbreaking) (?:study|survey|report|poll|analysis)\\b|\\bscientifically proven\\b|\\bresearch has (?:shown|found|proven)\\b"
+   },
+   "fix": "Name and link the source, or rewrite the sentence as your own experience."
+  },
+  {
+   "id": "S-03",
+   "category": "substance",
+   "name": "Person without a source",
+   "description": "A named person is quoted or paraphrased without a source in the sentence. Check that the person exists and said this.",
+   "bad": "Marketing expert Thomas Weber says content is everything.",
+   "better": "[Name] told us on [date]: \"[exact quote]\", or a link to the original source.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "people"
+   },
+   "fix": "Add a link to the original source or cut the person. Allow your own name with the config key own_names."
+  },
+  {
+   "id": "S-04",
+   "category": "substance",
+   "name": "Interchangeable paragraph",
+   "description": "A longer paragraph without a single concrete detail: no number, name, place, date, example or first-hand experience. It could appear in any text on the topic.",
+   "bad": "Good communication is the basis of all collaboration. Those who communicate clearly avoid misunderstandings and build trust.",
+   "better": "Add one detail only you know: [a case from your work, with a place or time].",
+   "severity": "hint",
+   "match": {
+    "type": "check",
+    "check": "portability",
+    "min_words": 35
+   },
+   "fix": "Add one concrete detail from your own experience or cut the paragraph."
+  },
+  {
+   "id": "S-05",
+   "category": "substance",
+   "name": "Little concrete detail",
+   "description": "Across the whole text there are very few concrete details per 100 words (numbers, names, dates, examples, first-hand experience). Threshold is provisional.",
+   "bad": "A whole article made of general advice.",
+   "better": "At least one example from your practice per section: [case], [time span], [result].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "concreteness",
+    "min_per_100": 1.0
+   },
+   "fix": "Add your own cases, sourced figures and examples."
+  },
+  {
+   "id": "S-06",
+   "category": "substance",
+   "name": "Advice without steps",
+   "description": "A paragraph piles up instructions (\"you should\", \"make sure\") but gives neither steps nor an example.",
+   "bad": "You should know your audience. You should post regularly. Make sure to focus on quality.",
+   "better": "A numbered list of the steps you actually take, with one example: [step 1], [step 2].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "advice",
+    "min_cues": 3
+   },
+   "fix": "Break the advice into steps or add an example from practice."
+  },
+  {
+   "id": "S-07",
+   "category": "substance",
+   "name": "Smoothed-over detail",
+   "description": "A concrete detail is replaced by a vague one: \"a leading provider\", \"well-known companies\", \"numerous clients\".",
+   "bad": "A leading company already uses the method.",
+   "better": "Name the company if you may, or describe it: [industry], [size], [what they do with it].",
+   "severity": "tell",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:a|an|one|the) (?:leading|major|well-known|renowned|prominent|top|large|global|big|household-name) (?:company|companies|provider|brand|retailer|firm|agency|expert|manufacturer|university|bank|player|organization|organisation)\\b|\\b(?:leading|renowned|well-known|top|major) (?:companies|brands|experts|firms|organizations|organisations|providers)\\b|\\b(?:industry leaders|market leaders|fortune 500 companies|household names)\\b|\\b(?:numerous|countless|many|several) (?:satisfied )?(?:clients|customers|companies|businesses|users|brands)\\b"
+   },
+   "fix": "Name it, or describe the detail that makes the case specific."
+  },
+  {
+   "id": "S-08",
+   "category": "substance",
+   "name": "Figure from your own experience",
+   "description": "A figure in an I or we sentence. It may be first-hand. Check that it is right and that you could back it up.",
+   "bad": "We cut costs by 40%.",
+   "better": "We cut costs from [amount] to [amount], measured over [time span].",
+   "severity": "hint",
+   "match": {
+    "type": "check",
+    "check": "unsourced_number"
+   },
+   "fix": "Add the time span and what was measured."
+  },
+  {
+   "id": "S-11",
+   "category": "facts",
+   "name": "Fact from the source is missing",
+   "description": "A number, date, name or link is in your notes but not in the draft.",
+   "bad": "Notes: 15,000 subscribers. Draft: lots of subscribers.",
+   "better": "Carry the detail over from your notes if it matters to the reader.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "facts_lost"
+   },
+   "fix": "Check whether the detail was dropped on purpose."
+  },
+  {
+   "id": "S-12",
+   "category": "facts",
+   "name": "New figure or link without support",
+   "description": "A figure or link is in the draft but in none of the sources, and the sentence has no citation. Typical of invented details.",
+   "bad": "Notes: no figure. Draft: 73% of readers stay longer.",
+   "better": "Only use figures from your notes, or add the source.",
+   "severity": "fail",
+   "match": {
+    "type": "check",
+    "check": "facts_added"
+   },
+   "fix": "Check and source the detail, or cut it. Open links and check that they support the claim."
+  },
+  {
+   "id": "S-13",
+   "category": "facts",
+   "name": "New name or date",
+   "description": "A name or date is in the draft but in none of the sources.",
+   "bad": "Notes: a client in Leeds. Draft: client Mary Hollis in Leeds.",
+   "better": "Stay with the detail from your notes: [as in your notes].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "facts_added"
+   },
+   "fix": "Check that the name or date is right."
+  },
+  {
+   "id": "P-01",
+   "category": "phrases",
+   "name": "In today's fast-paced world",
+   "description": "Era framing with no content.",
+   "bad": "In today's fast-paced world, every minute counts.",
+   "better": "Since [month/year], we answer requests within [your time span].",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin today['’]s (?:fast[\\s-]paced |digital |modern |competitive |connected |ever[\\s-]changing )?(?:world|age|era|landscape|environment|market|economy|business world)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-02",
+   "category": "phrases",
+   "name": "In the digital age",
+   "description": "Era label instead of a concrete trigger.",
+   "bad": "In the digital age, everything changes.",
+   "better": "Since [concrete change], teams have to [concrete consequence].",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin (?:the|this|our) (?:digital|modern|information) (?:age|era)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-03",
+   "category": "phrases",
+   "name": "Ever-evolving landscape",
+   "description": "Landscape image for a market.",
+   "bad": "In the ever-evolving landscape of SEO, ...",
+   "better": "Name the one change that affects your readers.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:ever[\\s-]evolving|ever[\\s-]changing|rapidly evolving|constantly evolving|shifting) (?:landscape|world|field|market|space)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-04",
+   "category": "phrases",
+   "name": "Now more than ever",
+   "description": "Escalation without a comparison point.",
+   "bad": "Visibility matters now more than ever.",
+   "better": "Say what changed and when.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bnow,? more than ever\\b|\\bmore (?:important|relevant|critical) than ever\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-05",
+   "category": "phrases",
+   "name": "It's important to note",
+   "description": "Announces a point instead of making it.",
+   "bad": "It's important to note that backups take time.",
+   "better": "Backups take time: plan [your duration] for them.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bit(?:['’]s| is) (?:important|crucial|essential|worth|vital|key) (?:to )?(?:note|noting|remember|remembering|mention|mentioning|highlight|highlighting|understand|recognize)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-06",
+   "category": "phrases",
+   "name": "It's no secret that",
+   "description": "Claims common knowledge instead of showing it.",
+   "bad": "It's no secret that customers read reviews.",
+   "better": "Customers read reviews: [what they ask you about first].",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bit(?:['’]s| is) no secret\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-07",
+   "category": "phrases",
+   "name": "Delve into",
+   "description": "Overused verb in generated prose.",
+   "bad": "Let's delve into the details.",
+   "better": "Cut the sentence and start with the first detail.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bdelv(?:e|es|ed|ing)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-08",
+   "category": "phrases",
+   "name": "Let's dive in",
+   "description": "Swimming metaphor as a transition.",
+   "bad": "Let's dive in.",
+   "better": "Cut it and start.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:let['’]s|let us) (?:take a )?(?:deep )?dive\\b|\\bdeep[\\s-]dive\\b|\\bdive (?:deep(?:er)? )?into\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-09",
+   "category": "phrases",
+   "name": "Welcome to the world of",
+   "description": "Greeting instead of an opening.",
+   "bad": "Welcome to the world of email marketing!",
+   "better": "Open with the question that brought the reader here.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bwelcome to the (?:\\w+ )?world of\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-10",
+   "category": "phrases",
+   "name": "Imagine a world",
+   "description": "Invented scenario as a hook.",
+   "bad": "Imagine a world where your shop sells while you sleep.",
+   "better": "Tell a real case: [what happened to one of your clients].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bimagine (?:a world|a scenario|this|that|for a moment|if you could)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-11",
+   "category": "phrases",
+   "name": "In this article, you'll learn",
+   "description": "Table of contents instead of content.",
+   "bad": "In this article, you'll learn everything about taxes.",
+   "better": "Give the most important answer in the first sentence.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin this (?:article|post|blog post|guide|piece),? (?:you['’]ll|you will|we['’]ll|we will|we|you|i['’]ll|i will) (?:learn|explore|discover|look|dive|cover|take a look|walk|break down|examine)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-12",
+   "category": "phrases",
+   "name": "Plays a crucial role",
+   "description": "Importance claimed, not explained.",
+   "bad": "Page speed plays a crucial role.",
+   "better": "Say what happens when page speed drops: [your observation].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bplay(?:s|ed|ing)? (?:a|an) (?:crucial|key|vital|pivotal|critical|important|significant|central|major|integral|essential) role\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-13",
+   "category": "phrases",
+   "name": "Of paramount importance",
+   "description": "Importance label without a reason.",
+   "bad": "Data protection is of paramount importance.",
+   "better": "Data protection decides [concrete consequence] here.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bof (?:paramount|utmost|crucial|critical|great|vital) importance\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-14",
+   "category": "phrases",
+   "name": "The key to success",
+   "description": "Success promise with no content.",
+   "bad": "Consistency is the key to success.",
+   "better": "Name what consistency changed in your case.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bkey to (?:success|growth|unlocking)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-15",
+   "category": "phrases",
+   "name": "Unlock the potential",
+   "description": "Potential rhetoric without a result.",
+   "bad": "Unlock the full potential of your website.",
+   "better": "Name the result the reader can reach.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bunlock(?:s|ed|ing)? (?:the |your |its |their |new )?(?:full |true )?(?:power|potential|value|possibilities|opportunities)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-16",
+   "category": "phrases",
+   "name": "Harness the power",
+   "description": "Power metaphor for using a tool.",
+   "bad": "Harness the power of automation.",
+   "better": "Say which task automation takes over.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bharness(?:es|ed|ing)? the (?:full )?(?:power|potential)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-17",
+   "category": "phrases",
+   "name": "Take it to the next level",
+   "description": "Step image without a measure.",
+   "bad": "Take your marketing to the next level.",
+   "better": "Say what is different afterwards: [your measure].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:to|on) the next level\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-18",
+   "category": "phrases",
+   "name": "Elevate your",
+   "description": "Lifting verb for any improvement.",
+   "bad": "Elevate your brand.",
+   "better": "Say what changes for the brand.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\belevat(?:e|es|ed|ing) (?:your|their|our|the)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-19",
+   "category": "phrases",
+   "name": "Navigate the complexities",
+   "description": "Navigation metaphor for difficulty.",
+   "bad": "We help you navigate the complexities of tax law.",
+   "better": "Name the one rule readers get wrong.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bnavigat(?:e|es|ed|ing) (?:the )?(?:complexities|complexity|intricacies|challenges|landscape|maze|world)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-20",
+   "category": "phrases",
+   "name": "A testament to",
+   "description": "Grand framing for a simple fact.",
+   "bad": "The result is a testament to hard work.",
+   "better": "Say what the team did.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:a|is a|stands as a) testament to\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-21",
+   "category": "phrases",
+   "name": "Game-changer",
+   "description": "Ad-copy superlative.",
+   "bad": "This feature is a real game-changer.",
+   "better": "Say what the feature changes and for whom.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bgame[\\s-]?chang(?:er|ers|ing)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-22",
+   "category": "phrases",
+   "name": "Revolutionize",
+   "description": "Exaggeration without before and after.",
+   "bad": "AI is revolutionizing accounting.",
+   "better": "AI now handles [concrete task] in accounting.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\brevolutioni[sz](?:e|es|ed|ing)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-23",
+   "category": "phrases",
+   "name": "Seamless",
+   "description": "Promises no friction, does not show it.",
+   "bad": "The software integrates seamlessly.",
+   "better": "The software reads [concrete format] directly.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bseamless(?:ly)?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-24",
+   "category": "phrases",
+   "name": "Leverage",
+   "description": "Consultant verb for 'use'.",
+   "bad": "Leverage your data to grow.",
+   "better": "Use [which data] to decide [what].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bleverag(?:e|es|ed|ing)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-25",
+   "category": "phrases",
+   "name": "Synergy",
+   "description": "Consultant word without a mechanism.",
+   "bad": "This creates synergy between teams.",
+   "better": "Name what one team takes off the other's plate.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bsynerg(?:y|ies|istic)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-26",
+   "category": "phrases",
+   "name": "Holistic",
+   "description": "Buzzword that pretends completeness.",
+   "bad": "We offer a holistic approach.",
+   "better": "List what the approach covers.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bholistic(?:ally)?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-27",
+   "category": "phrases",
+   "name": "Cutting-edge",
+   "description": "Novelty label without a comparison.",
+   "bad": "Cutting-edge technology.",
+   "better": "Say what the technology does that older tools do not.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:cutting|leading|bleeding)[\\s-]edge\\b|\\bstate[\\s-]of[\\s-]the[\\s-]art\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-28",
+   "category": "phrases",
+   "name": "Innovative solutions",
+   "description": "Empty label for an offer.",
+   "bad": "We deliver innovative solutions.",
+   "better": "Say what the offer does.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\binnovative (?:solutions?|approach(?:es)?|technolog(?:y|ies))\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-29",
+   "category": "phrases",
+   "name": "Multifaceted",
+   "description": "Complexity claimed instead of shown.",
+   "bad": "The issue is multifaceted.",
+   "better": "Name the two sides of the issue.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bmulti[\\s-]?faceted\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-30",
+   "category": "phrases",
+   "name": "In the realm of",
+   "description": "Kingdom image for a topic.",
+   "bad": "In the realm of finance, ...",
+   "better": "In finance, ...",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin the realm of\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-31",
+   "category": "phrases",
+   "name": "Hand in hand",
+   "description": "Image of connection without a mechanism.",
+   "bad": "SEO and content go hand in hand.",
+   "better": "Explain how one depends on the other.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bhand in hand\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-32",
+   "category": "phrases",
+   "name": "At the end of the day",
+   "description": "Filler idiom.",
+   "bad": "At the end of the day, results matter.",
+   "better": "Cut it or name the result.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bat the end of the day\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-33",
+   "category": "phrases",
+   "name": "Last but not least",
+   "description": "List filler.",
+   "bad": "Last but not least: the costs.",
+   "better": "Name the point without announcing it.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\blast but not least\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-34",
+   "category": "phrases",
+   "name": "Embark on a journey",
+   "description": "Journey metaphor for a process.",
+   "bad": "Embark on your journey to better sleep.",
+   "better": "Describe the first step.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bembark(?:s|ed|ing)? on\\b|\\b(?:on|in) (?:this|your|our|their) (?:\\w+ )?journey\\b(?!\\s+(?:to|from|through|across)\\b)"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-35",
+   "category": "phrases",
+   "name": "In conclusion / To sum up",
+   "description": "Closing formula instead of a closing thought.",
+   "bad": "In conclusion, planning helps.",
+   "better": "End with the reader's next step.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:in conclusion|to sum up|to summarize|to summarise|all in all|in summary)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-36",
+   "category": "phrases",
+   "name": "Robust",
+   "description": "Engineering adjective used as a quality seal.",
+   "bad": "A robust solution for your team.",
+   "better": "Say what the solution withstands: [load, errors, time span].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\brobust(?:ly|ness)?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-37",
+   "category": "phrases",
+   "name": "Tapestry",
+   "description": "Weaving image for variety.",
+   "bad": "A rich tapestry of cultures.",
+   "better": "Name two of the cultures and what they bring.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\btapestr(?:y|ies)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-38",
+   "category": "phrases",
+   "name": "The X landscape",
+   "description": "Landscape image for a market or field.",
+   "bad": "The marketing landscape is shifting.",
+   "better": "Say what shifted and for whom.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:the|today['’]s|a) (?:\\w+ ){0,2}landscape\\b(?<!\\blandscape photography)"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-39",
+   "category": "phrases",
+   "name": "Pivotal",
+   "description": "Importance adjective.",
+   "bad": "A pivotal moment for the company.",
+   "better": "Say what the company decided at that moment.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bpivotal\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-40",
+   "category": "phrases",
+   "name": "Foster",
+   "description": "Abstract verb for building something.",
+   "bad": "Foster a culture of trust.",
+   "better": "Say what you do so people trust each other.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bfoster(?:s|ed|ing)?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-41",
+   "category": "phrases",
+   "name": "Empower",
+   "description": "Abstract verb for enabling.",
+   "bad": "We empower teams to grow.",
+   "better": "Say what teams can do afterwards.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bempower(?:s|ed|ing|ment)?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-42",
+   "category": "phrases",
+   "name": "Streamline",
+   "description": "Process verb without the process.",
+   "bad": "Streamline your workflow.",
+   "better": "Name the step you remove.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bstreamlin(?:e|es|ed|ing)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-43",
+   "category": "phrases",
+   "name": "The ultimate guide",
+   "description": "Superlative in the title.",
+   "bad": "The ultimate guide to newsletters",
+   "better": "Newsletters: [the concrete promise the text keeps]",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:ultimate|comprehensive|complete|definitive) guide\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-44",
+   "category": "phrases",
+   "name": "Valuable insights",
+   "description": "Judgement instead of content.",
+   "bad": "The report offers valuable insights.",
+   "better": "Name the one finding from the report.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:valuable|actionable|key|deep|unique) (?:insights?|takeaways|tips)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-45",
+   "category": "phrases",
+   "name": "Meticulous",
+   "description": "Diligence adjective.",
+   "bad": "Meticulously crafted content.",
+   "better": "Say what you checked and how.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bmeticulous(?:ly)?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-46",
+   "category": "phrases",
+   "name": "Intricate",
+   "description": "Complexity adjective.",
+   "bad": "The intricate details of the process.",
+   "better": "Name the detail that trips people up.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bintricac(?:y|ies)\\b|\\bintricate(?:ly)?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-47",
+   "category": "phrases",
+   "name": "Underscore",
+   "description": "Emphasis verb.",
+   "bad": "This underscores the importance of planning.",
+   "better": "Say what goes wrong without planning.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bunderscor(?:e|es|ed|ing)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-48",
+   "category": "phrases",
+   "name": "Showcase",
+   "description": "Display verb.",
+   "bad": "The project showcases our expertise.",
+   "better": "Say what the project solved.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bshowcas(?:e|es|ed|ing)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-49",
+   "category": "phrases",
+   "name": "Boasts",
+   "description": "Brochure verb.",
+   "bad": "The city boasts many museums.",
+   "better": "The city has [number] museums, including [one you know].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bboast(?:s|ed|ing)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-50",
+   "category": "phrases",
+   "name": "Nestled",
+   "description": "Travel-brochure image.",
+   "bad": "Nestled in the hills, the hotel ...",
+   "better": "The hotel is in the hills, [distance] from [place].",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bnestled\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-51",
+   "category": "phrases",
+   "name": "Vibrant / bustling",
+   "description": "Brochure adjectives.",
+   "bad": "A vibrant, bustling city.",
+   "better": "Describe what you saw there.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bvibrant\\b|\\bbustling\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-52",
+   "category": "phrases",
+   "name": "A myriad of / plethora of",
+   "description": "Quantity word with no quantity.",
+   "bad": "A myriad of options.",
+   "better": "Name the two options that matter.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\ba (?:myriad|plethora) of\\b|\\bmyriad (?:of )?(?:options|ways|benefits)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-53",
+   "category": "phrases",
+   "name": "Here's the thing",
+   "description": "Spoken-style setup line.",
+   "bad": "Here's the thing: nobody reads manuals.",
+   "better": "Say it directly.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bhere['’]s the thing\\b|\\bhere['’]s the kicker\\b|\\bhere['’]s why\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-54",
+   "category": "phrases",
+   "name": "The good news?",
+   "description": "Suspense formula.",
+   "bad": "The good news? There is a fix.",
+   "better": "Name the fix directly.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bthe good news\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-55",
+   "category": "phrases",
+   "name": "This is where X comes in",
+   "description": "Stage entrance for a product or concept.",
+   "bad": "This is where automation comes in.",
+   "better": "Say which task automation takes over.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:this|that) is where (?:\\w+ ){1,3}comes? in\\b|\\bcomes? into play\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-56",
+   "category": "phrases",
+   "name": "Cornerstone",
+   "description": "Building image for importance.",
+   "bad": "Trust is the cornerstone of a brand.",
+   "better": "Name what customers base trust on.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bcornerstone\\b|\\bbedrock\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-57",
+   "category": "phrases",
+   "name": "Paradigm shift",
+   "description": "Big-change label.",
+   "bad": "A paradigm shift in marketing.",
+   "better": "Say what people do differently now.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bparadigm shift\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-58",
+   "category": "phrases",
+   "name": "Whether you're a beginner or a pro",
+   "description": "Audience-everyone formula.",
+   "bad": "Whether you're a beginner or a seasoned pro, ...",
+   "better": "Write for one reader and say who.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bwhether you['’]re (?:a |an )?\\w+(?: \\w+)? or (?:a |an )?(?:seasoned |experienced )?\\w+"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-59",
+   "category": "phrases",
+   "name": "Look no further",
+   "description": "Ad-copy formula.",
+   "bad": "Looking for a good CRM? Look no further.",
+   "better": "Name the CRM and why it fits.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\blook no further\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-60",
+   "category": "phrases",
+   "name": "It goes without saying",
+   "description": "Says what supposedly need not be said.",
+   "bad": "It goes without saying that quality matters.",
+   "better": "Cut it.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bit goes without saying\\b|\\bneedless to say\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-61",
+   "category": "phrases",
+   "name": "In a world where",
+   "description": "Movie-trailer opening.",
+   "bad": "In a world where data is everything, ...",
+   "better": "Open with the problem your readers have today.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin a world (?:where|that)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-62",
+   "category": "phrases",
+   "name": "Unprecedented / transformative",
+   "description": "Superlatives without a comparison.",
+   "bad": "An unprecedented, transformative shift.",
+   "better": "Say what changed compared to [your reference point].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bunprecedented\\b|\\btransformative\\b|\\btransformational\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-63",
+   "category": "phrases",
+   "name": "Rest assured",
+   "description": "Reassurance formula.",
+   "bad": "Rest assured, your data is safe.",
+   "better": "Say how the data is protected.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\brest assured\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-64",
+   "category": "phrases",
+   "name": "Not only ... but also (as a pattern)",
+   "description": "Double construction that inflates both halves.",
+   "bad": "It saves not only time but also money.",
+   "better": "It saves time and money.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bnot only\\b[^.!?\\n]{1,160}?\\bbut (?:also|even)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-65",
+   "category": "phrases",
+   "name": "Crucial",
+   "description": "Frequent importance word.",
+   "bad": "Planning is crucial.",
+   "better": "Say what planning prevents.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bcrucial(?:ly)?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-66",
+   "category": "phrases",
+   "name": "Vital / essential",
+   "description": "Must-have words, often without a reason.",
+   "bad": "A newsletter is essential.",
+   "better": "Say what is missing without one.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bvital\\b|\\bessential\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-67",
+   "category": "phrases",
+   "name": "Best practices",
+   "description": "Jargon, often without content.",
+   "bad": "We follow best practices.",
+   "better": "Name the one practice you use.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bbest practices?\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-68",
+   "category": "phrases",
+   "name": "Dynamic",
+   "description": "Energy adjective without content.",
+   "bad": "A dynamic team.",
+   "better": "Say what the team does.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bdynamic\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-69",
+   "category": "phrases",
+   "name": "Numerous benefits",
+   "description": "Quantity claimed, not listed.",
+   "bad": "The method offers numerous benefits.",
+   "better": "Name the two main benefits.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:numerous|countless|a wide range of|a wealth of|a host of) (?:benefits|advantages|options|features|opportunities|possibilities)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-70",
+   "category": "phrases",
+   "name": "Make a difference",
+   "description": "Effect claimed without a comparison.",
+   "bad": "Small details make all the difference.",
+   "better": "Name the detail and what it changed.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bmake(?:s)? (?:all |a (?:real |huge |big )?)?(?:the )?difference\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-71",
+   "category": "phrases",
+   "name": "Increasingly important",
+   "description": "Trend claim without a date.",
+   "bad": "Reviews are increasingly important.",
+   "better": "Say how you notice reviews matter more.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:increasingly|ever more|more and more) (?:important|relevant|critical|popular)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-72",
+   "category": "phrases",
+   "name": "Optimal results",
+   "description": "Promise without a measure.",
+   "bad": "Get optimal results.",
+   "better": "Name the result you expect.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\boptimal (?:results|outcomes|performance|solution)\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "P-73",
+   "category": "phrases",
+   "name": "In essence / Essentially",
+   "description": "Compression announcement.",
+   "bad": "In essence, it is about trust.",
+   "better": "Say what the trust rests on.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin essence\\b|\\bessentially\\b"
+   },
+   "fix": "Cut it or replace it with a concrete statement."
+  },
+  {
+   "id": "T-01",
+   "category": "structure",
+   "name": "Contrast template",
+   "description": "\"It's not X. It's Y.\" and similar set-ups that invent a position only to knock it down. Once is a hint, twice is a pattern.",
+   "bad": "It's not about reach. It's about trust.",
+   "better": "Trust brings us more enquiries than reach: [your observation].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "contrast"
+   },
+   "fix": "Drop the straw position and argue your point directly."
+  },
+  {
+   "id": "T-02",
+   "category": "structure",
+   "name": "Stacked lists of three",
+   "description": "Three items in a row again and again (\"fast, simple and secure\"). One is normal, many sound mechanical.",
+   "bad": "Fast, simple and secure. Clear, precise and accessible.",
+   "better": "Name only the quality you can back up, and back it up.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "triads"
+   },
+   "fix": "Shorten the lists: two items, or one with evidence."
+  },
+  {
+   "id": "T-03",
+   "category": "structure",
+   "name": "Connector at the start of a sentence",
+   "description": "Repeated sentence openers like \"Moreover\", \"Furthermore\", \"Additionally\". They stack rather than connect.",
+   "bad": "Moreover, it is cheap. Furthermore, it is fast.",
+   "better": "It is cheap and fast because [reason].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "connectors"
+   },
+   "fix": "Cut the connector or state the relation (because, so, but)."
+  },
+  {
+   "id": "T-04",
+   "category": "structure",
+   "name": "Same sentence openings",
+   "description": "Three or more sentences in a row start with the same word.",
+   "bad": "You plan. You write. You check.",
+   "better": "Vary the openings or turn the steps into a list.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "same_openings",
+    "run": 3
+   },
+   "fix": "Vary the openings or merge the sentences."
+  },
+  {
+   "id": "T-05",
+   "category": "structure",
+   "name": "Rhetorical question as opener",
+   "description": "A paragraph opens with a question it answers itself right away. Once is fine, repeated it reads like a template.",
+   "bad": "Why does this matter? Because customers compare.",
+   "better": "Customers compare before they get in touch: [how you notice].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "rhetorical_openers"
+   },
+   "fix": "Write the answer as the first sentence."
+  },
+  {
+   "id": "T-06",
+   "category": "structure",
+   "name": "Colon reveal",
+   "description": "A short lead-in with a colon or question mark builds fake suspense (\"The result:\", \"The reason?\").",
+   "bad": "The result? More enquiries.",
+   "better": "We got more enquiries afterwards, about [your number] a week instead of [before].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "colon_reveal"
+   },
+   "fix": "Build a normal sentence: subject, verb, claim."
+  },
+  {
+   "id": "T-07",
+   "category": "structure",
+   "name": "Grand closing line",
+   "description": "The last sentence ends with a grand gesture (\"The future is yours\", \"The first step starts today\").",
+   "bad": "The future belongs to those who act now.",
+   "better": "End with a concrete next step: [what the reader can do tomorrow].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "pathos_close"
+   },
+   "fix": "Cut the closing line or replace it with a concrete step."
+  },
+  {
+   "id": "T-08",
+   "category": "structure",
+   "name": "Summary ending",
+   "description": "The text ends by repeating itself (\"In summary\", \"All in all\").",
+   "bad": "In summary, planning is important.",
+   "better": "End with an open question from your practice or the next step.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "summary_end"
+   },
+   "fix": "Cut the closing paragraph or replace it with something new."
+  },
+  {
+   "id": "T-09",
+   "category": "structure",
+   "name": "Trailing participle clause",
+   "description": "A sentence gets an interpretation tacked on at the end (\", highlighting ...\", \", underscoring ...\").",
+   "bad": "Revenue rose, highlighting the importance of SEO.",
+   "better": "Revenue rose. Most of it came from [your source of enquiries].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "participle_tail"
+   },
+   "fix": "Cut the tail or turn it into its own sentence with evidence."
+  },
+  {
+   "id": "R-01",
+   "category": "rhythm",
+   "name": "Short sentences",
+   "description": "Average words per sentence. Generated expert texts have markedly shorter sentences on average than the human texts in the comparison band.",
+   "bad": "Every sentence is short. Every sentence ends fast. No thought develops.",
+   "better": "Join thoughts that belong together into one sentence and give the reason [because ...].",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "mean_sentence_len"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-02",
+   "category": "rhythm",
+   "name": "Uniform sentence lengths",
+   "description": "Spread of sentence lengths within paragraphs (coefficient of variation). Very even sentences sit on the generated-text side.",
+   "bad": "All sentences have about the same length and shape.",
+   "better": "Mix short and long sentences, the way you talk.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "cv_sentence_len_para"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-03",
+   "category": "rhythm",
+   "name": "Short paragraphs",
+   "description": "Average words per paragraph. Generated texts split content into many short paragraphs.",
+   "bad": "One paragraph, one sentence. Then the next paragraph.",
+   "better": "Merge paragraphs that carry one thought together.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "words_per_paragraph"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-04",
+   "category": "rhythm",
+   "name": "High vocabulary variety",
+   "description": "Vocabulary variety (MATTR, 50-word window). Generated texts repeat words less often and switch synonyms more than human texts.",
+   "bad": "Solution, approach, method, strategy: four words for one thing.",
+   "better": "Keep the technical term when you mean the same thing.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "mattr50"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-05",
+   "category": "rhythm",
+   "name": "Long words",
+   "description": "Average word length in letters. Generated texts reach for long, abstract words more often.",
+   "bad": "Operational efficiencies are strategically maximised.",
+   "better": "Say what gets faster: [process].",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "mean_word_len"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-06",
+   "category": "rhythm",
+   "name": "Nominal style",
+   "description": "Words ending in -tion, -sion, -ment, -ness, -ity per 1,000 words.",
+   "bad": "The implementation of the optimisation follows the assessment.",
+   "better": "We optimise after we have assessed [object].",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "nominalizations_1k"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-07",
+   "category": "rhythm",
+   "name": "Many lists of three",
+   "description": "Lists of the form \"A, B and C\" per 1,000 words. Adds a measured rate to pattern T-02.",
+   "bad": "Fast, secure and simple. Clear, precise and accessible.",
+   "better": "Name only what is true, even if it is two things.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "triads_1k"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-08",
+   "category": "rhythm",
+   "name": "Many colons",
+   "description": "Colons in running text per 1,000 words (not times or links).",
+   "bad": "The goal: growth. The path: clarity. The result: success.",
+   "better": "Write full sentences instead of \"term: explanation\".",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "colons_1k"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-09",
+   "category": "rhythm",
+   "name": "Trailing participles (rate)",
+   "description": "Clauses like \", ensuring ...\" or \", making ...\" per 1,000 words. Adds a measured rate to pattern T-09.",
+   "bad": "We review every text, ensuring the highest quality.",
+   "better": "We review every text because [reason].",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "participle_tail_1k"
+   },
+   "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+  },
+  {
+   "id": "R-10",
+   "category": "rhythm",
+   "name": "Many measurements on the AI side",
+   "description": "At least as many measured features as the band's verdict limit sit outside the band on the generated-text side at the same time. A single feature is only a hint, the combination is a finding.",
+   "bad": "Short sentences, short paragraphs, many colons and lists of three in one text.",
+   "better": "Rewrite in your own structure: fewer subheadings, longer thoughts, concrete examples [from your work].",
+   "severity": "tell",
+   "match": {
+    "type": "metric",
+    "feature": "ai_side_count"
+   },
+   "fix": "Work on the reported measurements one by one, not just swapping words."
+  },
+  {
+   "id": "F-01",
+   "category": "form",
+   "name": "Em dash",
+   "description": "Style rule: the em dash (U+2014) outside quotations. Many readers see long dashes as typical of AI. In our measurements it does not separate human from generated text, so it is a style rule you can switch off (config \"dashes\").",
+   "bad": "The result \u2014 more enquiries.",
+   "better": "The result: more enquiries.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "dashes"
+   },
+   "fix": "Replace it with a period, comma, colon or parentheses."
+  },
+  {
+   "id": "F-02",
+   "category": "form",
+   "name": "En dash used as a dash",
+   "description": "The en dash (U+2013) is right between numbers (10\u201320); between words it works as a dash.",
+   "bad": "Fast \u2013 and cheap.",
+   "better": "Fast and cheap.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "dashes"
+   },
+   "fix": "Replace it with a comma, period or colon."
+  },
+  {
+   "id": "F-03",
+   "category": "form",
+   "name": "Hyphen used as a dash",
+   "description": "\" - \" with spaces stands in for a dash.",
+   "bad": "Fast - and cheap.",
+   "better": "Fast and cheap.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "dashes"
+   },
+   "fix": "Replace it with a comma, period or colon."
+  },
+  {
+   "id": "F-04",
+   "category": "form",
+   "name": "Emojis",
+   "description": "Emojis in expert text. Default: more than one per section is a hint. With emojis: no, each one is a finding.",
+   "bad": "🚀 Start now 💪",
+   "better": "Start now.",
+   "severity": "hint",
+   "match": {
+    "type": "check",
+    "check": "emojis"
+   },
+   "fix": "Remove the emoji."
+  },
+  {
+   "id": "F-05",
+   "category": "form",
+   "name": "Bold overload",
+   "description": "Many bold passages in one paragraph. When everything is emphasised, nothing is.",
+   "bad": "**Important:** Use **clear** goals and **measurable** values.",
+   "better": "Use clear goals and measurable values. Bold at most the one term readers need to find again.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "bold"
+   },
+   "fix": "Reduce bold to one term per section."
+  },
+  {
+   "id": "F-06",
+   "category": "form",
+   "name": "Label heading",
+   "description": "Headings like \"What is X?\", \"Conclusion\" or \"Introduction\" say where you are, not what you learn.",
+   "bad": "## Conclusion",
+   "better": "## What to change first tomorrow",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "headings"
+   },
+   "fix": "Rewrite the heading as a statement or promise."
+  },
+  {
+   "id": "F-08",
+   "category": "form",
+   "name": "Too many headings",
+   "description": "Many headings for little text. The text breaks into fragments.",
+   "bad": "A new subheading every 60 words.",
+   "better": "Merge sections until each one has something to say.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "heading_density",
+    "min_words_per_heading": 80,
+    "min_headings": 4
+   },
+   "fix": "Merge sections."
+  },
+  {
+   "id": "F-09",
+   "category": "form",
+   "name": "Banned word (your list)",
+   "description": "A word from your own banned list (option --forbid or forbid in .slopcheck.json).",
+   "bad": "[a word from your list]",
+   "better": "[your preferred wording]",
+   "severity": "fail",
+   "match": {
+    "type": "check",
+    "check": "forbidden"
+   },
+   "fix": "Replace or cut the word."
+  }
+ ]
+}

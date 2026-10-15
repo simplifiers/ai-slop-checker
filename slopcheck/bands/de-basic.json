@@ -1,0 +1,87 @@
+{
+ "lang": "de",
+ "register": "basic",
+ "band_register": "news",
+ "provisional": false,
+ "created": "2026-10-15",
+ "n_human": 157,
+ "n_ai": 40,
+ "min_words": 300,
+ "revise_limit": 6,
+ "note": "Measured percentile band (p10, p50, p90) of human news texts written before 2022. ai_side and auc come from a comparison with 40 generated blog articles (one model). Only features whose direction is the same in every measured register are included. No texts are stored, only these statistics.",
+ "sources": [
+  {
+   "name": "Wikinews (de.wikinews.org), articles published 2006 to 2021",
+   "license": "CC BY 2.5",
+   "attribution": "Statistics derived from Wikinews articles by Wikinews contributors, CC BY 2.5"
+  }
+ ],
+ "ai_comparison": "40 blog articles generated for this calibration (Claude, October 2026), 7 industries",
+ "evaluation": {
+  "limit": 6,
+  "heldout_human": 39,
+  "heldout_false_alarms": 2,
+  "heldout_ai": 10,
+  "heldout_ai_hits": 4,
+  "all_human": 157,
+  "all_false_alarms": 2
+ },
+ "features": {
+  "mean_sentence_len": {
+   "p10": 13.4472,
+   "p50": 17.9722,
+   "p90": 22.2706,
+   "ai_side": "low",
+   "auc": 0.028
+  },
+  "cv_sentence_len_para": {
+   "p10": 0.3792,
+   "p50": 0.4772,
+   "p90": 0.6117,
+   "ai_side": "low",
+   "auc": 0.26
+  },
+  "words_per_paragraph": {
+   "p10": 49.3625,
+   "p50": 76.3714,
+   "p90": 121.1667,
+   "ai_side": "low",
+   "auc": 0.019
+  },
+  "mattr50": {
+   "p10": 0.8276,
+   "p50": 0.8635,
+   "p90": 0.8875,
+   "ai_side": "high",
+   "auc": 0.824
+  },
+  "mean_word_len": {
+   "p10": 5.6974,
+   "p50": 6.3045,
+   "p90": 6.6679,
+   "ai_side": "high",
+   "auc": 0.752
+  },
+  "nominalizations_1k": {
+   "p10": 14.7802,
+   "p50": 37.3683,
+   "p90": 58.307,
+   "ai_side": "high",
+   "auc": 0.751
+  },
+  "triads_1k": {
+   "p10": 0.0,
+   "p50": 2.6995,
+   "p90": 7.1556,
+   "ai_side": "high",
+   "auc": 0.941
+  },
+  "colons_1k": {
+   "p10": 0.0,
+   "p50": 4.5558,
+   "p90": 14.3988,
+   "ai_side": "high",
+   "auc": 0.942
+  }
+ }
+}

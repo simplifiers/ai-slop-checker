@@ -1,0 +1,50 @@
+name: AI Slop Checker
+description: AI slop checker for German and English Markdown or text files. Flags generic, unsupported and machine-sounding passages.
+author: simplifiers
+branding:
+  icon: check-square
+  color: purple
+
+inputs:
+  paths:
+    description: Files to check, separated by spaces or new lines. Globs are expanded by the shell.
+    required: true
+  lang:
+    description: Language of the texts, "de" or "en". Leave empty to let slop-check decide.
+    required: false
+    default: ""
+  fail-on:
+    description: Fail the step at this verdict, for example "revise". Leave empty to only report.
+    required: false
+    default: "revise"
+  python-version:
+    description: Python version used to run slop-check.
+    required: false
+    default: "3.12"
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+    - name: Install slop-check
+      shell: bash
+      run: python -m pip install --quiet "${{ github.action_path }}"
+    - name: Run slop-check
+      shell: bash
+      env:
+        SLOPCHECK_PATHS: ${{ inputs.paths }}
+        SLOPCHECK_LANG: ${{ inputs.lang }}
+        SLOPCHECK_FAIL_ON: ${{ inputs.fail-on }}
+      run: |
+        args=()
+        if [ -n "$SLOPCHECK_LANG" ]; then args+=(--lang "$SLOPCHECK_LANG"); fi
+        if [ -n "$SLOPCHECK_FAIL_ON" ]; then args+=(--fail-on "$SLOPCHECK_FAIL_ON"); fi
+        status=0
+        for path in $SLOPCHECK_PATHS; do
+          echo "::group::slop-check $path"
+          python -m slopcheck "$path" "${args[@]}" || status=1
+          echo "::endgroup::"
+        done
+        exit $status

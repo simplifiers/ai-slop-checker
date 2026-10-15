@@ -1,0 +1,2060 @@
+{
+ "lang": "de",
+ "catalog_version": "0.1.0",
+ "license": "MIT",
+ "note": "Muster, Wortlisten und Beispiele sind eigene Formulierungen. 'better' enthält keine erfundenen Zahlen, Studien oder Namen; Platzhalter in eckigen Klammern.",
+ "allow": [
+  "robuste Standardfehler",
+  "robuster Standardfehler",
+  "robuste Statistik",
+  "robuste Schätzer",
+  "robuste Regression",
+  "Hebelarm",
+  "Hebelgesetz",
+  "Hebelwirkung des Fremdkapitals",
+  "elektrisches Potenzial",
+  "Potenzialausgleich",
+  "Potenzialanalyse",
+  "nachhaltige Forstwirtschaft",
+  "Nachhaltigkeitsbericht",
+  "maßgeschneiderte Anzug",
+  "maßgeschneiderter Anzug",
+  "nahtlose Rohre",
+  "nahtloses Rohr",
+  "Best-Practice-Sharing"
+ ],
+ "lexicon": {
+  "function_words": [
+   "der",
+   "die",
+   "das",
+   "und",
+   "ist",
+   "nicht",
+   "mit",
+   "sich",
+   "auch",
+   "ein",
+   "eine",
+   "zu",
+   "von",
+   "für",
+   "auf",
+   "dem",
+   "den",
+   "des",
+   "im",
+   "wir",
+   "ich",
+   "du",
+   "sie",
+   "es",
+   "aber",
+   "oder",
+   "wenn",
+   "dass",
+   "wie",
+   "bei"
+  ],
+  "number_words": {
+   "ein": 1,
+   "eine": 1,
+   "einen": 1,
+   "eins": 1,
+   "zwei": 2,
+   "drei": 3,
+   "vier": 4,
+   "fünf": 5,
+   "sechs": 6,
+   "sieben": 7,
+   "acht": 8,
+   "neun": 9,
+   "zehn": 10,
+   "elf": 11,
+   "zwölf": 12,
+   "fünfzehn": 15,
+   "zwanzig": 20,
+   "dreißig": 30,
+   "vierzig": 40,
+   "fünfzig": 50,
+   "sechzig": 60,
+   "siebzig": 70,
+   "achtzig": 80,
+   "neunzig": 90,
+   "hundert": 100,
+   "tausend": 1000
+  },
+  "months": [
+   "januar",
+   "februar",
+   "märz",
+   "april",
+   "mai",
+   "juni",
+   "juli",
+   "august",
+   "september",
+   "oktober",
+   "november",
+   "dezember",
+   "jan",
+   "feb",
+   "mär",
+   "apr",
+   "jun",
+   "jul",
+   "aug",
+   "sep",
+   "sept",
+   "okt",
+   "nov",
+   "dez",
+   "montag",
+   "dienstag",
+   "mittwoch",
+   "donnerstag",
+   "freitag",
+   "samstag",
+   "sonntag"
+  ],
+  "first_person": [
+   "ich",
+   "mich",
+   "mir",
+   "mein",
+   "meine",
+   "meinen",
+   "meinem",
+   "meiner",
+   "meines",
+   "wir",
+   "uns",
+   "unser",
+   "unsere",
+   "unseren",
+   "unserem",
+   "unserer",
+   "unseres"
+  ],
+  "example_cues": [
+   "\\bz\\. ?b\\.",
+   "\\bzum beispiel\\b",
+   "\\bbeispielsweise\\b",
+   "\\betwa\\b",
+   "\\bkonkret\\b",
+   "\\bletzte[nm]? (?:woche|monat|jahr)\\b",
+   "\\bneulich\\b",
+   "\\bgestern\\b"
+  ],
+  "directive_cues": [
+   "\\bsollte(?:st|n|t)?\\b",
+   "\\bsolltest\\b",
+   "\\bmusst\\b",
+   "\\bmüssen sie\\b",
+   "\\bachte(?:n sie)? (?:\\w+ )?darauf\\b",
+   "\\bstelle?(?: sie)? sicher\\b",
+   "\\bvergiss nicht\\b",
+   "\\bvergessen sie nicht\\b",
+   "\\bdenk(?:e|en sie)? daran\\b",
+   "\\bsetze?(?: sie)? auf\\b",
+   "\\bnutze(?:n sie)?\\b",
+   "\\bachte auf\\b",
+   "\\bes empfiehlt sich\\b",
+   "\\bist es ratsam\\b"
+  ],
+  "connectors": [
+   "zudem",
+   "darüber hinaus",
+   "außerdem",
+   "des weiteren",
+   "ferner",
+   "überdies",
+   "zusätzlich",
+   "nicht zuletzt",
+   "darüber hinaus,",
+   "gleichzeitig",
+   "ebenso",
+   "weiterhin",
+   "letztendlich",
+   "insgesamt"
+  ],
+  "summary_openers": [
+   "zusammenfassend",
+   "insgesamt",
+   "alles in allem",
+   "abschließend",
+   "unterm strich",
+   "fazit",
+   "kurzum",
+   "zum schluss"
+  ],
+  "pathos_close": [
+   "\\bdie zukunft (?:gehört|ist|beginnt)\\b",
+   "\\bder (?:erste )?schritt (?:ist|beginnt|lohnt)\\b",
+   "\\bes (?:liegt|ist) (?:jetzt )?(?:an dir|an ihnen|in deiner hand|in ihrer hand)\\b",
+   "\\bjetzt ist (?:die|der) (?:zeit|richtige zeitpunkt)\\b",
+   "\\bworauf wartest du\\b",
+   "\\bworauf warten sie\\b",
+   "\\bdie wahl liegt bei\\b",
+   "\\bstarte(?:n sie)? (?:noch )?heute\\b",
+   "\\bder rest ist geschichte\\b",
+   "\\bdie reise beginnt\\b",
+   "\\bes lohnt sich\\b[^.]*[.!]?$",
+   "\\bbleib(?:en sie)? dran\\b"
+  ],
+  "contrast": [
+   "\\b(?:es|das) geht (?:hier )?nicht (?:nur |mehr )?(?:um|darum)\\b[^.!?\\n]{1,80}[.;,]\\s*(?:sondern|es geht|das geht|vielmehr)\\b",
+   "\\b(?:das|es|dies) ist kein(?:e|en)?\\b[^.!?\\n]{1,60}[.!]\\s+(?:das|es|dies) ist\\b",
+   "\\bnicht (?:\\w+ ){1,4}(?:ist|sind|zählt|zählen) entscheidend, sondern\\b"
+  ],
+  "colon_heads_exclude": [
+   "quelle",
+   "quellen",
+   "hinweis",
+   "tipp",
+   "beispiel",
+   "achtung",
+   "anmerkung",
+   "frage",
+   "antwort",
+   "titel",
+   "beschreibung",
+   "schritt",
+   "datum",
+   "ort",
+   "preis",
+   "dauer",
+   "zielgruppe",
+   "update",
+   "stand",
+   "lesezeit"
+  ],
+  "participle_tail": [
+   ",\\s*wodurch\\b",
+   ",\\s*womit\\b",
+   ",\\s*was (?:\\w+ )?(?:zeigt|verdeutlicht|unterstreicht|belegt|bedeutet|beweist), dass\\b",
+   ",\\s*was (?:die )?(?:bedeutung|wichtigkeit|relevanz) (?:\\w+ ){0,3}(?:unterstreicht|zeigt|verdeutlicht)\\b",
+   ",\\s*(?:und )?(?:damit|somit) (?:\\w+ ){0,3}(?:unterstreicht|verdeutlicht|zeigt)\\b"
+  ],
+  "heading_label": "^\\s*(?:fazit|zusammenfassung|einleitung|einführung|schlusswort|schlussgedanken|ausblick|abschließende gedanken|key takeaways|das wichtigste in kürze)\\s*[.!:]?\\s*$",
+  "heading_whatis": "^\\s*(?:was (?:ist|sind) (?:eigentlich )?(?:ein |eine |der |die |das )?[\\w\\u00c0-\\u017f\\s-]{1,40}|was (?:bedeutet|bedeuten|heißt) [\\w\\u00c0-\\u017f\\s-]{1,40})\\??\\s*$",
+  "passive": "\\b(?:wird|werden|wurde|wurden|worden|wirst|werde)\\b(?:\\s+\\w+){0,6}?\\s+(?:ge\\w+(?:t|en)|\\w+iert)\\b",
+  "address_du": "\\b(?:du|dich|dir|dein|deine|deinen|deinem|deiner|deines)\\b",
+  "address_sie": "\\b(?:Sie|Ihnen|Ihr|Ihre|Ihren|Ihrem|Ihrer|Ihres)\\b",
+  "noun_suffixes": [
+   "ung",
+   "ungen",
+   "heit",
+   "heiten",
+   "keit",
+   "keiten",
+   "schaft",
+   "schaften",
+   "tion",
+   "tionen",
+   "ität",
+   "ismus",
+   "nis",
+   "nisse",
+   "tum",
+   "ment",
+   "chen",
+   "lein"
+  ],
+  "name_stop": [
+   "Der",
+   "Die",
+   "Das",
+   "Den",
+   "Dem",
+   "Des",
+   "Ein",
+   "Eine",
+   "Einen",
+   "Einem",
+   "Einer",
+   "Unser",
+   "Unsere",
+   "Mein",
+   "Meine",
+   "Dein",
+   "Deine",
+   "Ihr",
+   "Ihre",
+   "Sein",
+   "Seine",
+   "Jeder",
+   "Jede",
+   "Jedes",
+   "Kein",
+   "Keine",
+   "Dieser",
+   "Diese",
+   "Dieses",
+   "Auch",
+   "Nur",
+   "So",
+   "Wie",
+   "Laut",
+   "Wer",
+   "Was",
+   "Man",
+   "Sie",
+   "Er",
+   "Es",
+   "Wir",
+   "Ich",
+   "Du",
+   "Und",
+   "Aber",
+   "Oder",
+   "Denn",
+   "Doch",
+   "Dann",
+   "Hier",
+   "Heute",
+   "Viele",
+   "Manche",
+   "Google",
+   "Microsoft",
+   "Kunden",
+   "Kundin",
+   "Kunde",
+   "Team",
+   "Chef",
+   "Chefin",
+   "Firma",
+   "Agentur",
+   "Kanzlei",
+   "Praxis",
+   "Bank",
+   "Stadt",
+   "Studie",
+   "Umfrage",
+   "Marke",
+   "Plattform",
+   "Am",
+   "Im",
+   "Zum",
+   "Zur",
+   "Beim",
+   "Vom",
+   "An",
+   "Auf",
+   "Aus",
+   "Bei",
+   "Bis",
+   "Durch",
+   "Für",
+   "Gegen",
+   "In",
+   "Mit",
+   "Nach",
+   "Ohne",
+   "Seit",
+   "Über",
+   "Um",
+   "Unter",
+   "Von",
+   "Vor",
+   "Während",
+   "Wegen",
+   "Zu",
+   "Zwischen",
+   "Danach",
+   "Damals",
+   "Dabei",
+   "Daher",
+   "Deshalb",
+   "Trotzdem",
+   "Später",
+   "Zuletzt",
+   "Zuerst",
+   "Schließlich",
+   "Jetzt",
+   "Nun",
+   "Inzwischen",
+   "Gestern",
+   "Morgen",
+   "Ende",
+   "Anfang",
+   "Herr",
+   "Frau",
+   "Experte",
+   "Expertin",
+   "Marketingexperte",
+   "Gründer",
+   "Gründerin",
+   "Geschäftsführer",
+   "Geschäftsführerin",
+   "Professor",
+   "Professorin",
+   "Autor",
+   "Autorin",
+   "Berater",
+   "Beraterin",
+   "Coach",
+   "Inhaber",
+   "Inhaberin",
+   "Leiter",
+   "Leiterin",
+   "Kollege",
+   "Kollegin",
+   "Mitarbeiter",
+   "Mitarbeiterin"
+  ],
+  "speech_verbs": "(?:sagt|sagte|meint|meinte|erklärt|erklärte|betont|betonte|rät|riet|warnt|warnte|empfiehlt|empfahl|schreibt|schrieb|ergänzt|ergänzte|berichtet|berichtete|weiß|fasst zusammen)",
+  "roles": "(?:[\\w-]*[Ee]xpert(?:e|in)|CEO|Gründer(?:in)?|Professor(?:in)?|Analyst(?:in)?|Coach|Berater(?:in)?|Forscher(?:in)?|Studienleiter(?:in)?|Autor(?:in)?|Trainer(?:in)?|Geschäftsführer(?:in)?|Inhaber(?:in)?|Leiter(?:in)?|Psycholog(?:e|in)|Ärztin|Arzt)",
+  "institution_suffix": "(kammer|verband|verbund|institut|gruppe|amt|verein|gesellschaft|akademie|universität|hochschule|stiftung|zentrum|agentur|bank|magazin|zeitung|portal|ministerium|behörde|messe|werk|werke|kasse|partner|consulting|beratung|group|media|verlag|online|digital|gmbh|ag|kg)$",
+  "units": "(?:mm|cm|dm|m|km|m²|m2|m³|qm|ha|g|kg|mg|t|l|ml|cl|hl|°c|°|grad|kwh|wh|kw|w|mw|v|a|mah|hz|khz|mhz|ghz|mb|gb|tb|kb|px|pt|dpi|ppi|zoll|kcal|kj|bar|psi|ps|db|lux|lumen|lm|uhr|min|sek|std|h|ms)"
+ },
+ "patterns": [
+  {
+   "id": "S-01",
+   "category": "substance",
+   "name": "Zahl ohne Quelle",
+   "description": "Prozente, Anteile, Beträge, große Zahlen oder Vielfache ohne Quelle im selben Satz. Maße, Jahreszahlen, Versionen, Paragraphen und Uhrzeiten zählen nicht.",
+   "bad": "73 % der Kunden lesen Bewertungen vor dem Kauf.",
+   "better": "Ein Link zur Erhebung im selben Satz, oder: Bei uns fragen [deine Zahl aus eigener Erfahrung] von zehn Kunden zuerst nach Bewertungen.",
+   "severity": "fail",
+   "match": {
+    "type": "check",
+    "check": "unsourced_number"
+   },
+   "fix": "Quelle als Link oder (Quelle: Name) in denselben Satz setzen, die Zahl als eigene Erfahrung kennzeichnen oder streichen."
+  },
+  {
+   "id": "S-02",
+   "category": "substance",
+   "name": "Vage Zuschreibung",
+   "description": "\"Studien zeigen\", \"Experten sagen\", \"laut einer Umfrage\": eine Autorität wird behauptet, aber nicht genannt.",
+   "bad": "Studien zeigen, dass kurze Texte besser funktionieren.",
+   "better": "Nenne die Studie mit Link, oder schreibe, was du selbst beobachtet hast: [deine Beobachtung].",
+   "severity": "fail",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:(?:aktuelle|neue|neuere|neueste|zahlreiche|viele|mehrere|diverse|verschiedene|einige|jüngste)n? )?(?:studien|untersuchungen|umfragen|statistiken|analysen|erhebungen|forschungen?|forschungsergebnisse|daten|zahlen) (?:zeigen|belegen|beweisen|ergeben|legen nahe|deuten darauf hin|haben gezeigt|bestätigen|sagen)\\b|\\b(?:(?:viele|die meisten|führende|zahlreiche|renommierte|einige) )?(?:experten|expertinnen|fachleute|forscher(?:innen)?|wissenschaftler(?:innen)?|analysten|branchenkenner|marketer) (?:sind sich einig|sagen|meinen|empfehlen|raten|warnen|betonen|gehen davon aus|schätzen|zufolge)\\b|\\b(?:laut|nach|gemäß) (?:einer|einem|aktuellen|neuen|jüngsten|der neuesten) (?:\\w+ )?(?:studie|umfrage|untersuchung|statistik|analyse|erhebung|bericht|report)\\b|\\b(?:eine|einer) (?:aktuelle|neue|neuere|kürzlich veröffentlichte|groß angelegte)n? (?:studie|umfrage|untersuchung|analyse|erhebung)\\b|\\b(?:laut|nach (?:ansicht|meinung) (?:von|vieler)) (?:experten|fachleuten|forschern|wissenschaftlern)\\b|\\bwissenschaftlich (?:erwiesen|belegt|bewiesen)\\b|\\bstudien belegen\\b"
+   },
+   "fix": "Die Quelle nennen und verlinken oder den Satz als eigene Erfahrung formulieren."
+  },
+  {
+   "id": "S-03",
+   "category": "substance",
+   "name": "Person ohne Quelle",
+   "description": "Eine namentlich genannte Person wird zitiert oder paraphrasiert, ohne Quelle im Satz. Prüfe, ob es die Person gibt und ob sie das gesagt hat.",
+   "bad": "Thomas Weber, Marketingexperte, sagt: \"Content ist alles.\"",
+   "better": "[Name] sagte im Gespräch mit uns am [Datum]: \"[wörtliches Zitat]\" oder ein Link zur Originalquelle.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "people"
+   },
+   "fix": "Link zur Originalquelle ergänzen oder die Person streichen. Eigene Namen per Konfiguration own_names freigeben."
+  },
+  {
+   "id": "S-04",
+   "category": "substance",
+   "name": "Austauschbarer Absatz",
+   "description": "Ein längerer Absatz ohne jedes konkrete Detail: keine Zahl, kein Name, kein Ort, kein Datum, kein Beispiel, keine eigene Erfahrung. Er könnte in jedem Text zum Thema stehen.",
+   "bad": "Gute Kommunikation ist die Basis jeder Zusammenarbeit. Wer klar kommuniziert, vermeidet Missverständnisse und schafft Vertrauen.",
+   "better": "Ergänze ein Detail, das nur du kennst: [ein Fall aus deiner Arbeit, mit Ort oder Zeitpunkt].",
+   "severity": "hint",
+   "match": {
+    "type": "check",
+    "check": "portability",
+    "min_words": 35
+   },
+   "fix": "Ein konkretes Detail aus eigener Erfahrung ergänzen oder den Absatz streichen."
+  },
+  {
+   "id": "S-05",
+   "category": "substance",
+   "name": "Wenig Konkretes",
+   "description": "Über den ganzen Text gerechnet kommen auf 100 Wörter sehr wenige konkrete Angaben (Zahlen, Namen, Daten, Beispiele, eigene Erfahrung). Grenze vorläufig.",
+   "bad": "Ein ganzer Artikel aus allgemeinen Ratschlägen.",
+   "better": "Pro Abschnitt mindestens ein Beispiel aus deiner Praxis: [Fall], [Zeitraum], [Ergebnis].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "concreteness",
+    "min_per_100": 1.0
+   },
+   "fix": "Mehr eigene Fälle, Zahlen mit Quelle und Beispiele einbauen."
+  },
+  {
+   "id": "S-06",
+   "category": "substance",
+   "name": "Rat ohne Schritte",
+   "description": "Ein Absatz häuft Aufforderungen (\"du solltest\", \"achte darauf\"), nennt aber weder Schritte noch ein Beispiel.",
+   "bad": "Du solltest deine Zielgruppe kennen. Du solltest regelmäßig posten. Achte auf Qualität.",
+   "better": "Eine nummerierte Liste mit den Schritten, die du selbst gehst, und einem Beispiel: [Schritt 1], [Schritt 2].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "advice",
+    "min_cues": 3
+   },
+   "fix": "Den Rat in Schritte zerlegen oder ein Beispiel aus der Praxis ergänzen."
+  },
+  {
+   "id": "S-07",
+   "category": "substance",
+   "name": "Geglättetes Detail",
+   "description": "Ein konkretes Detail wird durch eine vage Größe ersetzt: \"ein führender Anbieter\", \"namhafte Unternehmen\", \"zahlreiche Kunden\".",
+   "bad": "Ein führender Anbieter setzt die Methode bereits ein.",
+   "better": "Nenne den Anbieter, wenn du darfst, oder beschreibe ihn: [Branche], [Größe], [was er damit macht].",
+   "severity": "tell",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:ein|eine|einem|einer|einen|der|die|das|den) (?:international |weltweit |deutschlandweit |branchenweit )?(?:führende|renommierte|bekannte|namhafte|große|etablierte)(?:n|r|s|m)? (?:anbieter|unternehmen|hersteller|konzern|experte|expertin|agentur|marke|händler|kanzlei|universität|institut|fachmann|berater)\\w*|\\b(?:namhafte|renommierte|führende|bekannte|große) (?:unternehmen|marken|kunden|konzerne|experten|anbieter|hersteller)\\b|\\b(?:zahlreiche|unzählige|viele|etliche) (?:zufriedene )?(?:kunden|unternehmen|nutzer|anwender|firmen|marken)\\b|\\b(?:ein|einem|einen) (?:bekannten|großen|mittelständischen) (?:kunden|konzern|unternehmen)\\b|\\b(?:branchenführer|marktführer|top-unternehmen|top-marken)\\b"
+   },
+   "fix": "Den Namen nennen oder das Detail beschreiben, das den Fall besonders macht."
+  },
+  {
+   "id": "S-08",
+   "category": "substance",
+   "name": "Zahl aus eigener Erfahrung",
+   "description": "Eine Zahl in einem Ich- oder Wir-Satz. Das kann eigene Erfahrung sein. Prüfe, ob sie stimmt und ob du sie belegen könntest.",
+   "bad": "Wir haben die Kosten um 40 % gesenkt.",
+   "better": "Wir haben die Kosten von [Betrag] auf [Betrag] gesenkt, gemessen über [Zeitraum].",
+   "severity": "hint",
+   "match": {
+    "type": "check",
+    "check": "unsourced_number"
+   },
+   "fix": "Zeitraum und Messgröße ergänzen."
+  },
+  {
+   "id": "S-11",
+   "category": "facts",
+   "name": "Fakt aus der Quelle fehlt",
+   "description": "Eine Zahl, ein Datum, ein Name oder ein Link steht in deinen Notizen, aber nicht im Entwurf.",
+   "bad": "Notizen: 15.000 Abonnenten. Entwurf: viele Abonnenten.",
+   "better": "Übernimm die Angabe aus den Notizen, wenn sie für den Leser zählt.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "facts_lost"
+   },
+   "fix": "Prüfen, ob die Angabe absichtlich weggefallen ist."
+  },
+  {
+   "id": "S-12",
+   "category": "facts",
+   "name": "Neue Zahl oder neuer Link ohne Beleg",
+   "description": "Eine Zahl oder ein Link steht im Entwurf, aber in keiner Quelle, und der Satz hat keinen Beleg. Typisch für erfundene Angaben.",
+   "bad": "Notizen: keine Zahl. Entwurf: 73 % der Leser bleiben länger.",
+   "better": "Nimm nur Zahlen auf, die in deinen Notizen stehen, oder ergänze die Quelle.",
+   "severity": "fail",
+   "match": {
+    "type": "check",
+    "check": "facts_added"
+   },
+   "fix": "Angabe prüfen und belegen oder streichen. Links öffnen und prüfen, ob sie die Aussage tragen."
+  },
+  {
+   "id": "S-13",
+   "category": "facts",
+   "name": "Neuer Name oder neues Datum",
+   "description": "Ein Name oder Datum steht im Entwurf, aber in keiner Quelle.",
+   "bad": "Notizen: ein Kunde aus Leipzig. Entwurf: Kundin Maria Hofmann aus Leipzig.",
+   "better": "Bleib bei der Angabe aus den Notizen: [wie in den Notizen].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "facts_added"
+   },
+   "fix": "Prüfen, ob der Name oder das Datum stimmt."
+  },
+  {
+   "id": "P-01",
+   "category": "phrases",
+   "name": "In der heutigen (schnelllebigen) Welt",
+   "description": "Zeitdiagnose ohne Inhalt als Einstieg.",
+   "bad": "In der heutigen schnelllebigen Welt zählt jede Minute.",
+   "better": "Seit [Monat/Jahr] beantworten wir Anfragen innerhalb von [deine Zeitspanne].",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin der heutigen (?:schnelllebigen |digitalen |modernen |vernetzten )?(?:welt|zeit|gesellschaft|arbeitswelt)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-02",
+   "category": "phrases",
+   "name": "Im digitalen Zeitalter",
+   "description": "Epochen-Floskel statt konkretem Anlass.",
+   "bad": "Im digitalen Zeitalter ändert sich alles.",
+   "better": "Seit [konkrete Änderung] müssen Teams [konkrete Folge].",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bim (?:digitalen |modernen )?zeitalter(?: der digitalisierung| der ki| von ki)?\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-03",
+   "category": "phrases",
+   "name": "In einer Welt, in der",
+   "description": "Großer Rahmen, der vom eigentlichen Punkt ablenkt.",
+   "bad": "In einer Welt, in der Daten alles sind, ...",
+   "better": "Beginne mit dem Problem, das deine Leser heute haben.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin einer welt,? in der\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-04",
+   "category": "phrases",
+   "name": "Mehr denn je",
+   "description": "Steigerung ohne Vergleichsgröße.",
+   "bad": "Sichtbarkeit ist heute wichtiger denn je.",
+   "better": "Nenne, was sich geändert hat und seit wann.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:mehr|wichtiger|relevanter|gefragter) denn je\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-05",
+   "category": "phrases",
+   "name": "Es ist wichtig zu beachten",
+   "description": "Ankündigung statt Aussage.",
+   "bad": "Es ist wichtig zu beachten, dass Backups Zeit brauchen.",
+   "better": "Backups brauchen Zeit: plane [deine Dauer] dafür ein.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bes ist (?:wichtig|entscheidend|wesentlich|essenziell|ratsam) zu (?:beachten|betonen|verstehen|erwähnen|wissen)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-06",
+   "category": "phrases",
+   "name": "Es ist kein Geheimnis",
+   "description": "Behauptet Allgemeinwissen, statt es zu zeigen.",
+   "bad": "Es ist kein Geheimnis, dass Kunden Bewertungen lesen.",
+   "better": "Kunden lesen Bewertungen: [deine Beobachtung, z. B. was sie zuerst fragen].",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:es ist|ist es) (?:längst |doch |wohl )?kein geheimnis\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-07",
+   "category": "phrases",
+   "name": "Tauchen wir ein",
+   "description": "Reisemetapher als Übergang.",
+   "bad": "Tauchen wir tiefer in das Thema ein.",
+   "better": "Streiche den Satz und beginne direkt mit dem ersten Punkt.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\btauchen wir (?:\\w+ ){0,5}ein\\b|\\blass(?:t)? uns (?:\\w+ ){0,2}eintauchen\\b|\\beintauchen in die welt\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-08",
+   "category": "phrases",
+   "name": "Willkommen in der Welt von",
+   "description": "Begrüßungsformel statt Einstieg.",
+   "bad": "Willkommen in der Welt des E-Mail-Marketings!",
+   "better": "Beginne mit der Frage, die deine Leser hergeführt hat.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bwillkommen in der (?:\\w+ )?welt\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-09",
+   "category": "phrases",
+   "name": "Stell dir vor",
+   "description": "Erfundenes Szenario als Aufhänger.",
+   "bad": "Stell dir vor, dein Shop verkauft im Schlaf.",
+   "better": "Erzähle einen echten Fall: [was einem deiner Kunden passiert ist].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bstell dir (?:einmal |mal )?vor\\b|\\bstellen sie sich (?:einmal |mal )?vor\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-10",
+   "category": "phrases",
+   "name": "In diesem Artikel erfährst du",
+   "description": "Inhaltsangabe statt Inhalt.",
+   "bad": "In diesem Artikel erfährst du alles über Steuern.",
+   "better": "Sag im ersten Satz die wichtigste Antwort.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bin diesem (?:artikel|beitrag|text|leitfaden|guide|blogpost) (?:erfährst du|erfahren sie|zeigen wir|zeige ich|werden wir|schauen wir|lernst du|lernen sie)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-11",
+   "category": "phrases",
+   "name": "Spielt eine entscheidende Rolle",
+   "description": "Wichtigkeit behauptet, nicht erklärt.",
+   "bad": "Die Ladezeit spielt eine entscheidende Rolle.",
+   "better": "Sag, was passiert, wenn die Ladezeit steigt: [deine Beobachtung].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bspiel\\w* (?:\\w+ ){0,2}eine (?:entscheidende|zentrale|wichtige|wesentliche|große|tragende|maßgebliche|bedeutende|immer größere) rolle\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-12",
+   "category": "phrases",
+   "name": "Von entscheidender Bedeutung",
+   "description": "Wichtigkeits-Etikett ohne Begründung.",
+   "bad": "Datenschutz ist von zentraler Bedeutung.",
+   "better": "Datenschutz entscheidet hier über [konkrete Folge].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bvon (?:entscheidender|zentraler|großer|immenser|enormer|essenzieller|elementarer) bedeutung\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-13",
+   "category": "phrases",
+   "name": "Der Schlüssel zum Erfolg",
+   "description": "Erfolgsversprechen ohne Inhalt.",
+   "bad": "Konsistenz ist der Schlüssel zum Erfolg.",
+   "better": "Nenne, was Konsistenz in deinem Fall konkret bewirkt hat.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bschlüssel zu(?:m|r) (?:erfolg|wachstum|sichtbarkeit)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-14",
+   "category": "phrases",
+   "name": "Das volle Potenzial ausschöpfen",
+   "description": "Potenzial-Rhetorik ohne Ergebnis.",
+   "bad": "So schöpfst du das volle Potenzial deiner Website aus.",
+   "better": "Nenne das Ergebnis, das der Leser erreichen kann.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:volle[nsm]?|ganze[nsm]?|gesamte[nsm]?) potenzial\\b|\\bpotenzial(?:e)? (?:voll |optimal )?(?:ausschöpfen|entfalten|freisetzen)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-15",
+   "category": "phrases",
+   "name": "Auf ein neues Level heben",
+   "description": "Steigerungsbild ohne Messgröße.",
+   "bad": "Hebe dein Marketing auf das nächste Level.",
+   "better": "Sag, was danach anders ist: [deine Messgröße].",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bauf (?:ein|das) (?:neues|nächstes|höheres|ganz neues) (?:level|niveau)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-16",
+   "category": "phrases",
+   "name": "Ganzheitlich",
+   "description": "Modewort, das Vollständigkeit vortäuscht.",
+   "bad": "Wir bieten eine ganzheitliche Beratung.",
+   "better": "Zähle auf, was die Beratung umfasst.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bganzheitlich\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-17",
+   "category": "phrases",
+   "name": "Maßgeschneidert",
+   "description": "Versprechen von Individualität ohne Beleg.",
+   "bad": "Wir entwickeln maßgeschneiderte Lösungen.",
+   "better": "Beschreibe, was du für einen Kunden angepasst hast.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bma(?:ß|ss)geschneidert\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-18",
+   "category": "phrases",
+   "name": "Gamechanger",
+   "description": "Superlativ aus dem Werbe-Englisch.",
+   "bad": "Diese Funktion ist ein echter Gamechanger.",
+   "better": "Sag, was die Funktion ändert und für wen.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bgame[\\s-]?changer\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-19",
+   "category": "phrases",
+   "name": "Revolutionieren",
+   "description": "Übertreibung ohne Vorher-Nachher.",
+   "bad": "KI revolutioniert die Buchhaltung.",
+   "better": "KI übernimmt in der Buchhaltung [konkrete Aufgabe].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\brevolutionier\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-20",
+   "category": "phrases",
+   "name": "Nahtlos",
+   "description": "Verspricht Reibungslosigkeit, belegt sie nicht.",
+   "bad": "Die Software integriert sich nahtlos.",
+   "better": "Die Software liest [konkretes Format] direkt ein.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bnahtlos\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-21",
+   "category": "phrases",
+   "name": "Synergien",
+   "description": "Beraterwort ohne konkreten Zusammenhang.",
+   "bad": "So entstehen Synergien zwischen den Teams.",
+   "better": "Nenne, was ein Team dem anderen konkret abnimmt.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bsynergie\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-22",
+   "category": "phrases",
+   "name": "Innovative Lösungen",
+   "description": "Leeres Etikett für ein Angebot.",
+   "bad": "Wir liefern innovative Lösungen.",
+   "better": "Sag, was das Angebot tut.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\binnovative\\w* (?:lösung|ansätze?|technologie)\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-23",
+   "category": "phrases",
+   "name": "Facettenreich / vielschichtig",
+   "description": "Komplexität behauptet statt gezeigt.",
+   "bad": "Das Thema ist vielschichtig.",
+   "better": "Nenne die zwei Seiten, um die es geht.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bfacettenreich\\w*|\\bvielschichtig\\w*|\\bvielfältige(?:n|r|s)? (?:aspekte|facetten)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-24",
+   "category": "phrases",
+   "name": "Hand in Hand",
+   "description": "Bild für Zusammenhang ohne Mechanismus.",
+   "bad": "SEO und Content gehen Hand in Hand.",
+   "better": "Erkläre, wie das eine vom anderen abhängt.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bhand in hand\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-25",
+   "category": "phrases",
+   "name": "Am Ende des Tages",
+   "description": "Übersetzte Redewendung als Füllung.",
+   "bad": "Am Ende des Tages zählt das Ergebnis.",
+   "better": "Streichen oder das Ergebnis nennen.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bam ende des tages\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-26",
+   "category": "phrases",
+   "name": "Last but not least",
+   "description": "Aufzählungsfloskel.",
+   "bad": "Last but not least: die Kosten.",
+   "better": "Nenne den Punkt ohne Ankündigung.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\blast but not least\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-27",
+   "category": "phrases",
+   "name": "Auf dieser Reise",
+   "description": "Reise als Metapher für einen Prozess.",
+   "bad": "Wir begleiten dich auf deiner Reise.",
+   "better": "Beschreibe die Schritte, bei denen du hilfst.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bauf (?:dieser|deiner|ihrer|eurer|unserer) (?:\\w+ )?reise\\b(?!\\s+(?:nach|durch|in|zu|ans?|um)\\b)"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-28",
+   "category": "phrases",
+   "name": "Auf den Punkt gebracht",
+   "description": "Ankündigung einer Verdichtung.",
+   "bad": "Auf den Punkt gebracht: Qualität zählt.",
+   "better": "Sag direkt, was zählt und warum.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bauf den punkt gebracht\\b|\\bbring\\w* (?:es|das) (?:\\w+ )?auf den punkt\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-29",
+   "category": "phrases",
+   "name": "Zusammenfassend lässt sich sagen",
+   "description": "Schlussformel statt Schlussgedanke.",
+   "bad": "Zusammenfassend lässt sich sagen, dass Planung hilft.",
+   "better": "Ende mit dem nächsten Schritt für den Leser.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:zusammenfassend|abschließend|letztlich|insgesamt) (?:lässt sich|kann man|können wir|lässt es sich) (?:sagen|festhalten|festhalten)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-30",
+   "category": "phrases",
+   "name": "Werfen wir einen Blick",
+   "description": "Leser-Choreografie statt Inhalt.",
+   "bad": "Werfen wir einen Blick auf die Vorteile.",
+   "better": "Streiche den Satz und nenne den ersten Vorteil.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bwerfen wir (?:\\w+ )?(?:einen|einen genaueren|einen näheren) blick\\b|\\blass(?:t)? uns (?:\\w+ ){0,2}(?:einen blick werfen|anschauen|ansehen)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-31",
+   "category": "phrases",
+   "name": "Hier kommt X ins Spiel",
+   "description": "Bühnenauftritt für ein Produkt oder Konzept.",
+   "bad": "Hier kommt Automatisierung ins Spiel.",
+   "better": "Sag, welche Aufgabe die Automatisierung übernimmt.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bkomm\\w* (?:\\w+ ){0,3}ins spiel\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-32",
+   "category": "phrases",
+   "name": "Dreh- und Angelpunkt",
+   "description": "Bildhafte Wichtigkeit.",
+   "bad": "Der Kunde ist der Dreh- und Angelpunkt.",
+   "better": "Sag, welche Entscheidung vom Kunden abhängt.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bdreh- und angelpunkt\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-33",
+   "category": "phrases",
+   "name": "Eckpfeiler",
+   "description": "Architekturbild für Wichtigkeit.",
+   "bad": "Vertrauen ist ein Eckpfeiler der Marke.",
+   "better": "Nenne, woran Kunden Vertrauen festmachen.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\beckpfeiler\\w*|\\bgrundpfeiler\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-34",
+   "category": "phrases",
+   "name": "Den Grundstein legen",
+   "description": "Baumetapher ohne Bauplan.",
+   "bad": "So legst du den Grundstein für Wachstum.",
+   "better": "Nenne den ersten konkreten Schritt.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:den |einen )?grundstein (?:\\w+ )?(?:legen|gelegt|legt|legst)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-35",
+   "category": "phrases",
+   "name": "Nicht zu unterschätzen",
+   "description": "Doppelte Verneinung als Betonung.",
+   "bad": "Der Aufwand ist nicht zu unterschätzen.",
+   "better": "Der Aufwand liegt bei [deine Schätzung aus der Praxis].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:ist |sind |sollte man |solltest du |sollten sie )?nicht zu unterschätzen\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-36",
+   "category": "phrases",
+   "name": "Effizient und effektiv",
+   "description": "Wortpaar ohne Unterschied im Satz.",
+   "bad": "Arbeite effizient und effektiv.",
+   "better": "Sag, was der Leser weglassen kann.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\beffizient(?:er)? und effektiv\\w*|\\beffektiv(?:er)? und effizient\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-37",
+   "category": "phrases",
+   "name": "Der größte Hebel",
+   "description": "Hebel-Metapher für Wirkung.",
+   "bad": "Content ist dein größter Hebel.",
+   "better": "Sag, was Content bei dir konkret bewirkt hat.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:der|den|ein|einen) (?:größten?|wichtigsten?|entscheidenden?|stärksten?|wirksamsten?) hebel\\b|\\ban (?:den|allen) (?:richtigen )?hebeln\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-38",
+   "category": "phrases",
+   "name": "Wertvolle Einblicke",
+   "description": "Wertung statt Inhalt.",
+   "bad": "Der Bericht bietet wertvolle Einblicke.",
+   "better": "Nenne die eine Erkenntnis aus dem Bericht.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:wertvolle|spannende|tiefe|tiefere|exklusive|praxisnahe)n? (?:einblicke|insights|tipps)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-39",
+   "category": "phrases",
+   "name": "Der ultimative Leitfaden",
+   "description": "Superlativ im Titel.",
+   "bad": "Der ultimative Leitfaden für Newsletter",
+   "better": "Newsletter: [konkretes Versprechen, das der Text hält]",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:ultimative|umfassende|vollständige|komplette)n? (?:leitfaden|guide|anleitung|überblick)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-40",
+   "category": "phrases",
+   "name": "Im Handumdrehen / leicht gemacht",
+   "description": "Verspricht Mühelosigkeit.",
+   "bad": "So erstellst du im Handumdrehen Rechnungen.",
+   "better": "Nenne, wie lange es wirklich dauert: [deine Zeit].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bim handumdrehen\\b|\\bleicht gemacht\\b|\\bkinderleicht\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-41",
+   "category": "phrases",
+   "name": "Die digitale Landschaft",
+   "description": "Landschaftsbild für einen Markt.",
+   "bad": "In der digitalen Landschaft verändert sich viel.",
+   "better": "Nenne die eine Veränderung, die deine Leser betrifft.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:digitale|sich wandelnde|dynamische|heutige|moderne)n? (?:landschaft|marketinglandschaft|medienlandschaft)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-42",
+   "category": "phrases",
+   "name": "Im stetigen Wandel",
+   "description": "Wandel als Dauerzustand ohne Richtung.",
+   "bad": "Der Markt befindet sich im stetigen Wandel.",
+   "better": "Sag, was sich zuletzt geändert hat.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:im|in einem) (?:stetigen|ständigen|stetigen|permanenten|kontinuierlichen|rasanten) wandel\\b|\\bsich ständig (?:wandelnde|verändernde)n?\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-43",
+   "category": "phrases",
+   "name": "Fakt ist",
+   "description": "Behauptung als Tatsache verkleidet.",
+   "bad": "Fakt ist: Ohne Strategie geht nichts.",
+   "better": "Nenne den Beleg oder formuliere es als deine Erfahrung.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bfakt ist\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-44",
+   "category": "phrases",
+   "name": "Die gute Nachricht",
+   "description": "Spannungsbogen-Formel.",
+   "bad": "Die gute Nachricht: Es gibt eine Lösung.",
+   "better": "Nenne die Lösung direkt.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bdie gute nachricht\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-45",
+   "category": "phrases",
+   "name": "Bahnbrechend",
+   "description": "Superlativ ohne Vergleich.",
+   "bad": "Eine bahnbrechende Methode.",
+   "better": "Sag, was die Methode anders macht als die übliche.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bbahnbrechend\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-46",
+   "category": "phrases",
+   "name": "Wegweisend / zukunftsweisend",
+   "description": "Zukunftsversprechen ohne Inhalt.",
+   "bad": "Ein zukunftsweisender Ansatz.",
+   "better": "Sag, welches Problem der Ansatz löst.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:wegweisend|zukunftsweisend|zukunftssicher|zukunftsfähig)\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-47",
+   "category": "phrases",
+   "name": "Essenziell / unerlässlich",
+   "description": "Pflicht-Rhetorik ohne Grund.",
+   "bad": "Eine gute Datenbasis ist essenziell.",
+   "better": "Sag, was ohne Datenbasis schiefgeht.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bessenziell\\w*|\\bessentiell\\w*|\\bunerlässlich\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-48",
+   "category": "phrases",
+   "name": "Mehrwert schaffen",
+   "description": "Nutzen behauptet statt beschrieben.",
+   "bad": "Wir schaffen echten Mehrwert für Kunden.",
+   "better": "Nenne, was der Kunde danach kann oder spart.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:echten |nachhaltigen |messbaren |einen )?mehrwert (?:schaffen|bieten|liefern|generieren|stiften)\\w*|\\bmehrwert (?:\\w+ ){0,2}(?:schafft|bietet|liefert|generiert)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-49",
+   "category": "phrases",
+   "name": "Wettbewerbsvorteil sichern",
+   "description": "Strategie-Floskel.",
+   "bad": "So sicherst du dir einen Wettbewerbsvorteil.",
+   "better": "Sag, worin du besser wirst als die Konkurrenz.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:entscheidenden |klaren )?wettbewerbsvorteil\\w* (?:\\w+ )?(?:sichern|verschaffen|erzielen)\\b|\\bsichern?s?t? (?:dir|sich|ihnen) (?:einen |den )?(?:entscheidenden )?wettbewerbsvorteil\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-50",
+   "category": "phrases",
+   "name": "Herausforderungen meistern",
+   "description": "Abstrakter Kampf statt konkretem Problem.",
+   "bad": "So meisterst du die Herausforderungen des Alltags.",
+   "better": "Nenne das eine Problem und deinen Umgang damit.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bherausforderung\\w* (?:\\w+ ){0,2}(?:meistern|bewältigen|meisterst|meistert)\\b|\\b(?:meistern|bewältigen) (?:\\w+ ){0,2}herausforderung\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-51",
+   "category": "phrases",
+   "name": "In den Fokus rücken",
+   "description": "Bewegungsbild für Aufmerksamkeit.",
+   "bad": "Nachhaltigkeit rückt zunehmend in den Fokus.",
+   "better": "Sag, wer worauf achtet und seit wann.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:rückt|rücken|gerückt|rückte) (?:\\w+ ){0,2}in den (?:fokus|mittelpunkt|vordergrund)\\b|\\bin den (?:fokus|mittelpunkt) (?:rücken|stellen|gerückt)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-52",
+   "category": "phrases",
+   "name": "Proaktiv",
+   "description": "Managementwort ohne Handlung.",
+   "bad": "Gehe proaktiv auf Kunden zu.",
+   "better": "Melde dich bei Kunden, bevor [konkreter Anlass].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bproaktiv\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-53",
+   "category": "phrases",
+   "name": "Zielgerichtet / zielführend",
+   "description": "Bürokratischer Füller.",
+   "bad": "Ein zielgerichteter Ansatz ist zielführend.",
+   "better": "Sag, welches Ziel und welcher Ansatz.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bzielgerichtet\\w*|\\bzielführend\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-54",
+   "category": "phrases",
+   "name": "Wissen ist Macht",
+   "description": "Sinnspruch als Argument.",
+   "bad": "Denn Wissen ist Macht.",
+   "better": "Streichen.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bwissen ist macht\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-55",
+   "category": "phrases",
+   "name": "Die Antwort ist einfach",
+   "description": "Behauptete Einfachheit.",
+   "bad": "Die Antwort ist einfach: Daten.",
+   "better": "Gib die Antwort und begründe sie.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bdie antwort (?:ist|lautet) (?:ganz )?(?:einfach|klar|simpel)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-56",
+   "category": "phrases",
+   "name": "Ein entscheidender Faktor",
+   "description": "Faktor-Rhetorik statt Ursache.",
+   "bad": "Der Preis ist ein entscheidender Faktor.",
+   "better": "Sag, ab welchem Preis Kunden abspringen: [deine Erfahrung].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:ein|der|einen|den) (?:entscheidende|wichtige|zentrale|wesentliche|maßgebliche|ausschlaggebende)n?r? (?:faktor|erfolgsfaktor|aspekt)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-57",
+   "category": "phrases",
+   "name": "Robust",
+   "description": "Technik-Adjektiv als Qualitätssiegel.",
+   "bad": "Eine robuste Lösung für dein Team.",
+   "better": "Sag, was die Lösung aushält: [Last, Fehler, Zeitraum].",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\brobust\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-58",
+   "category": "phrases",
+   "name": "Nicht nur, sondern auch (als Muster)",
+   "description": "Doppelte Konstruktion, die beide Hälften aufbläht.",
+   "bad": "Das spart nicht nur Zeit, sondern auch Geld.",
+   "better": "Das spart Zeit und Geld.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bnicht nur\\b[^.!?\\n]{1,160}?\\bsondern auch\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-59",
+   "category": "phrases",
+   "name": "Entscheidend",
+   "description": "Häufiges Wichtigkeitswort.",
+   "bad": "Entscheidend ist die Planung.",
+   "better": "Sag, was die Planung verhindert.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bentscheidend(?:e|en|er|es|em)?\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-60",
+   "category": "phrases",
+   "name": "Unverzichtbar",
+   "description": "Pflichtwort, oft ohne Begründung.",
+   "bad": "Ein Newsletter ist unverzichtbar.",
+   "better": "Sag, was ohne Newsletter fehlt.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bunverzichtbar\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-61",
+   "category": "phrases",
+   "name": "Best Practices",
+   "description": "Fachjargon, oft ohne Inhalt.",
+   "bad": "Wir folgen Best Practices.",
+   "better": "Nenne die eine Praxis, die du anwendest.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bbest practices?\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-62",
+   "category": "phrases",
+   "name": "Potenzial",
+   "description": "Möglichkeitswort ohne Größe.",
+   "bad": "Hier liegt großes Potenzial.",
+   "better": "Sag, was konkret möglich ist.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:großes|enormes|ungenutztes|riesiges) potenzial\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-63",
+   "category": "phrases",
+   "name": "Kurz gesagt",
+   "description": "Ankündigung einer Kurzfassung.",
+   "bad": "Kurz gesagt: Es lohnt sich.",
+   "better": "Sag direkt, was sich lohnt.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bkurz gesagt\\b|\\bkurzum\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-64",
+   "category": "phrases",
+   "name": "Auf Augenhöhe",
+   "description": "Haltungsformel.",
+   "bad": "Wir arbeiten auf Augenhöhe.",
+   "better": "Beschreibe, wie Entscheidungen bei euch fallen.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bauf augenhöhe\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-65",
+   "category": "phrases",
+   "name": "Es lohnt sich",
+   "description": "Werturteil ohne Maßstab.",
+   "bad": "Es lohnt sich, das zu testen.",
+   "better": "Sag, was der Test zeigt.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bes lohnt sich\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-66",
+   "category": "phrases",
+   "name": "Erfolgsgeschichte",
+   "description": "Etikett statt Geschichte.",
+   "bad": "Eine echte Erfolgsgeschichte.",
+   "better": "Erzähle, was passiert ist.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\berfolgsgeschichte\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-67",
+   "category": "phrases",
+   "name": "Nachhaltig (als Füllwort)",
+   "description": "Oft nur Verstärker.",
+   "bad": "Nachhaltig erfolgreich werden.",
+   "better": "Sag, was über welchen Zeitraum hält.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\bnachhaltig(?:e|en|er|es)? (?:erfolg|erfolgreich|wachstum|wachsen|verbessern|steigern|stärken)\\w*"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-68",
+   "category": "phrases",
+   "name": "Optimal / optimieren (als Füllwort)",
+   "description": "Versprechen ohne Maßstab.",
+   "bad": "Optimale Ergebnisse erzielen.",
+   "better": "Nenne das Ergebnis, das du erwartest.",
+   "severity": "hint",
+   "tier": "context",
+   "match": {
+    "type": "regex",
+    "pattern": "\\boptimale(?:n|r|s)? (?:ergebnisse|lösung|weise|nutzung)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-69",
+   "category": "phrases",
+   "name": "Zahlreiche Vorteile",
+   "description": "Menge behauptet, nicht genannt.",
+   "bad": "Die Methode bietet zahlreiche Vorteile.",
+   "better": "Nenne die zwei wichtigsten Vorteile.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:zahlreiche|vielfältige|unzählige|eine vielzahl (?:an|von)) (?:vorteile|möglichkeiten|funktionen|vorteilen|möglichkeiten)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-70",
+   "category": "phrases",
+   "name": "Ein wahrer Schatz / Goldgrube",
+   "description": "Bild für Wert.",
+   "bad": "Kundenfeedback ist eine wahre Goldgrube.",
+   "better": "Sag, was du aus Feedback gelernt hast.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:wahre|echte)n? (?:goldgrube|fundgrube|schatz)\\b|\\beine goldgrube\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-71",
+   "category": "phrases",
+   "name": "Den Unterschied machen",
+   "description": "Wirkung behauptet ohne Vergleich.",
+   "bad": "Kleine Details machen den Unterschied.",
+   "better": "Nenne das Detail und was es geändert hat.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:macht|machen|machte|machten) (?:\\w+ ){0,2}den (?:entscheidenden |großen |feinen )?unterschied\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-72",
+   "category": "phrases",
+   "name": "Nicht mehr wegzudenken",
+   "description": "Unverzichtbarkeits-Floskel.",
+   "bad": "Social Media ist nicht mehr wegzudenken.",
+   "better": "Sag, wofür deine Kunden Social Media nutzen.",
+   "severity": "tell",
+   "tier": "evidence",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:nicht mehr|kaum noch) wegzudenken\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "P-73",
+   "category": "phrases",
+   "name": "Immer wichtiger",
+   "description": "Trendbehauptung ohne Zeitpunkt.",
+   "bad": "Bewertungen werden immer wichtiger.",
+   "better": "Sag, woran du merkst, dass Bewertungen mehr zählen.",
+   "severity": "tell",
+   "tier": "cluster",
+   "match": {
+    "type": "regex",
+    "pattern": "\\b(?:wird|werden|wurde) (?:\\w+ )?immer (?:wichtiger|relevanter|bedeutender)\\b"
+   },
+   "fix": "Streichen oder durch eine konkrete Aussage ersetzen."
+  },
+  {
+   "id": "T-01",
+   "category": "structure",
+   "name": "Kontrast-Schablone",
+   "description": "\"Es geht nicht um X, sondern um Y\" und ähnliche Gegenüberstellungen, die eine Position erfinden, nur um sie zu widerlegen. Einmal ist ein Hinweis, ab zwei ein Muster.",
+   "bad": "Es geht nicht um Reichweite. Es geht um Vertrauen.",
+   "better": "Vertrauen bringt uns mehr Anfragen als Reichweite: [deine Beobachtung].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "contrast"
+   },
+   "fix": "Die Gegenposition streichen und die eigene Aussage direkt begründen."
+  },
+  {
+   "id": "T-02",
+   "category": "structure",
+   "name": "Dreierlisten-Häufung",
+   "description": "Immer wieder drei Begriffe in einer Reihe (\"schnell, einfach und sicher\"). Einzelne Dreierlisten sind normal, gehäuft wirken sie mechanisch.",
+   "bad": "Schnell, einfach und sicher. Klar, präzise und verständlich.",
+   "better": "Nenne nur die Eigenschaft, die du belegen kannst, und belege sie.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "triads"
+   },
+   "fix": "Listen kürzen: zwei Begriffe oder einer mit Beleg."
+  },
+  {
+   "id": "T-03",
+   "category": "structure",
+   "name": "Konnektor am Satzanfang",
+   "description": "Gehäufte Satzanfänge mit \"Zudem\", \"Darüber hinaus\", \"Außerdem\". Sie verbinden nichts, sie stapeln.",
+   "bad": "Zudem ist es günstig. Darüber hinaus ist es schnell.",
+   "better": "Es ist günstig und schnell, weil [Grund].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "connectors"
+   },
+   "fix": "Konnektor streichen oder den Zusammenhang ausformulieren (weil, deshalb, aber)."
+  },
+  {
+   "id": "T-04",
+   "category": "structure",
+   "name": "Gleiche Satzanfänge",
+   "description": "Drei oder mehr Sätze in Folge beginnen mit demselben Wort.",
+   "bad": "Du planst. Du schreibst. Du prüfst.",
+   "better": "Variiere den Einstieg oder fasse die Schritte als Liste.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "same_openings",
+    "run": 3
+   },
+   "fix": "Satzanfänge variieren oder Sätze zusammenfassen."
+  },
+  {
+   "id": "T-05",
+   "category": "structure",
+   "name": "Rhetorische Frage als Einstieg",
+   "description": "Ein Absatz beginnt mit einer Frage, die er selbst sofort beantwortet. Einmal geht, gehäuft wirkt es wie eine Schablone.",
+   "bad": "Warum ist das wichtig? Weil Kunden vergleichen.",
+   "better": "Kunden vergleichen, bevor sie anfragen: [woran du das merkst].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "rhetorical_openers"
+   },
+   "fix": "Die Antwort direkt als ersten Satz schreiben."
+  },
+  {
+   "id": "T-06",
+   "category": "structure",
+   "name": "Doppelpunkt-Enthüllung",
+   "description": "Ein kurzer Satzanfang mit Doppelpunkt oder Fragezeichen baut Spannung auf (\"Das Ergebnis:\", \"Der Grund?\").",
+   "bad": "Das Ergebnis: mehr Anfragen.",
+   "better": "Wir bekamen danach mehr Anfragen, etwa [deine Zahl] pro Woche statt [vorher].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "colon_reveal"
+   },
+   "fix": "Den Satz normal bauen: Subjekt, Verb, Aussage."
+  },
+  {
+   "id": "T-07",
+   "category": "structure",
+   "name": "Pathos am Schluss",
+   "description": "Der letzte Satz endet mit einer großen Geste (\"Die Zukunft gehört dir\", \"Der erste Schritt beginnt jetzt\").",
+   "bad": "Die Zukunft gehört denen, die jetzt handeln.",
+   "better": "Ende mit einem konkreten nächsten Schritt: [was der Leser morgen tun kann].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "pathos_close"
+   },
+   "fix": "Den Schlusssatz streichen oder durch einen konkreten Schritt ersetzen."
+  },
+  {
+   "id": "T-08",
+   "category": "structure",
+   "name": "Zusammenfassung als Ende",
+   "description": "Der Text endet mit einer Wiederholung des Gesagten (\"Zusammenfassend\", \"Alles in allem\").",
+   "bad": "Zusammenfassend lässt sich sagen, dass Planung wichtig ist.",
+   "better": "Ende mit einer offenen Frage aus deiner Praxis oder dem nächsten Schritt.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "summary_end"
+   },
+   "fix": "Den Schlussabsatz streichen oder durch etwas Neues ersetzen."
+  },
+  {
+   "id": "T-09",
+   "category": "structure",
+   "name": "Partizip-Anhängsel",
+   "description": "Ein Satz bekommt hinten eine Deutung angehängt (\", wodurch ...\", \", was zeigt, dass ...\").",
+   "bad": "Der Umsatz stieg, wodurch die Bedeutung von SEO deutlich wird.",
+   "better": "Der Umsatz stieg. Den größten Anteil hatten [deine Quelle der Anfragen].",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "participle_tail"
+   },
+   "fix": "Das Anhängsel streichen oder als eigenen Satz mit Beleg schreiben."
+  },
+  {
+   "id": "R-01",
+   "category": "rhythm",
+   "name": "Kurze Sätze",
+   "description": "Mittlere Satzlänge in Wörtern. Generierte Fachtexte haben im Mittel deutlich kürzere Sätze als menschliche Texte im Vergleichsband.",
+   "bad": "Jeder Satz ist kurz. Jeder Satz endet schnell. Kein Gedanke wird entwickelt.",
+   "better": "Verbinde Gedanken, die zusammengehören, zu einem Satz und begründe sie [weil ...].",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "mean_sentence_len"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-02",
+   "category": "rhythm",
+   "name": "Gleichförmige Satzlängen",
+   "description": "Streuung der Satzlängen innerhalb der Absätze (Variationskoeffizient). Sehr gleichmäßige Sätze liegen auf der Seite generierter Texte.",
+   "bad": "Alle Sätze sind ähnlich lang und ähnlich gebaut.",
+   "better": "Mische kurze und lange Sätze, so wie du sprichst.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "cv_sentence_len_para"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-03",
+   "category": "rhythm",
+   "name": "Kurze Absätze",
+   "description": "Mittlere Wörter je Absatz. Generierte Texte zerlegen den Inhalt in viele kurze Absätze.",
+   "bad": "Ein Absatz, ein Satz. Dann der nächste Absatz.",
+   "better": "Fasse Absätze zusammen, die einen Gedanken gemeinsam tragen.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "words_per_paragraph"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-04",
+   "category": "rhythm",
+   "name": "Hohe Wortvielfalt",
+   "description": "Wortvielfalt (MATTR, Fenster 50 Wörter). Generierte Texte wiederholen Wörter seltener und wechseln öfter das Synonym als menschliche Texte.",
+   "bad": "Lösung, Ansatz, Methode, Strategie: viermal dasselbe gemeint.",
+   "better": "Bleib beim Fachwort, wenn du dasselbe meinst.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "mattr50"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-05",
+   "category": "rhythm",
+   "name": "Lange Wörter",
+   "description": "Mittlere Wortlänge in Buchstaben. Generierte Texte greifen öfter zu langen, abstrakten Wörtern.",
+   "bad": "Effizienzsteigerungspotenziale werden zielgerichtet ausgeschöpft.",
+   "better": "Sag, was konkret schneller geht: [Vorgang].",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "mean_word_len"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-06",
+   "category": "rhythm",
+   "name": "Nominalstil",
+   "description": "Wörter auf -ung, -heit, -keit, -tion, -ität, -schaft, -ismus je 1.000 Wörter.",
+   "bad": "Die Durchführung der Optimierung erfolgt nach der Analyse.",
+   "better": "Wir optimieren, nachdem wir [Gegenstand] analysiert haben.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "nominalizations_1k"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-07",
+   "category": "rhythm",
+   "name": "Viele Dreierlisten",
+   "description": "Aufzählungen der Form \"A, B und C\" je 1.000 Wörter. Ergänzt das Muster T-02 um eine gemessene Rate.",
+   "bad": "Schnell, sicher und einfach. Klar, präzise und verständlich.",
+   "better": "Nenne nur, was wirklich zutrifft, auch wenn es zwei Punkte sind.",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "triads_1k"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-08",
+   "category": "rhythm",
+   "name": "Viele Doppelpunkte",
+   "description": "Doppelpunkte im Fließtext je 1.000 Wörter (ohne Uhrzeiten und Links).",
+   "bad": "Das Ziel: Wachstum. Der Weg: Klarheit. Das Ergebnis: Erfolg.",
+   "better": "Schreib ganze Sätze statt \"Begriff: Erklärung\".",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "colons_1k"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-09",
+   "category": "rhythm",
+   "name": "Partizip-Anhängsel (Rate)",
+   "description": "Nur im Englischen gemessen: Anhängsel wie \", ensuring ...\" je 1.000 Wörter. Das deutsche Gegenstück \"um ... zu\" trennt in der Messung nicht.",
+   "bad": "Wir prüfen jeden Text, um höchste Qualität zu gewährleisten.",
+   "better": "Wir prüfen jeden Text, weil [Grund].",
+   "severity": "hint",
+   "match": {
+    "type": "metric",
+    "feature": "participle_tail_1k"
+   },
+   "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+  },
+  {
+   "id": "R-10",
+   "category": "rhythm",
+   "name": "Viele Messwerte auf der KI-Seite",
+   "description": "Mindestens so viele gemessene Merkmale wie die Urteilsgrenze des Bands liegen gleichzeitig außerhalb des Bands auf der Seite generierter Texte. Ein einzelnes Merkmal ist nur ein Hinweis, das Zusammentreffen ist ein Befund.",
+   "bad": "Kurze Sätze, kurze Absätze, viele Doppelpunkte und Dreierlisten in einem Text.",
+   "better": "Schreib den Text in deiner eigenen Gliederung neu: weniger Zwischentitel, längere Gedanken, konkrete Beispiele [aus deiner Arbeit].",
+   "severity": "tell",
+   "match": {
+    "type": "metric",
+    "feature": "ai_side_count"
+   },
+   "fix": "Die gemeldeten Messwerte einzeln angehen, nicht nur Wörter tauschen."
+  },
+  {
+   "id": "F-01",
+   "category": "form",
+   "name": "Langer Gedankenstrich",
+   "description": "Stilregel: der lange Gedankenstrich (U+2014) außerhalb von Zitaten. Viele Leser empfinden lange Gedankenstriche als KI-typisch. In der Messung trennt er menschliche und generierte Texte nicht; deshalb ist er eine abschaltbare Stilregel (Konfiguration \"dashes\").",
+   "bad": "Das Ergebnis \u2014 mehr Anfragen.",
+   "better": "Das Ergebnis: mehr Anfragen.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "dashes"
+   },
+   "fix": "Durch Punkt, Komma, Doppelpunkt oder Klammer ersetzen."
+  },
+  {
+   "id": "F-02",
+   "category": "form",
+   "name": "Halbgeviertstrich als Gedankenstrich",
+   "description": "Der Halbgeviertstrich (U+2013) ist zwischen Zahlen richtig (10\u201320), zwischen Wörtern wirkt er wie ein Gedankenstrich.",
+   "bad": "Schnell \u2013 und günstig.",
+   "better": "Schnell und günstig.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "dashes"
+   },
+   "fix": "Durch Komma, Punkt oder Doppelpunkt ersetzen."
+  },
+  {
+   "id": "F-03",
+   "category": "form",
+   "name": "Bindestrich als Gedankenstrich",
+   "description": "\" - \" mit Leerzeichen ersetzt einen Gedankenstrich.",
+   "bad": "Schnell - und günstig.",
+   "better": "Schnell und günstig.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "dashes"
+   },
+   "fix": "Durch Komma, Punkt oder Doppelpunkt ersetzen."
+  },
+  {
+   "id": "F-04",
+   "category": "form",
+   "name": "Emojis",
+   "description": "Emojis im Fachtext. Standard: mehr als eines pro Abschnitt ist ein Hinweis. Mit emojis: no ist jedes ein Fund.",
+   "bad": "🚀 Starte jetzt 💪",
+   "better": "Starte jetzt.",
+   "severity": "hint",
+   "match": {
+    "type": "check",
+    "check": "emojis"
+   },
+   "fix": "Emoji entfernen."
+  },
+  {
+   "id": "F-05",
+   "category": "form",
+   "name": "Fettdruck-Häufung",
+   "description": "Viele fett gesetzte Stellen in einem Absatz. Wenn alles betont ist, ist nichts betont.",
+   "bad": "**Wichtig:** Nutze **klare** Ziele und **messbare** Werte.",
+   "better": "Nutze klare Ziele und messbare Werte. Fett höchstens für den einen Begriff, den Leser wiederfinden müssen.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "bold"
+   },
+   "fix": "Fettdruck auf einen Begriff pro Abschnitt reduzieren."
+  },
+  {
+   "id": "F-06",
+   "category": "form",
+   "name": "Etikett-Überschrift",
+   "description": "Überschriften wie \"Was ist X?\", \"Fazit\" oder \"Einleitung\" sagen, wo man ist, nicht was man erfährt.",
+   "bad": "## Fazit",
+   "better": "## Was du morgen als Erstes ändern kannst",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "headings"
+   },
+   "fix": "Die Überschrift als Aussage oder Versprechen formulieren."
+  },
+  {
+   "id": "F-07",
+   "category": "form",
+   "name": "Anrede-Wechsel",
+   "description": "Der Text wechselt zwischen du und Sie. Mit address: du oder sie (Option --address) ist jede falsche Form ein Fehler, ohne Angabe ein Hinweis auf die seltenere Form.",
+   "bad": "Du kannst das sofort testen. Probieren Sie es aus.",
+   "better": "Du kannst das sofort testen. Probier es aus.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "address"
+   },
+   "fix": "Eine Anrede wählen und durchziehen."
+  },
+  {
+   "id": "F-08",
+   "category": "form",
+   "name": "Zu viele Überschriften",
+   "description": "Sehr viele Überschriften für wenig Text. Der Text zerfällt in Häppchen.",
+   "bad": "Alle 60 Wörter eine neue Zwischenüberschrift.",
+   "better": "Abschnitte zusammenlegen, bis jeder etwas zu sagen hat.",
+   "severity": "tell",
+   "match": {
+    "type": "check",
+    "check": "heading_density",
+    "min_words_per_heading": 80,
+    "min_headings": 4
+   },
+   "fix": "Abschnitte zusammenlegen."
+  },
+  {
+   "id": "F-09",
+   "category": "form",
+   "name": "Verbotenes Wort (eigene Liste)",
+   "description": "Ein Wort aus deiner eigenen Verbotsliste (Option --forbid oder forbid in .slopcheck.json).",
+   "bad": "[ein Wort von deiner Liste]",
+   "better": "[deine bevorzugte Formulierung]",
+   "severity": "fail",
+   "match": {
+    "type": "check",
+    "check": "forbidden"
+   },
+   "fix": "Wort ersetzen oder streichen."
+  }
+ ]
+}

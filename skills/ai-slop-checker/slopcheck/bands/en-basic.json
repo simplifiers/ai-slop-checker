@@ -1,0 +1,94 @@
+{
+ "lang": "en",
+ "register": "basic",
+ "band_register": "news",
+ "provisional": false,
+ "created": "2026-10-15",
+ "n_human": 162,
+ "n_ai": 40,
+ "min_words": 300,
+ "revise_limit": 6,
+ "note": "Measured percentile band (p10, p50, p90) of human news texts written before 2022. ai_side and auc come from a comparison with 40 generated blog articles (one model). Only features whose direction is the same in every measured register are included. No texts are stored, only these statistics.",
+ "sources": [
+  {
+   "name": "Wikinews (en.wikinews.org), articles published 2004 to 2021",
+   "license": "CC BY 2.5",
+   "attribution": "Statistics derived from Wikinews articles by Wikinews contributors, CC BY 2.5"
+  }
+ ],
+ "ai_comparison": "40 blog articles generated for this calibration (Claude, October 2026), 7 industries",
+ "evaluation": {
+  "limit": 6,
+  "heldout_human": 40,
+  "heldout_false_alarms": 0,
+  "heldout_ai": 10,
+  "heldout_ai_hits": 5,
+  "all_human": 162,
+  "all_false_alarms": 0
+ },
+ "features": {
+  "mean_sentence_len": {
+   "p10": 15.2553,
+   "p50": 19.3542,
+   "p90": 24.0831,
+   "ai_side": "low",
+   "auc": 0.015
+  },
+  "cv_sentence_len_para": {
+   "p10": 0.3848,
+   "p50": 0.4828,
+   "p90": 0.5987,
+   "ai_side": "low",
+   "auc": 0.305
+  },
+  "words_per_paragraph": {
+   "p10": 30.3671,
+   "p50": 44.8072,
+   "p90": 65.56,
+   "ai_side": "low",
+   "auc": 0.085
+  },
+  "mattr50": {
+   "p10": 0.7717,
+   "p50": 0.8149,
+   "p90": 0.8436,
+   "ai_side": "high",
+   "auc": 0.907
+  },
+  "mean_word_len": {
+   "p10": 4.5862,
+   "p50": 5.0777,
+   "p90": 5.4111,
+   "ai_side": "high",
+   "auc": 0.846
+  },
+  "nominalizations_1k": {
+   "p10": 7.1773,
+   "p50": 23.6781,
+   "p90": 48.6441,
+   "ai_side": "high",
+   "auc": 0.788
+  },
+  "triads_1k": {
+   "p10": 0.0,
+   "p50": 2.9335,
+   "p90": 7.3149,
+   "ai_side": "high",
+   "auc": 0.934
+  },
+  "colons_1k": {
+   "p10": 0.0,
+   "p50": 0.9895,
+   "p90": 10.524,
+   "ai_side": "high",
+   "auc": 0.919
+  },
+  "participle_tail_1k": {
+   "p10": 0.0,
+   "p50": 2.3839,
+   "p90": 6.2171,
+   "ai_side": "high",
+   "auc": 0.713
+  }
+ }
+}

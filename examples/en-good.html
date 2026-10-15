@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:">
+<title>AI Slop Checker report: Pass</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --paper: #ffffff;
+  --canvas: #f6f5fa;
+  --ink: #1c1a24;
+  --muted: #5d5970;
+  --rule: #e4e1ee;
+  --accent: #7c3aed;
+  --accent-soft: #f1eafe;
+  --pass: #15803d;
+  --pass-soft: #e8f6ed;
+  --revise: #b42318;
+  --revise-soft: #fdecea;
+  --short: #5d5970;
+  --short-soft: #efedf5;
+  --substance: #c81e1e;
+  --substance-bg: #fde3e1;
+  --facts: #1d5fc9;
+  --facts-bg: #e2ecfd;
+  --form: #c2560c;
+  --form-bg: #fde9d6;
+  --phrases: #8a6a00;
+  --phrases-bg: #fdf3c4;
+  --structure: #6d28d9;
+  --structure-bg: #ece3fd;
+  --focus: #7c3aed;
+  --serif: "Iowan Old Style", "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b1924;
+    --canvas: #121019;
+    --ink: #ece9f5;
+    --muted: #aaa4bf;
+    --rule: #34304a;
+    --accent: #a78bfa;
+    --accent-soft: #2a2240;
+    --pass: #4ade80;
+    --pass-soft: #13291c;
+    --revise: #f87171;
+    --revise-soft: #3a1616;
+    --short: #aaa4bf;
+    --short-soft: #26233a;
+    --substance: #fca5a5;
+    --substance-bg: #4a1818;
+    --facts: #93c5fd;
+    --facts-bg: #172a4d;
+    --form: #fdba74;
+    --form-bg: #45250d;
+    --phrases: #fde047;
+    --phrases-bg: #3d3408;
+    --structure: #c4b5fd;
+    --structure-bg: #2e2050;
+    --focus: #c4b5fd;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 16px/1.55 var(--sans);
+}
+a { color: var(--accent); }
+a:focus-visible, .mark:focus-visible, .notes-col:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--paper); padding: 8px 12px; z-index: 10; }
+.page { max-width: 1180px; margin: 0 auto; padding: 48px 32px 32px; }
+
+/* Head */
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 1fr);
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--rule);
+}
+.brand { font-weight: 650; letter-spacing: -0.01em; color: var(--accent); margin: 0 0 28px; font-size: 15px; }
+.verdict-word {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(48px, 6.2vw, 84px);
+  overflow-wrap: anywhere;
+  hyphens: manual;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.verdict-pass .verdict-word { color: var(--pass); }
+.verdict-revise .verdict-word { color: var(--revise); }
+.verdict-too_short .verdict-word { color: var(--short); }
+.verdict-reason { font-size: 18px; margin: 16px 0 0; max-width: 34em; }
+.facts-line { color: var(--muted); margin: 10px 0 0; font-size: 15px; }
+.facts-line span + span::before { content: ""; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--rule); margin: 0 10px 3px; }
+
+.tally { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tally caption { text-align: left; color: var(--muted); font-size: 13px; padding-bottom: 8px; }
+.tally th, .tally td { padding: 9px 0; border-bottom: 1px solid var(--rule); text-align: left; font-weight: 400; }
+.tally th { font-weight: 600; }
+.tally td.n { text-align: right; width: 4.5em; font-variant-numeric: tabular-nums; }
+.tally td.zero { color: var(--muted); }
+.tally .sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 10px; vertical-align: 0; }
+.tally thead th { font-size: 12px; color: var(--muted); font-weight: 500; }
+.tally tr.cat-substance th { font-size: 17px; }
+
+.disclaimer {
+  margin: 28px 0 0;
+  padding: 14px 18px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  max-width: 62em;
+}
+
+/* Body: manuscript + notes */
+.work { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 40px; margin-top: 40px; }
+h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 6px; }
+.section-note { color: var(--muted); font-size: 14px; margin: 0 0 18px; max-width: 40em; }
+.manuscript {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 40px 44px;
+  font-family: var(--serif);
+  font-size: 18.5px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 44em;
+}
+.mark {
+  border-radius: 2px;
+  padding: 0.08em 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  text-decoration: none;
+  color: inherit;
+}
+.m-substance { background: var(--substance-bg); box-shadow: inset 0 -2px 0 var(--substance); }
+.m-facts { background: var(--facts-bg); box-shadow: inset 0 -2px 0 var(--facts); }
+.m-form { background: var(--form-bg); box-shadow: inset 0 -2px 0 var(--form); }
+.m-phrases { background: var(--phrases-bg); box-shadow: inset 0 -2px 0 var(--phrases); }
+.m-structure { background: var(--structure-bg); box-shadow: inset 0 -2px 0 var(--structure); }
+.u-substance { box-shadow: inset 0 -2px 0 var(--substance); }
+.u-facts { box-shadow: inset 0 -2px 0 var(--facts); }
+.u-form { box-shadow: inset 0 -2px 0 var(--form); }
+.u-phrases { box-shadow: inset 0 -2px 0 var(--phrases); }
+.u-structure { box-shadow: inset 0 -2px 0 var(--structure); }
+.ref {
+  font-family: var(--sans);
+  font-size: 0.6em;
+  font-weight: 650;
+  vertical-align: 0.6em;
+  line-height: 0;
+  margin-left: 1px;
+  text-decoration: none;
+  padding: 0 2px;
+  white-space: nowrap;
+}
+.ref-substance { color: var(--substance); }
+.ref-facts { color: var(--facts); }
+.ref-form { color: var(--form); }
+.ref-phrases { color: var(--phrases); }
+.ref-structure { color: var(--structure); }
+
+.notes { list-style: none; margin: 0; padding: 0; }
+@media (min-width: 901px) {
+  .notes-col { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 32px); overflow-y: auto; padding-right: 6px; overscroll-behavior: contain; }
+}
+.note {
+  position: relative;
+  padding: 14px 16px 14px 18px;
+  border-left: 3px solid var(--rule);
+  margin-bottom: 10px;
+  background: var(--paper);
+  border-radius: 0 10px 10px 0;
+  scroll-margin-top: 24px;
+}
+.note:target { outline: 2px solid var(--accent); outline-offset: 0; }
+.note.c-substance { border-left-color: var(--substance); }
+.note.c-facts { border-left-color: var(--facts); }
+.note.c-form { border-left-color: var(--form); }
+.note.c-phrases { border-left-color: var(--phrases); }
+.note.c-structure { border-left-color: var(--structure); }
+.note.c-rhythm { border-left-color: var(--muted); }
+.note-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-size: 14px; }
+.note-num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.note-name { font-weight: 600; }
+.note-meta { color: var(--muted); font-size: 13px; }
+.sev { font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.sev-fail { color: var(--revise); }
+.sev-tell { color: var(--form); }
+.sev-hint { color: var(--muted); }
+.note-excerpt { font-family: var(--serif); font-style: italic; margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+.note-msg { margin: 6px 0 0; font-size: 15px; }
+.note-fix { margin: 6px 0 0; font-size: 15px; }
+.note-fix b { color: var(--accent); font-weight: 600; }
+.back { font-size: 13px; margin-left: auto; }
+
+/* Lower sections */
+.lower { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--rule); }
+.lower .wide { grid-column: 1 / -1; }
+.plain { list-style: none; padding: 0; margin: 0; }
+.plain li { padding: 9px 0; border-bottom: 1px solid var(--rule); display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.plain .val { font-weight: 600; font-variant-numeric: tabular-nums; }
+.plain .meta { color: var(--muted); font-size: 14px; }
+.tag { font-size: 12px; padding: 1px 8px; border-radius: 999px; }
+.tag-ok { background: var(--pass-soft); color: var(--pass); }
+.tag-warn { background: var(--revise-soft); color: var(--revise); }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+h3 { font-size: 15px; margin: 18px 0 6px; }
+
+.rhythm { width: 100%; border-collapse: collapse; font-size: 15px; }
+.rhythm th, .rhythm td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.rhythm thead th { font-size: 12px; color: var(--muted); font-weight: 500; }
+.rhythm td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar { position: relative; height: 10px; min-width: 160px; background: var(--rule); border-radius: 999px; }
+.bar .band { position: absolute; top: 0; bottom: 0; background: var(--pass-soft); border: 1px solid var(--pass); border-radius: 999px; }
+.bar .dot { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); border: 2px solid var(--paper); }
+.state-ai_side .dot, .state-overshot .dot { background: var(--revise); }
+.state-ok .dot { background: var(--pass); }
+.prov { color: var(--muted); font-size: 12px; }
+
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 24px; margin: 0; }
+.metrics div { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.metrics dt { color: var(--muted); font-size: 13px; }
+.metrics dd { margin: 2px 0 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.foot { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 13px; }
+.foot a { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .page { padding: 28px 16px; }
+  .head, .work, .lower { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .manuscript { padding: 24px 20px; font-size: 17px; }
+  .bar { min-width: 100px; }
+}
+@media print {
+  :root { color-scheme: light; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .page { max-width: none; padding: 0; }
+  .work { grid-template-columns: minmax(0, 1fr); }
+  .notes-col { position: static; max-height: none; overflow: visible; }
+  .manuscript { border: 0; padding: 0; max-width: none; font-size: 11.5pt; }
+  .note, .manuscript, .lower > section { break-inside: avoid; }
+  .note { border: 1px solid #ccc; border-left-width: 3px; }
+  .back, .skip { display: none; }
+  .mark, .bar .band, .bar .dot, .tally .sw, .disclaimer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+<a class="skip" href="#text">Skip to the text</a>
+<main class="page">
+<header class="head verdict-pass">
+<div>
+<p class="brand">AI Slop Checker</p>
+<h1 class="verdict-word">Pass</h1>
+<p class="verdict-reason">No hard finding and tells from 0 patterns (limit 5). Measured features on the AI side: 2 (limit 6). Hints do not count.</p>
+<p class="facts-line"><span>350 words</span><span>English</span><span>Register: article</span><span>slop-check 0.1.0</span></p>
+</div>
+<div><table class="tally"><caption>Findings by category</caption><thead><tr><td></td><th scope="col" class="n" title="Fail: fix this before publishing">fail</th><th scope="col" class="n" title="Tell: typical of generated text">tell</th><th scope="col" class="n" title="Hint: worth a second look">hint</th></tr></thead><tbody><tr class="cat-substance"><th scope="row"><span class="sw" style="background:var(--substance)" aria-hidden="true"></span>Substance</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-facts"><th scope="row"><span class="sw" style="background:var(--facts)" aria-hidden="true"></span>Facts</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-phrases"><th scope="row"><span class="sw" style="background:var(--phrases)" aria-hidden="true"></span>Stock phrases</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-structure"><th scope="row"><span class="sw" style="background:var(--structure)" aria-hidden="true"></span>Structure</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-rhythm"><th scope="row"><span class="sw" style="background:var(--muted)" aria-hidden="true"></span>Rhythm</th><td class="n zero">0</td><td class="n zero">0</td><td class="n">2</td></tr><tr class="cat-form"><th scope="row"><span class="sw" style="background:var(--form)" aria-hidden="true"></span>Form</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr></tbody></table></div>
+</header>
+<p class="disclaimer" role="note">slop-check does not tell whether AI wrote a text. It shows patterns you can check.</p>
+<div class="work">
+<section aria-labelledby="text-h">
+<h2 id="text-h">The text</h2>
+<p class="section-note">Marked passages link to the matching note. Rhythm is measured on the whole text and shown further down.</p>
+<div class="manuscript" id="text" tabindex="-1">
+
+# Three questions we ask every new client before the first article
+
+I have written articles for small trade businesses since 2014. At first I picked topics by search volume. That worked for almost two years, until a carpenter in Leeds asked me why his most-read articles had never led to a single job.
+
+He was right. Since then we ask three questions before every text.
+
+## Who calls after reading?
+
+Not who reads, but who calls. For the carpenter it was almost always couples renovating a house built between 1960 and 1980 who needed a new staircase. So we wrote about staircases in exactly those houses: which woods cope with old screed floors, how long fitting takes, what it costs.
+
+In the first quarter after that, eleven enquiries came through the website. Before, it had been two a quarter. That proves nothing about a method, but it was enough for this business.
+
+## What does only this business know?
+
+Anyone can explain what a closed-string staircase is. Hardly anyone knows that this carpenter lets oak treads sit in the house for three weeks before fitting them in an old building, because otherwise the wood keeps drying and starts to creak. Sentences like that are in no guide. We get them in the interview, usually with one question: &quot;What do you do differently from others in your trade?&quot;
+
+Sometimes that question gets nothing. Then we ask about the last job that went wrong. That always gets something.
+
+## Which figures may go in?
+
+Only figures the business measured itself or that we can source. The [trade association survey](https://example.org/survey-2025) reports how many owners plan a renovation in the next five years; we link to it instead of copying the figure.
+
+When the carpenter says fitting &quot;usually takes two days&quot;, we write exactly that. No rounded percentages that sound good and that nobody can check.
+
+What I learned from this: an article meant to lead to a phone call does not start with the search engine. It starts with the first question the customer asks on the phone. Write that question down during your next call.
+</div>
+</section>
+<section class="notes-col" aria-labelledby="notes-h" tabindex="0">
+<h2 id="notes-h">Notes</h2>
+<ol class="notes"><li class="note c-rhythm" id="note-1"><div class="note-head"><span class="note-num">1</span><span class="note-name">Short sentences</span><span class="sev sev-hint" title="Hint: worth a second look">hint</span></div><div class="note-meta">Rhythm / R-01 / line 5</div><p class="note-msg">words per sentence: 13 is below the band 15.3 to 24.1, on the generated-text side.</p><p class="note-fix"><b>Fix:</b> Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10).</p></li><li class="note c-rhythm" id="note-2"><div class="note-head"><span class="note-num">2</span><span class="note-name">High vocabulary variety</span><span class="sev sev-hint" title="Hint: worth a second look">hint</span></div><div class="note-meta">Rhythm / R-04 / line 5</div><p class="note-msg">vocabulary variety (MATTR): 0.861 is above the band 0.772 to 0.844, on the generated-text side.</p><p class="note-fix"><b>Fix:</b> Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10).</p></li></ol>
+</section>
+</div>
+<div class="lower"><section><h2>People to verify</h2><p class="section-note">Every named person should exist and have said what the text claims. The tool does not check this for you.</p><p class="empty">none</p></section><section><h2>Fact check against your source</h2><p class="section-note">Numbers and claims without a match in the source need a reference or should go.</p><h3>In the source, missing in the text</h3><p class="empty">Nothing from the source went missing.</p><h3>New in the text</h3><p class="empty">No new numbers or claims.</p></section><section class="wide"><h2>Rhythm</h2><p class="section-note">Each bar shows the range of human news texts (Wikinews, 10th to 90th percentile). The dot is this text. One value outside the range is common in human texts; only many values on the generated side at once count for the verdict.</p><table class="rhythm"><thead><tr><th scope="col">Measure</th><th scope="col">Value</th><th scope="col">Human range</th><th scope="col">State</th></tr></thead><tbody><tr class="state-ai_side"><th scope="row">Words per sentence</th><td class="num">12.96</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:30.4%;width:52.9%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">15.26 / 24.08</span></td><td>on the generated side</td></tr><tr class="state-ok"><th scope="row">Spread of sentence lengths</th><td class="num">0.58</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.7%"></span><span class="dot" style="left:78.4%"></span></div><span class="prov">0.38 / 0.6</span></td><td>in range</td></tr><tr class="state-ok"><th scope="row">Words per paragraph</th><td class="num">36</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.7%"></span><span class="dot" style="left:27.3%"></span></div><span class="prov">30.37 / 65.56</span></td><td>in range</td></tr><tr class="state-ai_side"><th scope="row">Vocabulary variety (MATTR 50)</th><td class="num">0.86</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:53.7%"></span><span class="dot" style="left:83.3%"></span></div><span class="prov">0.77 / 0.84</span></td><td>on the generated side</td></tr><tr class="state-overshot"><th scope="row">Letters per word</th><td class="num">4.59</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.6%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">4.59 / 5.41</span></td><td>overshot</td></tr><tr class="state-overshot"><th scope="row">Nominalisations per 1,000 words</th><td class="num">6.17</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:18.2%;width:65.1%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">7.18 / 48.64</span></td><td>overshot</td></tr><tr class="state-ok"><th scope="row">Lists of three per 1,000 words</th><td class="num">0</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.7%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">0 / 7.31</span></td><td>in range</td></tr><tr class="state-ok"><th scope="row">Colons per 1,000 words</th><td class="num">9.26</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.7%"></span><span class="dot" style="left:75.3%"></span></div><span class="prov">0 / 10.52</span></td><td>in range</td></tr><tr class="state-ok"><th scope="row">Trailing participles per 1,000 words</th><td class="num">0</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.7%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">0 / 6.22</span></td><td>in range</td></tr></tbody></table></section><section class="wide"><h2>Measurements</h2><dl class="metrics"><div><dt>Concrete details per 100 words</dt><dd>7.72</dd></div><div><dt>Words of running text</dt><dd>324</dd></div><div><dt>Words per sentence</dt><dd>12.96</dd></div><div><dt>Spread of sentence lengths</dt><dd>0.58</dd></div><div><dt>Words per paragraph</dt><dd>36</dd></div><div><dt>Vocabulary variety (MATTR 50)</dt><dd>0.86</dd></div><div><dt>Letters per word</dt><dd>4.59</dd></div><div><dt>Nominalisations per 1,000 words</dt><dd>6.17</dd></div><div><dt>Lists of three per 1,000 words</dt><dd>0</dd></div><div><dt>Colons per 1,000 words</dt><dd>9.26</dd></div><div><dt>Trailing participles per 1,000 words</dt><dd>0</dd></div><div><dt>Measures on the generated side</dt><dd>2</dd></div><div><dt>Limit for revise</dt><dd>6</dd></div></dl></section></div>
+<footer class="foot">AI Slop Checker · <a href="https://github.com/simplifiers/ai-slop-checker">github.com/simplifiers/ai-slop-checker</a></footer>
+</main>
+</body>
+</html>

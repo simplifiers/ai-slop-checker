@@ -1,0 +1,199 @@
+{
+  "tool": "slop-check",
+  "version": "0.1.0",
+  "lang": "de",
+  "register": "article",
+  "words": 332,
+  "verdict": "pass",
+  "verdict_reason": "Kein harter Fund und Auffälligkeiten aus 0 Mustern (Grenze 5). Gemessene Merkmale auf der KI-Seite: 3 (Grenze 6). Hinweise zählen nicht.",
+  "notice": "slop-check sagt nicht, ob eine KI einen Text geschrieben hat. Es zeigt Muster, die du prüfen kannst.",
+  "findings": [
+    {
+      "id": "R-01",
+      "category": "rhythm",
+      "severity": "hint",
+      "name": "Kurze Sätze",
+      "line": 5,
+      "start": 76,
+      "end": 76,
+      "excerpt": "",
+      "message": "Wörter je Satz: 12,1 liegt unter dem Band 13,4 bis 22,3, auf der Seite generierter Texte.",
+      "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+    },
+    {
+      "id": "R-03",
+      "category": "rhythm",
+      "severity": "hint",
+      "name": "Kurze Absätze",
+      "line": 5,
+      "start": 76,
+      "end": 76,
+      "excerpt": "",
+      "message": "Wörter je Absatz: 33,7 liegt unter dem Band 49,4 bis 121,2, auf der Seite generierter Texte.",
+      "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+    },
+    {
+      "id": "R-04",
+      "category": "rhythm",
+      "severity": "hint",
+      "name": "Hohe Wortvielfalt",
+      "line": 5,
+      "start": 76,
+      "end": 76,
+      "excerpt": "",
+      "message": "Wortvielfalt (MATTR): 0,906 liegt über dem Band 0,828 bis 0,887, auf der Seite generierter Texte.",
+      "fix": "Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10)."
+    }
+  ],
+  "summary": {
+    "substance": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "facts": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "phrases": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "structure": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "rhythm": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 3
+    },
+    "form": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    }
+  },
+  "facts": {
+    "lost": [],
+    "added": []
+  },
+  "people": [],
+  "metrics": {
+    "concreteness_per_100": 7.92,
+    "prose_words": 303,
+    "mean_sentence_len": 12.12,
+    "cv_sentence_len_para": 0.5751,
+    "words_per_paragraph": 33.6667,
+    "mattr50": 0.906,
+    "mean_word_len": 5.1067,
+    "nominalizations_1k": 9.901,
+    "triads_1k": 3.3003,
+    "colons_1k": 9.901,
+    "participle_tail_1k": 0.0,
+    "ai_side_count": 3,
+    "ai_side_limit": 6
+  },
+  "rhythm": [
+    {
+      "feature": "mean_sentence_len",
+      "value": 12.12,
+      "band": {
+        "p10": 13.4472,
+        "p50": 17.9722,
+        "p90": 22.2706,
+        "ai_side": "low"
+      },
+      "state": "ai_side",
+      "provisional": false
+    },
+    {
+      "feature": "cv_sentence_len_para",
+      "value": 0.5751,
+      "band": {
+        "p10": 0.3792,
+        "p50": 0.4772,
+        "p90": 0.6117,
+        "ai_side": "low"
+      },
+      "state": "ok",
+      "provisional": false
+    },
+    {
+      "feature": "words_per_paragraph",
+      "value": 33.6667,
+      "band": {
+        "p10": 49.3625,
+        "p50": 76.3714,
+        "p90": 121.1667,
+        "ai_side": "low"
+      },
+      "state": "ai_side",
+      "provisional": false
+    },
+    {
+      "feature": "mattr50",
+      "value": 0.906,
+      "band": {
+        "p10": 0.8276,
+        "p50": 0.8635,
+        "p90": 0.8875,
+        "ai_side": "high"
+      },
+      "state": "ai_side",
+      "provisional": false
+    },
+    {
+      "feature": "mean_word_len",
+      "value": 5.1067,
+      "band": {
+        "p10": 5.6974,
+        "p50": 6.3045,
+        "p90": 6.6679,
+        "ai_side": "high"
+      },
+      "state": "overshot",
+      "provisional": false
+    },
+    {
+      "feature": "nominalizations_1k",
+      "value": 9.901,
+      "band": {
+        "p10": 14.7802,
+        "p50": 37.3683,
+        "p90": 58.307,
+        "ai_side": "high"
+      },
+      "state": "overshot",
+      "provisional": false
+    },
+    {
+      "feature": "triads_1k",
+      "value": 3.3003,
+      "band": {
+        "p10": 0.0,
+        "p50": 2.6995,
+        "p90": 7.1556,
+        "ai_side": "high"
+      },
+      "state": "ok",
+      "provisional": false
+    },
+    {
+      "feature": "colons_1k",
+      "value": 9.901,
+      "band": {
+        "p10": 0.0,
+        "p50": 4.5558,
+        "p90": 14.3988,
+        "ai_side": "high"
+      },
+      "state": "ok",
+      "provisional": false
+    }
+  ],
+  "text": "\n\n# Drei Fragen, die wir jedem neuen Kunden vor dem ersten Artikel stellen\n\nIch schreibe seit 2014 Fachartikel für Handwerksbetriebe. Am Anfang habe ich Themen nach Suchvolumen ausgewählt. Das ging fast zwei Jahre gut, bis ein Tischler aus Kassel mich fragte, warum seine meistgelesenen Artikel nie zu einem Auftrag geführt hatten.\n\nEr hatte recht. Seitdem stellen wir vor jedem Text drei Fragen.\n\n## Wer ruft nach dem Lesen an?\n\nNicht wer liest, sondern wer anruft. Bei dem Tischler waren es fast immer Paare, die ein Haus von 1960 bis 1980 renovieren und eine Treppe brauchen. Also schrieben wir über Treppen in genau diesen Häusern: welche Holzarten mit alten Estrichen klarkommen, wie lange der Einbau dauert, was er kostet.\n\nIm ersten Quartal danach kamen elf Anfragen über die Website. Vorher waren es zwei im Quartal. Das ist kein Beweis für eine Methode, aber für diesen Betrieb hat es gereicht.\n\n## Was weiß nur dieser Betrieb?\n\nJeder kann erklären, was eine Wangentreppe ist. Kaum jemand weiß, dass der Tischler Treppen aus Eiche in Altbauten erst nach drei Wochen Lagerung im Haus einbaut, weil das Holz sonst nachtrocknet und knarzt. Solche Sätze stehen in keinem Ratgeber. Wir holen sie im Interview ab, meistens mit der Frage: \"Was machen Sie anders als die Kollegen?\"\n\nManchmal kommt darauf nichts. Dann fragen wir nach dem letzten Auftrag, der schiefging. Darauf kommt immer etwas.\n\n## Welche Zahl darf in den Text?\n\nNur Zahlen, die der Betrieb selbst gemessen hat oder die wir belegen können. Laut der [Erhebung des Branchenverbands](https://example.org/erhebung-2025) planen viele Eigentümer eine Renovierung in den nächsten fünf Jahren; die Zahl dazu steht dort, wir verlinken sie, statt sie abzuschreiben.\n\nWenn der Tischler sagt, dass ein Einbau \"meistens zwei Tage\" dauert, schreiben wir genau das. Keine gerundeten Prozentwerte, die gut klingen und niemand prüfen kann.\n\nWas ich daraus gelernt habe: Ein Artikel, der zu einem Anruf führen soll, beginnt nicht bei der Suchmaschine. Er beginnt bei der Frage, die der Kunde am Telefon als Erstes stellt. Notier dir diese Frage beim nächsten Gespräch.\n"
+}

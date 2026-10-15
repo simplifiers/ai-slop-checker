@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:">
+<title>AI Slop Checker report: Revise</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --paper: #ffffff;
+  --canvas: #f6f5fa;
+  --ink: #1c1a24;
+  --muted: #5d5970;
+  --rule: #e4e1ee;
+  --accent: #7c3aed;
+  --accent-soft: #f1eafe;
+  --pass: #15803d;
+  --pass-soft: #e8f6ed;
+  --revise: #b42318;
+  --revise-soft: #fdecea;
+  --short: #5d5970;
+  --short-soft: #efedf5;
+  --substance: #c81e1e;
+  --substance-bg: #fde3e1;
+  --facts: #1d5fc9;
+  --facts-bg: #e2ecfd;
+  --form: #c2560c;
+  --form-bg: #fde9d6;
+  --phrases: #8a6a00;
+  --phrases-bg: #fdf3c4;
+  --structure: #6d28d9;
+  --structure-bg: #ece3fd;
+  --focus: #7c3aed;
+  --serif: "Iowan Old Style", "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b1924;
+    --canvas: #121019;
+    --ink: #ece9f5;
+    --muted: #aaa4bf;
+    --rule: #34304a;
+    --accent: #a78bfa;
+    --accent-soft: #2a2240;
+    --pass: #4ade80;
+    --pass-soft: #13291c;
+    --revise: #f87171;
+    --revise-soft: #3a1616;
+    --short: #aaa4bf;
+    --short-soft: #26233a;
+    --substance: #fca5a5;
+    --substance-bg: #4a1818;
+    --facts: #93c5fd;
+    --facts-bg: #172a4d;
+    --form: #fdba74;
+    --form-bg: #45250d;
+    --phrases: #fde047;
+    --phrases-bg: #3d3408;
+    --structure: #c4b5fd;
+    --structure-bg: #2e2050;
+    --focus: #c4b5fd;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 16px/1.55 var(--sans);
+}
+a { color: var(--accent); }
+a:focus-visible, .mark:focus-visible, .notes-col:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--paper); padding: 8px 12px; z-index: 10; }
+.page { max-width: 1180px; margin: 0 auto; padding: 48px 32px 32px; }
+
+/* Head */
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 1fr);
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--rule);
+}
+.brand { font-weight: 650; letter-spacing: -0.01em; color: var(--accent); margin: 0 0 28px; font-size: 15px; }
+.verdict-word {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(48px, 6.2vw, 84px);
+  overflow-wrap: anywhere;
+  hyphens: manual;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.verdict-pass .verdict-word { color: var(--pass); }
+.verdict-revise .verdict-word { color: var(--revise); }
+.verdict-too_short .verdict-word { color: var(--short); }
+.verdict-reason { font-size: 18px; margin: 16px 0 0; max-width: 34em; }
+.facts-line { color: var(--muted); margin: 10px 0 0; font-size: 15px; }
+.facts-line span + span::before { content: ""; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--rule); margin: 0 10px 3px; }
+
+.tally { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tally caption { text-align: left; color: var(--muted); font-size: 13px; padding-bottom: 8px; }
+.tally th, .tally td { padding: 9px 0; border-bottom: 1px solid var(--rule); text-align: left; font-weight: 400; }
+.tally th { font-weight: 600; }
+.tally td.n { text-align: right; width: 4.5em; font-variant-numeric: tabular-nums; }
+.tally td.zero { color: var(--muted); }
+.tally .sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 10px; vertical-align: 0; }
+.tally thead th { font-size: 12px; color: var(--muted); font-weight: 500; }
+.tally tr.cat-substance th { font-size: 17px; }
+
+.disclaimer {
+  margin: 28px 0 0;
+  padding: 14px 18px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  max-width: 62em;
+}
+
+/* Body: manuscript + notes */
+.work { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 40px; margin-top: 40px; }
+h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 6px; }
+.section-note { color: var(--muted); font-size: 14px; margin: 0 0 18px; max-width: 40em; }
+.manuscript {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 40px 44px;
+  font-family: var(--serif);
+  font-size: 18.5px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 44em;
+}
+.mark {
+  border-radius: 2px;
+  padding: 0.08em 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  text-decoration: none;
+  color: inherit;
+}
+.m-substance { background: var(--substance-bg); box-shadow: inset 0 -2px 0 var(--substance); }
+.m-facts { background: var(--facts-bg); box-shadow: inset 0 -2px 0 var(--facts); }
+.m-form { background: var(--form-bg); box-shadow: inset 0 -2px 0 var(--form); }
+.m-phrases { background: var(--phrases-bg); box-shadow: inset 0 -2px 0 var(--phrases); }
+.m-structure { background: var(--structure-bg); box-shadow: inset 0 -2px 0 var(--structure); }
+.u-substance { box-shadow: inset 0 -2px 0 var(--substance); }
+.u-facts { box-shadow: inset 0 -2px 0 var(--facts); }
+.u-form { box-shadow: inset 0 -2px 0 var(--form); }
+.u-phrases { box-shadow: inset 0 -2px 0 var(--phrases); }
+.u-structure { box-shadow: inset 0 -2px 0 var(--structure); }
+.ref {
+  font-family: var(--sans);
+  font-size: 0.6em;
+  font-weight: 650;
+  vertical-align: 0.6em;
+  line-height: 0;
+  margin-left: 1px;
+  text-decoration: none;
+  padding: 0 2px;
+  white-space: nowrap;
+}
+.ref-substance { color: var(--substance); }
+.ref-facts { color: var(--facts); }
+.ref-form { color: var(--form); }
+.ref-phrases { color: var(--phrases); }
+.ref-structure { color: var(--structure); }
+
+.notes { list-style: none; margin: 0; padding: 0; }
+@media (min-width: 901px) {
+  .notes-col { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 32px); overflow-y: auto; padding-right: 6px; overscroll-behavior: contain; }
+}
+.note {
+  position: relative;
+  padding: 14px 16px 14px 18px;
+  border-left: 3px solid var(--rule);
+  margin-bottom: 10px;
+  background: var(--paper);
+  border-radius: 0 10px 10px 0;
+  scroll-margin-top: 24px;
+}
+.note:target { outline: 2px solid var(--accent); outline-offset: 0; }
+.note.c-substance { border-left-color: var(--substance); }
+.note.c-facts { border-left-color: var(--facts); }
+.note.c-form { border-left-color: var(--form); }
+.note.c-phrases { border-left-color: var(--phrases); }
+.note.c-structure { border-left-color: var(--structure); }
+.note.c-rhythm { border-left-color: var(--muted); }
+.note-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-size: 14px; }
+.note-num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.note-name { font-weight: 600; }
+.note-meta { color: var(--muted); font-size: 13px; }
+.sev { font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.sev-fail { color: var(--revise); }
+.sev-tell { color: var(--form); }
+.sev-hint { color: var(--muted); }
+.note-excerpt { font-family: var(--serif); font-style: italic; margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+.note-msg { margin: 6px 0 0; font-size: 15px; }
+.note-fix { margin: 6px 0 0; font-size: 15px; }
+.note-fix b { color: var(--accent); font-weight: 600; }
+.back { font-size: 13px; margin-left: auto; }
+
+/* Lower sections */
+.lower { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--rule); }
+.lower .wide { grid-column: 1 / -1; }
+.plain { list-style: none; padding: 0; margin: 0; }
+.plain li { padding: 9px 0; border-bottom: 1px solid var(--rule); display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.plain .val { font-weight: 600; font-variant-numeric: tabular-nums; }
+.plain .meta { color: var(--muted); font-size: 14px; }
+.tag { font-size: 12px; padding: 1px 8px; border-radius: 999px; }
+.tag-ok { background: var(--pass-soft); color: var(--pass); }
+.tag-warn { background: var(--revise-soft); color: var(--revise); }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+h3 { font-size: 15px; margin: 18px 0 6px; }
+
+.rhythm { width: 100%; border-collapse: collapse; font-size: 15px; }
+.rhythm th, .rhythm td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.rhythm thead th { font-size: 12px; color: var(--muted); font-weight: 500; }
+.rhythm td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar { position: relative; height: 10px; min-width: 160px; background: var(--rule); border-radius: 999px; }
+.bar .band { position: absolute; top: 0; bottom: 0; background: var(--pass-soft); border: 1px solid var(--pass); border-radius: 999px; }
+.bar .dot { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); border: 2px solid var(--paper); }
+.state-ai_side .dot, .state-overshot .dot { background: var(--revise); }
+.state-ok .dot { background: var(--pass); }
+.prov { color: var(--muted); font-size: 12px; }
+
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 24px; margin: 0; }
+.metrics div { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.metrics dt { color: var(--muted); font-size: 13px; }
+.metrics dd { margin: 2px 0 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.foot { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 13px; }
+.foot a { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .page { padding: 28px 16px; }
+  .head, .work, .lower { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .manuscript { padding: 24px 20px; font-size: 17px; }
+  .bar { min-width: 100px; }
+}
+@media print {
+  :root { color-scheme: light; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .page { max-width: none; padding: 0; }
+  .work { grid-template-columns: minmax(0, 1fr); }
+  .notes-col { position: static; max-height: none; overflow: visible; }
+  .manuscript { border: 0; padding: 0; max-width: none; font-size: 11.5pt; }
+  .note, .manuscript, .lower > section { break-inside: avoid; }
+  .note { border: 1px solid #ccc; border-left-width: 3px; }
+  .back, .skip { display: none; }
+  .mark, .bar .band, .bar .dot, .tally .sw, .disclaimer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+<a class="skip" href="#text">Skip to the text</a>
+<main class="page">
+<header class="head verdict-revise">
+<div>
+<p class="brand">AI Slop Checker</p>
+<h1 class="verdict-word">Revise</h1>
+<p class="verdict-reason">3 hard findings (S-01, S-02). Rule: one hard finding, or tells from at least 5 different patterns, means revise.</p>
+<p class="facts-line"><span>230 words</span><span>English</span><span>Register: article</span><span>slop-check 0.1.0</span></p>
+</div>
+<div><table class="tally"><caption>Findings by category</caption><thead><tr><td></td><th scope="col" class="n" title="Fail: fix this before publishing">fail</th><th scope="col" class="n" title="Tell: typical of generated text">tell</th><th scope="col" class="n" title="Hint: worth a second look">hint</th></tr></thead><tbody><tr class="cat-substance"><th scope="row"><span class="sw" style="background:var(--substance)" aria-hidden="true"></span>Substance</th><td class="n">3</td><td class="n">4</td><td class="n">1</td></tr><tr class="cat-facts"><th scope="row"><span class="sw" style="background:var(--facts)" aria-hidden="true"></span>Facts</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-phrases"><th scope="row"><span class="sw" style="background:var(--phrases)" aria-hidden="true"></span>Stock phrases</th><td class="n zero">0</td><td class="n">12</td><td class="n">2</td></tr><tr class="cat-structure"><th scope="row"><span class="sw" style="background:var(--structure)" aria-hidden="true"></span>Structure</th><td class="n zero">0</td><td class="n">9</td><td class="n">3</td></tr><tr class="cat-rhythm"><th scope="row"><span class="sw" style="background:var(--muted)" aria-hidden="true"></span>Rhythm</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-form"><th scope="row"><span class="sw" style="background:var(--form)" aria-hidden="true"></span>Form</th><td class="n zero">0</td><td class="n">3</td><td class="n zero">0</td></tr></tbody></table></div>
+</header>
+<p class="disclaimer" role="note">slop-check does not tell whether AI wrote a text. It shows patterns you can check.</p>
+<div class="work">
+<section aria-labelledby="text-h">
+<h2 id="text-h">The text</h2>
+<p class="section-note">Marked passages link to the matching note. Rhythm is measured on the whole text and shown further down.</p>
+<div class="manuscript" id="text" tabindex="-1">
+
+<a class="mark m-form u-form" href="#note-1" title="Form 1: Label heading"># What Is Content Marketing?</a><a class="ref ref-form" id="ref-1" href="#note-1" aria-label="Notes 1">1</a>
+
+<a class="mark m-phrases u-phrases" href="#note-2" title="Stock phrases 2: In today&#x27;s fast-paced world">In today&#x27;s fast-paced world</a><a class="ref ref-phrases" id="ref-2" href="#note-2" aria-label="Notes 2">2</a>, content marketing is <a class="mark m-phrases u-phrases" href="#note-3" title="Stock phrases 3: Now more than ever">more important than ever</a><a class="ref ref-phrases" id="ref-3" href="#note-3" aria-label="Notes 3">3</a>. <a class="mark m-phrases u-phrases" href="#note-4" title="Stock phrases 4: It&#x27;s no secret that">It&#x27;s no secret</a><a class="ref ref-phrases" id="ref-4" href="#note-4" aria-label="Notes 4">4</a> that businesses that invest in quality content grow faster. <a class="mark m-phrases u-phrases" href="#note-5" title="Stock phrases 5: Let&#x27;s dive in">Let&#x27;s dive</a><a class="ref ref-phrases" id="ref-5" href="#note-5" aria-label="Notes 5">5</a> in and <a class="mark m-phrases u-phrases" href="#note-6" title="Stock phrases 6: Delve into">delve</a><a class="ref ref-phrases" id="ref-6" href="#note-6" aria-label="Notes 6">6</a> into the details.
+
+<a class="mark m-substance u-substance" href="#note-7" title="Substance 7: Vague attribution">Studies show</a><a class="ref ref-substance" id="ref-7" href="#note-7" aria-label="Notes 7">7</a> that <a class="mark m-substance u-substance" href="#note-8" title="Substance 8: Figure without a source">73%</a><a class="ref ref-substance" id="ref-8" href="#note-8" aria-label="Notes 8">8</a> of customers read a blog post before buying. Marketing expert <a class="mark m-substance u-substance" href="#note-9" title="Substance 9: Person without a source">Thomas Weber</a><a class="ref ref-substance" id="ref-9" href="#note-9" aria-label="Notes 9">9</a> says content is the <a class="mark m-phrases u-phrases" href="#note-10" title="Stock phrases 10: The key to success">key to success</a><a class="ref ref-phrases" id="ref-10" href="#note-10" aria-label="Notes 10">10</a>. <a class="mark m-substance u-substance" href="#note-11" title="Substance 11: Smoothed-over detail">A leading company</a><a class="ref ref-substance" id="ref-11" href="#note-11" aria-label="Notes 11">11</a> in the industry already uses this strategy and <a class="mark m-substance u-substance" href="#note-12" title="Substance 12: Figure without a source">tripled</a><a class="ref ref-substance" id="ref-12" href="#note-12" aria-label="Notes 12">12</a> its revenue.
+
+## Why Does This Matter?
+
+<a class="mark m-structure u-structure" href="#note-13" title="Structure 13: Rhetorical question as opener">Why does this matter?</a><a class="ref ref-structure" id="ref-13" href="#note-13" aria-label="Notes 13">13</a> Because customers decide differently today. <a class="mark m-structure u-structure" href="#note-14" title="Structure 14: Contrast template">It&#x27;s not about reach. It&#x27;s</a><a class="ref ref-structure" id="ref-14" href="#note-14" aria-label="Notes 14">14</a> about trust. Great <a class="mark m-structure u-structure" href="#note-15" title="Structure 15: Stacked lists of three">content creates value, strengthens the brand and builds relationships</a><a class="ref ref-structure" id="ref-15" href="#note-15" aria-label="Notes 15">15</a>. <a class="mark m-structure u-structure" href="#note-16" title="Structure 16: Stacked lists of three">It is clear, concise and engaging</a><a class="ref ref-structure" id="ref-16" href="#note-16" aria-label="Notes 16">16</a>.
+
+<a class="mark m-substance u-structure" href="#note-17" title="Structure 17: Connector at the start of a sentence; Substance 18: Advice without steps">Moreover</a><a class="ref ref-structure" id="ref-17" href="#note-17" aria-label="Notes 17">17</a><a class="mark m-substance u-substance" href="#note-18" title="Substance 18: Advice without steps">, page speed </a><a class="mark m-substance u-phrases" href="#note-19" title="Substance 18: Advice without steps; Stock phrases 19: Plays a crucial role">plays a </a><a class="mark m-substance u-phrases" href="#note-20" title="Substance 18: Advice without steps; Stock phrases 19: Plays a crucial role; Stock phrases 20: Crucial">crucial</a><a class="ref ref-phrases" id="ref-20" href="#note-20" aria-label="Notes 20">20</a><a class="mark m-substance u-phrases" href="#note-19" title="Substance 18: Advice without steps; Stock phrases 19: Plays a crucial role"> role</a><a class="ref ref-phrases" id="ref-19" href="#note-19" aria-label="Notes 19">19</a><a class="mark m-substance u-substance" href="#note-18" title="Substance 18: Advice without steps">. </a><a class="mark m-substance u-structure" href="#note-21" title="Substance 18: Advice without steps; Structure 21: Connector at the start of a sentence">Furthermore</a><a class="ref ref-structure" id="ref-21" href="#note-21" aria-label="Notes 21">21</a><a class="mark m-substance u-substance" href="#note-18" title="Substance 18: Advice without steps">, a </a><a class="mark m-substance u-phrases" href="#note-22" title="Substance 18: Advice without steps; Stock phrases 22: Holistic">holistic</a><a class="ref ref-phrases" id="ref-22" href="#note-22" aria-label="Notes 22">22</a><a class="mark m-substance u-substance" href="#note-18" title="Substance 18: Advice without steps"> strategy is </a><a class="mark m-substance u-phrases" href="#note-23" title="Substance 18: Advice without steps; Stock phrases 23: Vital / essential">essential</a><a class="ref ref-phrases" id="ref-23" href="#note-23" aria-label="Notes 23">23</a><a class="mark m-substance u-substance" href="#note-18" title="Substance 18: Advice without steps">. </a><a class="mark m-substance u-structure" href="#note-24" title="Substance 18: Advice without steps; Structure 24: Connector at the start of a sentence">Additionally</a><a class="ref ref-structure" id="ref-24" href="#note-24" aria-label="Notes 24">24</a><a class="mark m-substance u-substance" href="#note-18" title="Substance 18: Advice without steps">, you should know your audience, you should publish regularly, and you should always focus on quality.</a><a class="ref ref-substance" id="ref-18" href="#note-18" aria-label="Notes 18">18</a>
+
+<a class="mark m-structure u-structure" href="#note-25" title="Structure 25: Colon reveal">The result?</a><a class="ref ref-structure" id="ref-25" href="#note-25" aria-label="Notes 25">25</a> More visibility<a class="mark m-form u-form" href="#note-26" title="Form 26: Hyphen used as a dash"> - </a><a class="ref ref-form" id="ref-26" href="#note-26" aria-label="Notes 26">26</a>and more leads. Revenue rose,<a class="mark m-structure u-structure" href="#note-27" title="Structure 27: Trailing participle clause"> highlighting</a><a class="ref ref-structure" id="ref-27" href="#note-27" aria-label="Notes 27">27</a> the importance of content. Traffic grew,<a class="mark m-structure u-structure" href="#note-28" title="Structure 28: Trailing participle clause"> </a><a class="mark m-phrases u-phrases" href="#note-29" title="Structure 28: Trailing participle clause; Stock phrases 29: Underscore">underscoring</a><a class="ref ref-structure" id="ref-28" href="#note-28" aria-label="Notes 28">28</a><a class="ref ref-phrases" id="ref-29" href="#note-29" aria-label="Notes 29">29</a> the value of the investment.
+
+<a class="mark m-substance u-substance" href="#note-30" title="Substance 30: Interchangeable paragraph">Good communication is the foundation of every successful relationship between a brand and its audience. Those who communicate clearly avoid misunderstandings, build trust and lay the groundwork for a long-term relationship that benefits both sides and grows stronger over time.</a><a class="ref ref-substance" id="ref-30" href="#note-30" aria-label="Notes 30">30</a>
+
+<a class="mark m-form u-form" href="#note-31" title="Form 31: Label heading">## Conclusion</a><a class="ref ref-form" id="ref-31" href="#note-31" aria-label="Notes 31">31</a>
+
+<a class="mark m-phrases u-phrases" href="#note-32" title="Stock phrases 32: In conclusion / To sum up; Structure 33: Summary ending">In conclusion</a><a class="ref ref-phrases" id="ref-32" href="#note-32" aria-label="Notes 32">32</a><a class="mark m-structure u-structure" href="#note-33" title="Structure 33: Summary ending">,</a><a class="ref ref-structure" id="ref-33" href="#note-33" aria-label="Notes 33">33</a> content marketing is a true <a class="mark m-phrases u-phrases" href="#note-34" title="Stock phrases 34: Game-changer">game-changer</a><a class="ref ref-phrases" id="ref-34" href="#note-34" aria-label="Notes 34">34</a>. With the right content, you can <a class="mark m-phrases u-phrases" href="#note-35" title="Stock phrases 35: Unlock the potential">unlock the full potential</a><a class="ref ref-phrases" id="ref-35" href="#note-35" aria-label="Notes 35">35</a> of your website. <a class="mark m-structure u-structure" href="#note-36" title="Structure 36: Grand closing line">The future belongs to those who act now.</a><a class="ref ref-structure" id="ref-36" href="#note-36" aria-label="Notes 36">36</a>
+</div>
+</section>
+<section class="notes-col" aria-labelledby="notes-h" tabindex="0">
+<h2 id="notes-h">Notes</h2>
+<ol class="notes"><li class="note c-form" id="note-1"><div class="note-head"><span class="note-num">1</span><span class="note-name">Label heading</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-1" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Form / F-06 / line 3</div><p class="note-excerpt">“# What Is Content Marketing?”</p><p class="note-msg">Headings like &quot;What is X?&quot;, &quot;Conclusion&quot; or &quot;Introduction&quot; say where you are, not what you learn.</p><p class="note-fix"><b>Fix:</b> Rewrite the heading as a statement or promise.</p></li><li class="note c-phrases" id="note-2"><div class="note-head"><span class="note-num">2</span><span class="note-name">In today&#x27;s fast-paced world</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-2" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-01 / line 5</div><p class="note-excerpt">“In today&#x27;s fast-paced world”</p><p class="note-msg">Stock phrase &quot;In today&#x27;s fast-paced world&quot; (In today&#x27;s fast-paced world): Era framing with no content.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-phrases" id="note-3"><div class="note-head"><span class="note-num">3</span><span class="note-name">Now more than ever</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-3" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-04 / line 5</div><p class="note-excerpt">“more important than ever”</p><p class="note-msg">Stock phrase &quot;more important than ever&quot; (Now more than ever): Escalation without a comparison point. Reported because such phrases pile up here.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-phrases" id="note-4"><div class="note-head"><span class="note-num">4</span><span class="note-name">It&#x27;s no secret that</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-4" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-06 / line 5</div><p class="note-excerpt">“It&#x27;s no secret”</p><p class="note-msg">Stock phrase &quot;It&#x27;s no secret&quot; (It&#x27;s no secret that): Claims common knowledge instead of showing it.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-phrases" id="note-5"><div class="note-head"><span class="note-num">5</span><span class="note-name">Let&#x27;s dive in</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-5" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-08 / line 5</div><p class="note-excerpt">“Let&#x27;s dive”</p><p class="note-msg">Stock phrase &quot;Let&#x27;s dive&quot; (Let&#x27;s dive in): Swimming metaphor as a transition. Reported because such phrases pile up here.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-phrases" id="note-6"><div class="note-head"><span class="note-num">6</span><span class="note-name">Delve into</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-6" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-07 / line 5</div><p class="note-excerpt">“delve”</p><p class="note-msg">Stock phrase &quot;delve&quot; (Delve into): Overused verb in generated prose.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-substance" id="note-7"><div class="note-head"><span class="note-num">7</span><span class="note-name">Vague attribution</span><span class="sev sev-fail" title="Fail: fix this before publishing">fail</span><a class="back" href="#ref-7" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Substance / S-02 / line 7</div><p class="note-excerpt">“Studies show”</p><p class="note-msg">&quot;Studies show&quot;, &quot;experts say&quot;, &quot;according to a survey&quot;: an authority is invoked but not named.</p><p class="note-fix"><b>Fix:</b> Name and link the source, or rewrite the sentence as your own experience.</p></li><li class="note c-substance" id="note-8"><div class="note-head"><span class="note-num">8</span><span class="note-name">Figure without a source</span><span class="sev sev-fail" title="Fail: fix this before publishing">fail</span><a class="back" href="#ref-8" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Substance / S-01 / line 7</div><p class="note-excerpt">“73%”</p><p class="note-msg">Figure &quot;73%&quot; without a source in the same sentence.</p><p class="note-fix"><b>Fix:</b> Add the source as a link or (source: name) in the same sentence, mark the figure as your own experience, or cut it.</p></li><li class="note c-substance" id="note-9"><div class="note-head"><span class="note-num">9</span><span class="note-name">Person without a source</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-9" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Substance / S-03 / line 7</div><p class="note-excerpt">“Thomas Weber”</p><p class="note-msg">Thomas Weber is quoted or paraphrased without a source in the sentence. Does the person exist, and did they say this?</p><p class="note-fix"><b>Fix:</b> Add a link to the original source or cut the person. Allow your own name with the config key own_names.</p></li><li class="note c-phrases" id="note-10"><div class="note-head"><span class="note-num">10</span><span class="note-name">The key to success</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-10" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-14 / line 7</div><p class="note-excerpt">“key to success”</p><p class="note-msg">Stock phrase &quot;key to success&quot; (The key to success): Success promise with no content.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-substance" id="note-11"><div class="note-head"><span class="note-num">11</span><span class="note-name">Smoothed-over detail</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-11" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Substance / S-07 / line 7</div><p class="note-excerpt">“A leading company”</p><p class="note-msg">A concrete detail is replaced by a vague one: &quot;a leading provider&quot;, &quot;well-known companies&quot;, &quot;numerous clients&quot;.</p><p class="note-fix"><b>Fix:</b> Name it, or describe the detail that makes the case specific.</p></li><li class="note c-substance" id="note-12"><div class="note-head"><span class="note-num">12</span><span class="note-name">Figure without a source</span><span class="sev sev-fail" title="Fail: fix this before publishing">fail</span><a class="back" href="#ref-12" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Substance / S-01 / line 7</div><p class="note-excerpt">“tripled”</p><p class="note-msg">Figure &quot;tripled&quot; without a source in the same sentence.</p><p class="note-fix"><b>Fix:</b> Add the source as a link or (source: name) in the same sentence, mark the figure as your own experience, or cut it.</p></li><li class="note c-structure" id="note-13"><div class="note-head"><span class="note-num">13</span><span class="note-name">Rhetorical question as opener</span><span class="sev sev-hint" title="Hint: worth a second look">hint</span><a class="back" href="#ref-13" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-05 / line 11</div><p class="note-excerpt">“Why does this matter?”</p><p class="note-msg">A paragraph opens with a question it answers itself right away. Once is fine, repeated it reads like a template.</p><p class="note-fix"><b>Fix:</b> Write the answer as the first sentence.</p></li><li class="note c-structure" id="note-14"><div class="note-head"><span class="note-num">14</span><span class="note-name">Contrast template</span><span class="sev sev-hint" title="Hint: worth a second look">hint</span><a class="back" href="#ref-14" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-01 / line 11</div><p class="note-excerpt">“It&#x27;s not about reach. It&#x27;s”</p><p class="note-msg">&quot;It&#x27;s not X. It&#x27;s Y.&quot; and similar set-ups that invent a position only to knock it down. Once is a hint, twice is a pattern.</p><p class="note-fix"><b>Fix:</b> Drop the straw position and argue your point directly.</p></li><li class="note c-structure" id="note-15"><div class="note-head"><span class="note-num">15</span><span class="note-name">Stacked lists of three</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-15" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-02 / line 11</div><p class="note-excerpt">“content creates value, strengthens the brand and builds relationships”</p><p class="note-msg">Three items in a row again and again (&quot;fast, simple and secure&quot;). One is normal, many sound mechanical.</p><p class="note-fix"><b>Fix:</b> Shorten the lists: two items, or one with evidence.</p></li><li class="note c-structure" id="note-16"><div class="note-head"><span class="note-num">16</span><span class="note-name">Stacked lists of three</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-16" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-02 / line 11</div><p class="note-excerpt">“It is clear, concise and engaging”</p><p class="note-msg">Three items in a row again and again (&quot;fast, simple and secure&quot;). One is normal, many sound mechanical.</p><p class="note-fix"><b>Fix:</b> Shorten the lists: two items, or one with evidence.</p></li><li class="note c-structure" id="note-17"><div class="note-head"><span class="note-num">17</span><span class="note-name">Connector at the start of a sentence</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-17" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-03 / line 13</div><p class="note-excerpt">“Moreover”</p><p class="note-msg">Repeated sentence openers like &quot;Moreover&quot;, &quot;Furthermore&quot;, &quot;Additionally&quot;. They stack rather than connect.</p><p class="note-fix"><b>Fix:</b> Cut the connector or state the relation (because, so, but).</p></li><li class="note c-substance" id="note-18"><div class="note-head"><span class="note-num">18</span><span class="note-name">Advice without steps</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-18" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Substance / S-06 / line 13</div><p class="note-excerpt">“Moreover, page speed plays a crucial role. Furthermore, a holistic strategy is essential. Additionally, you should know your audience, you should publish reg...”</p><p class="note-msg">5 instructions in one paragraph, but no steps and no example.</p><p class="note-fix"><b>Fix:</b> Break the advice into steps or add an example from practice.</p></li><li class="note c-phrases" id="note-19"><div class="note-head"><span class="note-num">19</span><span class="note-name">Plays a crucial role</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-19" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-12 / line 13</div><p class="note-excerpt">“plays a crucial role”</p><p class="note-msg">Stock phrase &quot;plays a crucial role&quot; (Plays a crucial role): Importance claimed, not explained. Reported because such phrases pile up here.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-phrases" id="note-20"><div class="note-head"><span class="note-num">20</span><span class="note-name">Crucial</span><span class="sev sev-hint" title="Hint: worth a second look">hint</span><a class="back" href="#ref-20" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-65 / line 13</div><p class="note-excerpt">“crucial”</p><p class="note-msg">Stock phrase &quot;crucial&quot; (Crucial): Frequent importance word.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-structure" id="note-21"><div class="note-head"><span class="note-num">21</span><span class="note-name">Connector at the start of a sentence</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-21" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-03 / line 13</div><p class="note-excerpt">“Furthermore”</p><p class="note-msg">Repeated sentence openers like &quot;Moreover&quot;, &quot;Furthermore&quot;, &quot;Additionally&quot;. They stack rather than connect.</p><p class="note-fix"><b>Fix:</b> Cut the connector or state the relation (because, so, but).</p></li><li class="note c-phrases" id="note-22"><div class="note-head"><span class="note-num">22</span><span class="note-name">Holistic</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-22" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-26 / line 13</div><p class="note-excerpt">“holistic”</p><p class="note-msg">Stock phrase &quot;holistic&quot; (Holistic): Buzzword that pretends completeness. Reported because such phrases pile up here.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-phrases" id="note-23"><div class="note-head"><span class="note-num">23</span><span class="note-name">Vital / essential</span><span class="sev sev-hint" title="Hint: worth a second look">hint</span><a class="back" href="#ref-23" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-66 / line 13</div><p class="note-excerpt">“essential”</p><p class="note-msg">Stock phrase &quot;essential&quot; (Vital / essential): Must-have words, often without a reason.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-structure" id="note-24"><div class="note-head"><span class="note-num">24</span><span class="note-name">Connector at the start of a sentence</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-24" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-03 / line 13</div><p class="note-excerpt">“Additionally”</p><p class="note-msg">Repeated sentence openers like &quot;Moreover&quot;, &quot;Furthermore&quot;, &quot;Additionally&quot;. They stack rather than connect.</p><p class="note-fix"><b>Fix:</b> Cut the connector or state the relation (because, so, but).</p></li><li class="note c-structure" id="note-25"><div class="note-head"><span class="note-num">25</span><span class="note-name">Colon reveal</span><span class="sev sev-hint" title="Hint: worth a second look">hint</span><a class="back" href="#ref-25" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-06 / line 15</div><p class="note-excerpt">“The result?”</p><p class="note-msg">A short lead-in with a colon or question mark builds fake suspense (&quot;The result:&quot;, &quot;The reason?&quot;).</p><p class="note-fix"><b>Fix:</b> Build a normal sentence: subject, verb, claim.</p></li><li class="note c-form" id="note-26"><div class="note-head"><span class="note-num">26</span><span class="note-name">Hyphen used as a dash</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-26" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Form / F-03 / line 15</div><p class="note-excerpt">“...n quality. The result? More visibility - and more leads. Revenue rose, highligh...”</p><p class="note-msg">&quot; - &quot; with spaces stands in for a dash.</p><p class="note-fix"><b>Fix:</b> Replace it with a comma, period or colon.</p></li><li class="note c-structure" id="note-27"><div class="note-head"><span class="note-num">27</span><span class="note-name">Trailing participle clause</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-27" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-09 / line 15</div><p class="note-excerpt">“highlighting”</p><p class="note-msg">A sentence gets an interpretation tacked on at the end (&quot;, highlighting ...&quot;, &quot;, underscoring ...&quot;).</p><p class="note-fix"><b>Fix:</b> Cut the tail or turn it into its own sentence with evidence.</p></li><li class="note c-structure" id="note-28"><div class="note-head"><span class="note-num">28</span><span class="note-name">Trailing participle clause</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-28" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-09 / line 15</div><p class="note-excerpt">“underscoring”</p><p class="note-msg">A sentence gets an interpretation tacked on at the end (&quot;, highlighting ...&quot;, &quot;, underscoring ...&quot;).</p><p class="note-fix"><b>Fix:</b> Cut the tail or turn it into its own sentence with evidence.</p></li><li class="note c-phrases" id="note-29"><div class="note-head"><span class="note-num">29</span><span class="note-name">Underscore</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-29" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-47 / line 15</div><p class="note-excerpt">“underscoring”</p><p class="note-msg">Stock phrase &quot;underscoring&quot; (Underscore): Emphasis verb. Reported because such phrases pile up here.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-substance" id="note-30"><div class="note-head"><span class="note-num">30</span><span class="note-name">Interchangeable paragraph</span><span class="sev sev-hint" title="Hint: worth a second look">hint</span><a class="back" href="#ref-30" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Substance / S-04 / line 17</div><p class="note-excerpt">“Good communication is the foundation of every successful relationship between a brand and its audience. Those who communicate clearly avoid misunderstandings...”</p><p class="note-msg">Paragraph of 40 words with no number, name, date, example or first-hand experience: it could be in any text.</p><p class="note-fix"><b>Fix:</b> Add one concrete detail from your own experience or cut the paragraph.</p></li><li class="note c-form" id="note-31"><div class="note-head"><span class="note-num">31</span><span class="note-name">Label heading</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-31" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Form / F-06 / line 19</div><p class="note-excerpt">“## Conclusion”</p><p class="note-msg">Headings like &quot;What is X?&quot;, &quot;Conclusion&quot; or &quot;Introduction&quot; say where you are, not what you learn.</p><p class="note-fix"><b>Fix:</b> Rewrite the heading as a statement or promise.</p></li><li class="note c-phrases" id="note-32"><div class="note-head"><span class="note-num">32</span><span class="note-name">In conclusion / To sum up</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-32" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-35 / line 21</div><p class="note-excerpt">“In conclusion”</p><p class="note-msg">Stock phrase &quot;In conclusion&quot; (In conclusion / To sum up): Closing formula instead of a closing thought. Reported because such phrases pile up here.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-structure" id="note-33"><div class="note-head"><span class="note-num">33</span><span class="note-name">Summary ending</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-33" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-08 / line 21</div><p class="note-excerpt">“In conclusion,”</p><p class="note-msg">The text ends by repeating itself (&quot;In summary&quot;, &quot;All in all&quot;).</p><p class="note-fix"><b>Fix:</b> Cut the closing paragraph or replace it with something new.</p></li><li class="note c-phrases" id="note-34"><div class="note-head"><span class="note-num">34</span><span class="note-name">Game-changer</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-34" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-21 / line 21</div><p class="note-excerpt">“game-changer”</p><p class="note-msg">Stock phrase &quot;game-changer&quot; (Game-changer): Ad-copy superlative.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-phrases" id="note-35"><div class="note-head"><span class="note-num">35</span><span class="note-name">Unlock the potential</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-35" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Stock phrases / P-15 / line 21</div><p class="note-excerpt">“unlock the full potential”</p><p class="note-msg">Stock phrase &quot;unlock the full potential&quot; (Unlock the potential): Potential rhetoric without a result.</p><p class="note-fix"><b>Fix:</b> Cut it or replace it with a concrete statement.</p></li><li class="note c-structure" id="note-36"><div class="note-head"><span class="note-num">36</span><span class="note-name">Grand closing line</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span><a class="back" href="#ref-36" aria-label="Skip to the text">&uarr;</a></div><div class="note-meta">Structure / T-07 / line 21</div><p class="note-excerpt">“The future belongs to those who act now.”</p><p class="note-msg">The last sentence ends with a grand gesture (&quot;The future is yours&quot;, &quot;The first step starts today&quot;).</p><p class="note-fix"><b>Fix:</b> Cut the closing line or replace it with a concrete step.</p></li><li class="note c-substance" id="note-37"><div class="note-head"><span class="note-num">37</span><span class="note-name">Little concrete detail</span><span class="sev sev-tell" title="Tell: typical of generated text">tell</span></div><div class="note-meta">Substance / S-05 / line 5</div><p class="note-msg">Only 0.9 concrete details per 100 words across the text (provisional threshold 1.0).</p><p class="note-fix"><b>Fix:</b> Add your own cases, sourced figures and examples.</p></li></ol>
+</section>
+</div>
+<div class="lower"><section><h2>People to verify</h2><p class="section-note">Every named person should exist and have said what the text claims. The tool does not check this for you.</p><ul class="plain"><li><span class="val">Thomas Weber</span><span class="meta">line 7</span><span class="tag tag-warn">not in your source</span></li></ul></section><section><h2>Fact check against your source</h2><p class="section-note">Numbers and claims without a match in the source need a reference or should go.</p><h3>In the source, missing in the text</h3><p class="empty">Nothing from the source went missing.</p><h3>New in the text</h3><p class="empty">No new numbers or claims.</p></section><section class="wide"><h2>Measurements</h2><dl class="metrics"><div><dt>Concrete details per 100 words</dt><dd>0.9</dd></div><div><dt>Words of running text</dt><dd>221</dd></div><div><dt>Limit for revise</dt><dd>6</dd></div></dl></section></div>
+<footer class="foot">AI Slop Checker · <a href="https://github.com/simplifiers/ai-slop-checker">github.com/simplifiers/ai-slop-checker</a></footer>
+</main>
+</body>
+</html>

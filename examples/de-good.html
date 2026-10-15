@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:">
+<title>AI Slop Checker Bericht: Bestanden</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --paper: #ffffff;
+  --canvas: #f6f5fa;
+  --ink: #1c1a24;
+  --muted: #5d5970;
+  --rule: #e4e1ee;
+  --accent: #7c3aed;
+  --accent-soft: #f1eafe;
+  --pass: #15803d;
+  --pass-soft: #e8f6ed;
+  --revise: #b42318;
+  --revise-soft: #fdecea;
+  --short: #5d5970;
+  --short-soft: #efedf5;
+  --substance: #c81e1e;
+  --substance-bg: #fde3e1;
+  --facts: #1d5fc9;
+  --facts-bg: #e2ecfd;
+  --form: #c2560c;
+  --form-bg: #fde9d6;
+  --phrases: #8a6a00;
+  --phrases-bg: #fdf3c4;
+  --structure: #6d28d9;
+  --structure-bg: #ece3fd;
+  --focus: #7c3aed;
+  --serif: "Iowan Old Style", "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b1924;
+    --canvas: #121019;
+    --ink: #ece9f5;
+    --muted: #aaa4bf;
+    --rule: #34304a;
+    --accent: #a78bfa;
+    --accent-soft: #2a2240;
+    --pass: #4ade80;
+    --pass-soft: #13291c;
+    --revise: #f87171;
+    --revise-soft: #3a1616;
+    --short: #aaa4bf;
+    --short-soft: #26233a;
+    --substance: #fca5a5;
+    --substance-bg: #4a1818;
+    --facts: #93c5fd;
+    --facts-bg: #172a4d;
+    --form: #fdba74;
+    --form-bg: #45250d;
+    --phrases: #fde047;
+    --phrases-bg: #3d3408;
+    --structure: #c4b5fd;
+    --structure-bg: #2e2050;
+    --focus: #c4b5fd;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 16px/1.55 var(--sans);
+}
+a { color: var(--accent); }
+a:focus-visible, .mark:focus-visible, .notes-col:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--paper); padding: 8px 12px; z-index: 10; }
+.page { max-width: 1180px; margin: 0 auto; padding: 48px 32px 32px; }
+
+/* Head */
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 1fr);
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--rule);
+}
+.brand { font-weight: 650; letter-spacing: -0.01em; color: var(--accent); margin: 0 0 28px; font-size: 15px; }
+.verdict-word {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(48px, 6.2vw, 84px);
+  overflow-wrap: anywhere;
+  hyphens: manual;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.verdict-pass .verdict-word { color: var(--pass); }
+.verdict-revise .verdict-word { color: var(--revise); }
+.verdict-too_short .verdict-word { color: var(--short); }
+.verdict-reason { font-size: 18px; margin: 16px 0 0; max-width: 34em; }
+.facts-line { color: var(--muted); margin: 10px 0 0; font-size: 15px; }
+.facts-line span + span::before { content: ""; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--rule); margin: 0 10px 3px; }
+
+.tally { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tally caption { text-align: left; color: var(--muted); font-size: 13px; padding-bottom: 8px; }
+.tally th, .tally td { padding: 9px 0; border-bottom: 1px solid var(--rule); text-align: left; font-weight: 400; }
+.tally th { font-weight: 600; }
+.tally td.n { text-align: right; width: 4.5em; font-variant-numeric: tabular-nums; }
+.tally td.zero { color: var(--muted); }
+.tally .sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 10px; vertical-align: 0; }
+.tally thead th { font-size: 12px; color: var(--muted); font-weight: 500; }
+.tally tr.cat-substance th { font-size: 17px; }
+
+.disclaimer {
+  margin: 28px 0 0;
+  padding: 14px 18px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  max-width: 62em;
+}
+
+/* Body: manuscript + notes */
+.work { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: 40px; margin-top: 40px; }
+h2 { font-size: 20px; letter-spacing: -0.01em; margin: 0 0 6px; }
+.section-note { color: var(--muted); font-size: 14px; margin: 0 0 18px; max-width: 40em; }
+.manuscript {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 40px 44px;
+  font-family: var(--serif);
+  font-size: 18.5px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-width: 44em;
+}
+.mark {
+  border-radius: 2px;
+  padding: 0.08em 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  text-decoration: none;
+  color: inherit;
+}
+.m-substance { background: var(--substance-bg); box-shadow: inset 0 -2px 0 var(--substance); }
+.m-facts { background: var(--facts-bg); box-shadow: inset 0 -2px 0 var(--facts); }
+.m-form { background: var(--form-bg); box-shadow: inset 0 -2px 0 var(--form); }
+.m-phrases { background: var(--phrases-bg); box-shadow: inset 0 -2px 0 var(--phrases); }
+.m-structure { background: var(--structure-bg); box-shadow: inset 0 -2px 0 var(--structure); }
+.u-substance { box-shadow: inset 0 -2px 0 var(--substance); }
+.u-facts { box-shadow: inset 0 -2px 0 var(--facts); }
+.u-form { box-shadow: inset 0 -2px 0 var(--form); }
+.u-phrases { box-shadow: inset 0 -2px 0 var(--phrases); }
+.u-structure { box-shadow: inset 0 -2px 0 var(--structure); }
+.ref {
+  font-family: var(--sans);
+  font-size: 0.6em;
+  font-weight: 650;
+  vertical-align: 0.6em;
+  line-height: 0;
+  margin-left: 1px;
+  text-decoration: none;
+  padding: 0 2px;
+  white-space: nowrap;
+}
+.ref-substance { color: var(--substance); }
+.ref-facts { color: var(--facts); }
+.ref-form { color: var(--form); }
+.ref-phrases { color: var(--phrases); }
+.ref-structure { color: var(--structure); }
+
+.notes { list-style: none; margin: 0; padding: 0; }
+@media (min-width: 901px) {
+  .notes-col { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 32px); overflow-y: auto; padding-right: 6px; overscroll-behavior: contain; }
+}
+.note {
+  position: relative;
+  padding: 14px 16px 14px 18px;
+  border-left: 3px solid var(--rule);
+  margin-bottom: 10px;
+  background: var(--paper);
+  border-radius: 0 10px 10px 0;
+  scroll-margin-top: 24px;
+}
+.note:target { outline: 2px solid var(--accent); outline-offset: 0; }
+.note.c-substance { border-left-color: var(--substance); }
+.note.c-facts { border-left-color: var(--facts); }
+.note.c-form { border-left-color: var(--form); }
+.note.c-phrases { border-left-color: var(--phrases); }
+.note.c-structure { border-left-color: var(--structure); }
+.note.c-rhythm { border-left-color: var(--muted); }
+.note-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-size: 14px; }
+.note-num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.note-name { font-weight: 600; }
+.note-meta { color: var(--muted); font-size: 13px; }
+.sev { font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.sev-fail { color: var(--revise); }
+.sev-tell { color: var(--form); }
+.sev-hint { color: var(--muted); }
+.note-excerpt { font-family: var(--serif); font-style: italic; margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+.note-msg { margin: 6px 0 0; font-size: 15px; }
+.note-fix { margin: 6px 0 0; font-size: 15px; }
+.note-fix b { color: var(--accent); font-weight: 600; }
+.back { font-size: 13px; margin-left: auto; }
+
+/* Lower sections */
+.lower { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--rule); }
+.lower .wide { grid-column: 1 / -1; }
+.plain { list-style: none; padding: 0; margin: 0; }
+.plain li { padding: 9px 0; border-bottom: 1px solid var(--rule); display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.plain .val { font-weight: 600; font-variant-numeric: tabular-nums; }
+.plain .meta { color: var(--muted); font-size: 14px; }
+.tag { font-size: 12px; padding: 1px 8px; border-radius: 999px; }
+.tag-ok { background: var(--pass-soft); color: var(--pass); }
+.tag-warn { background: var(--revise-soft); color: var(--revise); }
+.empty { color: var(--muted); font-size: 15px; margin: 0; }
+h3 { font-size: 15px; margin: 18px 0 6px; }
+
+.rhythm { width: 100%; border-collapse: collapse; font-size: 15px; }
+.rhythm th, .rhythm td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+.rhythm thead th { font-size: 12px; color: var(--muted); font-weight: 500; }
+.rhythm td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar { position: relative; height: 10px; min-width: 160px; background: var(--rule); border-radius: 999px; }
+.bar .band { position: absolute; top: 0; bottom: 0; background: var(--pass-soft); border: 1px solid var(--pass); border-radius: 999px; }
+.bar .dot { position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); border: 2px solid var(--paper); }
+.state-ai_side .dot, .state-overshot .dot { background: var(--revise); }
+.state-ok .dot { background: var(--pass); }
+.prov { color: var(--muted); font-size: 12px; }
+
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 24px; margin: 0; }
+.metrics div { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.metrics dt { color: var(--muted); font-size: 13px; }
+.metrics dd { margin: 2px 0 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.foot { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 13px; }
+.foot a { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .page { padding: 28px 16px; }
+  .head, .work, .lower { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .manuscript { padding: 24px 20px; font-size: 17px; }
+  .bar { min-width: 100px; }
+}
+@media print {
+  :root { color-scheme: light; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .page { max-width: none; padding: 0; }
+  .work { grid-template-columns: minmax(0, 1fr); }
+  .notes-col { position: static; max-height: none; overflow: visible; }
+  .manuscript { border: 0; padding: 0; max-width: none; font-size: 11.5pt; }
+  .note, .manuscript, .lower > section { break-inside: avoid; }
+  .note { border: 1px solid #ccc; border-left-width: 3px; }
+  .back, .skip { display: none; }
+  .mark, .bar .band, .bar .dot, .tally .sw, .disclaimer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+<a class="skip" href="#text">Zum Text springen</a>
+<main class="page">
+<header class="head verdict-pass">
+<div>
+<p class="brand">AI Slop Checker</p>
+<h1 class="verdict-word">Bestanden</h1>
+<p class="verdict-reason">Kein harter Fund und Auffälligkeiten aus 0 Mustern (Grenze 5). Gemessene Merkmale auf der KI-Seite: 3 (Grenze 6). Hinweise zählen nicht.</p>
+<p class="facts-line"><span>332 Wörter</span><span>Deutsch</span><span>Textsorte: article</span><span>slop-check 0.1.0</span></p>
+</div>
+<div><table class="tally"><caption>Befunde nach Kategorie</caption><thead><tr><td></td><th scope="col" class="n" title="Fehler: vor der Veröffentlichung beheben">Fehler</th><th scope="col" class="n" title="Auffällig: typisch für generierten Text">Auffällig</th><th scope="col" class="n" title="Hinweis: ein zweiter Blick lohnt sich">Hinweis</th></tr></thead><tbody><tr class="cat-substance"><th scope="row"><span class="sw" style="background:var(--substance)" aria-hidden="true"></span>Substanz</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-facts"><th scope="row"><span class="sw" style="background:var(--facts)" aria-hidden="true"></span>Fakten</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-phrases"><th scope="row"><span class="sw" style="background:var(--phrases)" aria-hidden="true"></span>Floskeln</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-structure"><th scope="row"><span class="sw" style="background:var(--structure)" aria-hidden="true"></span>Struktur</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr><tr class="cat-rhythm"><th scope="row"><span class="sw" style="background:var(--muted)" aria-hidden="true"></span>Rhythmus</th><td class="n zero">0</td><td class="n zero">0</td><td class="n">3</td></tr><tr class="cat-form"><th scope="row"><span class="sw" style="background:var(--form)" aria-hidden="true"></span>Form</th><td class="n zero">0</td><td class="n zero">0</td><td class="n zero">0</td></tr></tbody></table></div>
+</header>
+<p class="disclaimer" role="note">slop-check sagt nicht, ob eine KI einen Text geschrieben hat. Es zeigt Muster, die du prüfen kannst.</p>
+<div class="work">
+<section aria-labelledby="text-h">
+<h2 id="text-h">Der Text</h2>
+<p class="section-note">Markierte Stellen führen zur passenden Anmerkung. Rhythmus wird über den ganzen Text gemessen und steht weiter unten.</p>
+<div class="manuscript" id="text" tabindex="-1">
+
+# Drei Fragen, die wir jedem neuen Kunden vor dem ersten Artikel stellen
+
+Ich schreibe seit 2014 Fachartikel für Handwerksbetriebe. Am Anfang habe ich Themen nach Suchvolumen ausgewählt. Das ging fast zwei Jahre gut, bis ein Tischler aus Kassel mich fragte, warum seine meistgelesenen Artikel nie zu einem Auftrag geführt hatten.
+
+Er hatte recht. Seitdem stellen wir vor jedem Text drei Fragen.
+
+## Wer ruft nach dem Lesen an?
+
+Nicht wer liest, sondern wer anruft. Bei dem Tischler waren es fast immer Paare, die ein Haus von 1960 bis 1980 renovieren und eine Treppe brauchen. Also schrieben wir über Treppen in genau diesen Häusern: welche Holzarten mit alten Estrichen klarkommen, wie lange der Einbau dauert, was er kostet.
+
+Im ersten Quartal danach kamen elf Anfragen über die Website. Vorher waren es zwei im Quartal. Das ist kein Beweis für eine Methode, aber für diesen Betrieb hat es gereicht.
+
+## Was weiß nur dieser Betrieb?
+
+Jeder kann erklären, was eine Wangentreppe ist. Kaum jemand weiß, dass der Tischler Treppen aus Eiche in Altbauten erst nach drei Wochen Lagerung im Haus einbaut, weil das Holz sonst nachtrocknet und knarzt. Solche Sätze stehen in keinem Ratgeber. Wir holen sie im Interview ab, meistens mit der Frage: &quot;Was machen Sie anders als die Kollegen?&quot;
+
+Manchmal kommt darauf nichts. Dann fragen wir nach dem letzten Auftrag, der schiefging. Darauf kommt immer etwas.
+
+## Welche Zahl darf in den Text?
+
+Nur Zahlen, die der Betrieb selbst gemessen hat oder die wir belegen können. Laut der [Erhebung des Branchenverbands](https://example.org/erhebung-2025) planen viele Eigentümer eine Renovierung in den nächsten fünf Jahren; die Zahl dazu steht dort, wir verlinken sie, statt sie abzuschreiben.
+
+Wenn der Tischler sagt, dass ein Einbau &quot;meistens zwei Tage&quot; dauert, schreiben wir genau das. Keine gerundeten Prozentwerte, die gut klingen und niemand prüfen kann.
+
+Was ich daraus gelernt habe: Ein Artikel, der zu einem Anruf führen soll, beginnt nicht bei der Suchmaschine. Er beginnt bei der Frage, die der Kunde am Telefon als Erstes stellt. Notier dir diese Frage beim nächsten Gespräch.
+</div>
+</section>
+<section class="notes-col" aria-labelledby="notes-h" tabindex="0">
+<h2 id="notes-h">Anmerkungen</h2>
+<ol class="notes"><li class="note c-rhythm" id="note-1"><div class="note-head"><span class="note-num">1</span><span class="note-name">Kurze Sätze</span><span class="sev sev-hint" title="Hinweis: ein zweiter Blick lohnt sich">Hinweis</span></div><div class="note-meta">Rhythmus / R-01 / Zeile 5</div><p class="note-msg">Wörter je Satz: 12,1 liegt unter dem Band 13,4 bis 22,3, auf der Seite generierter Texte.</p><p class="note-fix"><b>Tipp:</b> Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10).</p></li><li class="note c-rhythm" id="note-2"><div class="note-head"><span class="note-num">2</span><span class="note-name">Kurze Absätze</span><span class="sev sev-hint" title="Hinweis: ein zweiter Blick lohnt sich">Hinweis</span></div><div class="note-meta">Rhythmus / R-03 / Zeile 5</div><p class="note-msg">Wörter je Absatz: 33,7 liegt unter dem Band 49,4 bis 121,2, auf der Seite generierter Texte.</p><p class="note-fix"><b>Tipp:</b> Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10).</p></li><li class="note c-rhythm" id="note-3"><div class="note-head"><span class="note-num">3</span><span class="note-name">Hohe Wortvielfalt</span><span class="sev sev-hint" title="Hinweis: ein zweiter Blick lohnt sich">Hinweis</span></div><div class="note-meta">Rhythmus / R-04 / Zeile 5</div><p class="note-msg">Wortvielfalt (MATTR): 0,906 liegt über dem Band 0,828 bis 0,887, auf der Seite generierter Texte.</p><p class="note-fix"><b>Tipp:</b> Nur ein Hinweis: Ein einzelner Wert außerhalb des Bands kommt auch bei Menschen oft vor. Zählt erst im Zusammentreffen (R-10).</p></li></ol>
+</section>
+</div>
+<div class="lower"><section><h2>Genannte Personen prüfen</h2><p class="section-note">Jede genannte Person sollte existieren und gesagt haben, was der Text behauptet. Das prüft das Werkzeug nicht für dich.</p><p class="empty">keine</p></section><section><h2>Fakten-Abgleich mit deiner Quelle</h2><p class="section-note">Zahlen und Aussagen ohne Gegenstück in der Quelle brauchen einen Beleg oder fliegen raus.</p><h3>In der Quelle, fehlt im Text</h3><p class="empty">Aus der Quelle ist nichts verloren gegangen.</p><h3>Neu im Text</h3><p class="empty">Keine neuen Zahlen oder Aussagen.</p></section><section class="wide"><h2>Rhythmus</h2><p class="section-note">Jeder Balken zeigt den Bereich menschlicher Nachrichtentexte (Wikinews, 10. bis 90. Perzentil). Der Punkt ist dieser Text. Ein Wert außerhalb kommt bei Menschen oft vor; erst viele Werte gleichzeitig auf der generierten Seite zählen für das Urteil.</p><table class="rhythm"><thead><tr><th scope="col">Messwert</th><th scope="col">Wert</th><th scope="col">Menschlicher Bereich</th><th scope="col">Lage</th></tr></thead><tbody><tr class="state-ai_side"><th scope="row">Wörter je Satz</th><td class="num">12.12</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:25.4%;width:57.9%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">13.45 / 22.27</span></td><td>auf der generierten Seite</td></tr><tr class="state-ok"><th scope="row">Streuung der Satzlängen</th><td class="num">0.58</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.7%"></span><span class="dot" style="left:72.8%"></span></div><span class="prov">0.38 / 0.61</span></td><td>im Bereich</td></tr><tr class="state-ai_side"><th scope="row">Wörter je Absatz</th><td class="num">33.67</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:28.6%;width:54.7%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">49.36 / 121.17</span></td><td>auf der generierten Seite</td></tr><tr class="state-ai_side"><th scope="row">Wortvielfalt (MATTR 50)</th><td class="num">0.91</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:50.9%"></span><span class="dot" style="left:83.3%"></span></div><span class="prov">0.83 / 0.89</span></td><td>auf der generierten Seite</td></tr><tr class="state-overshot"><th scope="row">Buchstaben je Wort</th><td class="num">5.11</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:41.9%;width:41.4%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">5.7 / 6.67</span></td><td>übers Ziel hinaus</td></tr><tr class="state-overshot"><th scope="row">Nominalisierungen je 1.000 Wörter</th><td class="num">9.9</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:23.4%;width:59.9%"></span><span class="dot" style="left:16.7%"></span></div><span class="prov">14.78 / 58.31</span></td><td>übers Ziel hinaus</td></tr><tr class="state-ok"><th scope="row">Dreierlisten je 1.000 Wörter</th><td class="num">3.3</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.7%"></span><span class="dot" style="left:47.4%"></span></div><span class="prov">0 / 7.16</span></td><td>im Bereich</td></tr><tr class="state-ok"><th scope="row">Doppelpunkte je 1.000 Wörter</th><td class="num">9.9</td><td><div class="bar" aria-hidden="true"><span class="band" style="left:16.7%;width:66.7%"></span><span class="dot" style="left:62.5%"></span></div><span class="prov">0 / 14.4</span></td><td>im Bereich</td></tr></tbody></table></section><section class="wide"><h2>Kennzahlen</h2><dl class="metrics"><div><dt>Konkrete Details je 100 Wörter</dt><dd>7.92</dd></div><div><dt>Wörter Fließtext</dt><dd>303</dd></div><div><dt>Wörter je Satz</dt><dd>12.12</dd></div><div><dt>Streuung der Satzlängen</dt><dd>0.58</dd></div><div><dt>Wörter je Absatz</dt><dd>33.67</dd></div><div><dt>Wortvielfalt (MATTR 50)</dt><dd>0.91</dd></div><div><dt>Buchstaben je Wort</dt><dd>5.11</dd></div><div><dt>Nominalisierungen je 1.000 Wörter</dt><dd>9.9</dd></div><div><dt>Dreierlisten je 1.000 Wörter</dt><dd>3.3</dd></div><div><dt>Doppelpunkte je 1.000 Wörter</dt><dd>9.9</dd></div><div><dt>Partizip-Anhängsel je 1.000 Wörter</dt><dd>0</dd></div><div><dt>Messwerte auf der generierten Seite</dt><dd>3</dd></div><div><dt>Grenze für Überarbeiten</dt><dd>6</dd></div></dl></section></div>
+<footer class="foot">AI Slop Checker · <a href="https://github.com/simplifiers/ai-slop-checker">github.com/simplifiers/ai-slop-checker</a></footer>
+</main>
+</body>
+</html>

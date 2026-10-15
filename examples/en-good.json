@@ -1,0 +1,199 @@
+{
+  "tool": "slop-check",
+  "version": "0.1.0",
+  "lang": "en",
+  "register": "article",
+  "words": 350,
+  "verdict": "pass",
+  "verdict_reason": "No hard finding and tells from 0 patterns (limit 5). Measured features on the AI side: 2 (limit 6). Hints do not count.",
+  "notice": "slop-check does not tell whether AI wrote a text. It shows patterns you can check.",
+  "findings": [
+    {
+      "id": "R-01",
+      "category": "rhythm",
+      "severity": "hint",
+      "name": "Short sentences",
+      "line": 5,
+      "start": 70,
+      "end": 70,
+      "excerpt": "",
+      "message": "words per sentence: 13 is below the band 15.3 to 24.1, on the generated-text side.",
+      "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+    },
+    {
+      "id": "R-04",
+      "category": "rhythm",
+      "severity": "hint",
+      "name": "High vocabulary variety",
+      "line": 5,
+      "start": 70,
+      "end": 70,
+      "excerpt": "",
+      "message": "vocabulary variety (MATTR): 0.861 is above the band 0.772 to 0.844, on the generated-text side.",
+      "fix": "Only a hint: a single value outside the band is common in human texts too. It counts only in combination (R-10)."
+    }
+  ],
+  "summary": {
+    "substance": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "facts": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "phrases": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "structure": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    },
+    "rhythm": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 2
+    },
+    "form": {
+      "fail": 0,
+      "tell": 0,
+      "hint": 0
+    }
+  },
+  "facts": {
+    "lost": [],
+    "added": []
+  },
+  "people": [],
+  "metrics": {
+    "concreteness_per_100": 7.72,
+    "prose_words": 324,
+    "mean_sentence_len": 12.96,
+    "cv_sentence_len_para": 0.5829,
+    "words_per_paragraph": 36.0,
+    "mattr50": 0.8609,
+    "mean_word_len": 4.5857,
+    "nominalizations_1k": 6.1728,
+    "triads_1k": 0.0,
+    "colons_1k": 9.2593,
+    "participle_tail_1k": 0.0,
+    "ai_side_count": 2,
+    "ai_side_limit": 6
+  },
+  "rhythm": [
+    {
+      "feature": "mean_sentence_len",
+      "value": 12.96,
+      "band": {
+        "p10": 15.2553,
+        "p50": 19.3542,
+        "p90": 24.0831,
+        "ai_side": "low"
+      },
+      "state": "ai_side",
+      "provisional": false
+    },
+    {
+      "feature": "cv_sentence_len_para",
+      "value": 0.5829,
+      "band": {
+        "p10": 0.3848,
+        "p50": 0.4828,
+        "p90": 0.5987,
+        "ai_side": "low"
+      },
+      "state": "ok",
+      "provisional": false
+    },
+    {
+      "feature": "words_per_paragraph",
+      "value": 36.0,
+      "band": {
+        "p10": 30.3671,
+        "p50": 44.8072,
+        "p90": 65.56,
+        "ai_side": "low"
+      },
+      "state": "ok",
+      "provisional": false
+    },
+    {
+      "feature": "mattr50",
+      "value": 0.8609,
+      "band": {
+        "p10": 0.7717,
+        "p50": 0.8149,
+        "p90": 0.8436,
+        "ai_side": "high"
+      },
+      "state": "ai_side",
+      "provisional": false
+    },
+    {
+      "feature": "mean_word_len",
+      "value": 4.5857,
+      "band": {
+        "p10": 4.5862,
+        "p50": 5.0777,
+        "p90": 5.4111,
+        "ai_side": "high"
+      },
+      "state": "overshot",
+      "provisional": false
+    },
+    {
+      "feature": "nominalizations_1k",
+      "value": 6.1728,
+      "band": {
+        "p10": 7.1773,
+        "p50": 23.6781,
+        "p90": 48.6441,
+        "ai_side": "high"
+      },
+      "state": "overshot",
+      "provisional": false
+    },
+    {
+      "feature": "triads_1k",
+      "value": 0.0,
+      "band": {
+        "p10": 0.0,
+        "p50": 2.9335,
+        "p90": 7.3149,
+        "ai_side": "high"
+      },
+      "state": "ok",
+      "provisional": false
+    },
+    {
+      "feature": "colons_1k",
+      "value": 9.2593,
+      "band": {
+        "p10": 0.0,
+        "p50": 0.9895,
+        "p90": 10.524,
+        "ai_side": "high"
+      },
+      "state": "ok",
+      "provisional": false
+    },
+    {
+      "feature": "participle_tail_1k",
+      "value": 0.0,
+      "band": {
+        "p10": 0.0,
+        "p50": 2.3839,
+        "p90": 6.2171,
+        "ai_side": "high"
+      },
+      "state": "ok",
+      "provisional": false
+    }
+  ],
+  "text": "\n\n# Three questions we ask every new client before the first article\n\nI have written articles for small trade businesses since 2014. At first I picked topics by search volume. That worked for almost two years, until a carpenter in Leeds asked me why his most-read articles had never led to a single job.\n\nHe was right. Since then we ask three questions before every text.\n\n## Who calls after reading?\n\nNot who reads, but who calls. For the carpenter it was almost always couples renovating a house built between 1960 and 1980 who needed a new staircase. So we wrote about staircases in exactly those houses: which woods cope with old screed floors, how long fitting takes, what it costs.\n\nIn the first quarter after that, eleven enquiries came through the website. Before, it had been two a quarter. That proves nothing about a method, but it was enough for this business.\n\n## What does only this business know?\n\nAnyone can explain what a closed-string staircase is. Hardly anyone knows that this carpenter lets oak treads sit in the house for three weeks before fitting them in an old building, because otherwise the wood keeps drying and starts to creak. Sentences like that are in no guide. We get them in the interview, usually with one question: \"What do you do differently from others in your trade?\"\n\nSometimes that question gets nothing. Then we ask about the last job that went wrong. That always gets something.\n\n## Which figures may go in?\n\nOnly figures the business measured itself or that we can source. The [trade association survey](https://example.org/survey-2025) reports how many owners plan a renovation in the next five years; we link to it instead of copying the figure.\n\nWhen the carpenter says fitting \"usually takes two days\", we write exactly that. No rounded percentages that sound good and that nobody can check.\n\nWhat I learned from this: an article meant to lead to a phone call does not start with the search engine. It starts with the first question the customer asks on the phone. Write that question down during your next call.\n"
+}
