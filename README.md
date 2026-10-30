@@ -4,6 +4,8 @@
 
 [Deutsche Fassung](README.de.md)
 
+**[Try it in your browser](https://app.redaktion.ai/ai-slop-checker?lang=en&ref=github)**: paste a text and see the findings, free and without sign-up.
+
 ## The problem
 
 Most tools against "AI slop" hunt for a list of words and the long dash. Delete them all and the text can still say nothing. A paragraph can be free of every listed phrase and still fit any company, any topic, any reader.
@@ -200,7 +202,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: simplifiers/ai-slop-checker@main
+      - uses: simplifiers/ai-slop-checker@v0.1.0
         with:
           paths: content/blog/*.md
           lang: en

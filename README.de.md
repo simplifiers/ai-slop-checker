@@ -4,6 +4,8 @@
 
 [English version](README.md)
 
+**[Im Browser ausprobieren](https://app.redaktion.ai/ai-slop-checker?ref=github)**: Text einfügen und die Funde sehen, kostenlos und ohne Anmeldung.
+
 ## Das Problem
 
 Die meisten Werkzeuge gegen "AI Slop" suchen nach einer Liste von Wörtern und dem langen Gedankenstrich. Streicht man alles davon, kann der Text immer noch nichts sagen. Ein Absatz kann frei von jeder gelisteten Phrase sein und trotzdem zu jeder Firma, jedem Thema und jedem Leser passen.
@@ -201,7 +203,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: simplifiers/ai-slop-checker@main
+      - uses: simplifiers/ai-slop-checker@v0.1.0
         with:
           paths: content/blog/*.md
           lang: de
